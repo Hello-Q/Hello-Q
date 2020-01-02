@@ -1,0 +1,1259 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="CRM-教育版产品文档, Hello-Z">
+    <meta name="description" content="
+CRM系统
+XXXX:需要到基础参数中设置参数
+招生线索获取概述线索的获取分两个大类：
+手动录入：
+线索获取为客服拿到第一手资源信息时进行学员基本信息的录入。
+手动输入的客户可放入公海池， 也可以直接分入私池。遵循线索分配机制。
+自动生成">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>CRM-教育版产品文档 | Hello-Z</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Hello-Z</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/" class="waves-effect waves-light">
+						
+						<i class="fa fa-home"></i>
+						
+						<span>首页</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/tags" class="waves-effect waves-light">
+						
+						<i class="fa fa-tags"></i>
+						
+						<span>标签</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/categories" class="waves-effect waves-light">
+						
+						<i class="fa fa-bookmark"></i>
+						
+						<span>分类</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/archives" class="waves-effect waves-light">
+						
+						<i class="fa fa-archive"></i>
+						
+						<span>归档</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/about" class="waves-effect waves-light">
+						
+						<i class="fa fa-user-circle-o"></i>
+						
+						<span>关于</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/friends" class="waves-effect waves-light">
+						
+						<i class="fa fa-address-book"></i>
+						
+						<span>友情链接</span>
+					</a>
+          
+        </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Hello-Z</div>
+        <div class="logo-desc">
+            
+            错误这种东西，就算我们做了所有准备，也还是会悄悄跑出来 T_T
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-user-circle-o"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        CRM-教育版产品文档
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/CRM/" target="_blank">
+                                <span class="chip bg-color">CRM</span>
+                            </a>
+                        
+                            <a href="/tags/教育/" target="_blank">
+                                <span class="chip bg-color">教育</span>
+                            </a>
+                        
+                            <a href="/tags/管理系统/" target="_blank">
+                                <span class="chip bg-color">管理系统</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/产品设计/" class="post-category" target="_blank">
+                                产品设计
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-11-04
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        8.8k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        29 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><img src="https://i.loli.net/2019/11/04/pjTozrAqiL1O4hn.png" alt="CRM教育版系统.png"></p>
+<p>CRM系统</p>
+<p>XXXX:需要到基础参数中设置参数</p>
+<h1 id="招生"><a href="#招生" class="headerlink" title="招生"></a>招生</h1><h2 id="线索获取"><a href="#线索获取" class="headerlink" title="线索获取"></a>线索获取</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>线索的获取分两个大类：</p>
+<p>手动录入：</p>
+<p>线索获取为客服拿到第一手资源信息时进行学员基本信息的录入。</p>
+<p>手动输入的客户可放入公海池， 也可以直接分入私池。<a href="#_线索分配机制">遵循线索分配机制。</a></p>
+<p>自动生成：</p>
+<p>将官网、公众号等渠道收集到的注册信息对接到CRM系统中。</p>
+<p>自动获取的线索将进入公海客户池。</p>
+<h3 id="字段"><a href="#字段" class="headerlink" title="字段"></a>字段</h3><p>渠道类型：自动获取将根据来源接口信息自动生成，手动输入为选择渠道管理中预先设置好的渠道类型。两种情况全部必填；</p>
+<p>线索获取部门：自动获抓取渠道管理中的负责部门，手动输入则手动选择。需要注意的是，会有多个部门协作一条线索的情况，此处要以逗号分隔符储存部门。</p>
+<p>获取时间：自动获取即当前时间，手动输入为输入时间 。两种情况全部必填；</p>
+<p>来源url：自动获取即来源url，手动输入为空或者是对应渠道的正则url；</p>
+<p>关键词：来自搜索引擎的搜索词。计划-单元-关键词-搜索词</p>
+<p>姓名：输入的姓名。两种情况全部必填；</p>
+<p>电话：输入的电话，并对电话号进行查重校验，用户输入的线索不校验重复，防止我们通过其他渠道收录过用户电话，以免引起不必要纠纷。两种情况全部必填；</p>
+<p>年龄：输入的年龄数据，且只能时整数类型，非法字符友善提醒，或者是将用户输入的信息进行重新格式化。两种情况都可不填；</p>
+<p>性别：选择性别，可以为空，两种情况都可不填；</p>
+<p>住址：文本输入或选择或坐标打标，两种情况都可不填；</p>
+<p>咨询课程：选择课程管理中预设的课程，两种情况都可不填；</p>
+<p>意向校区：选择校区管理中的预设校区，在用户选择时，要提供校区的地址，电话等信息，以辅助用户选择，两种情况都可不填。</p>
+<p>意向课程：选择课程管理中的预设课程，自动获取与手动录入相同。</p>
+<p>跟进客服：用户录入时，此项为空，线索进入公海客户池。客服人员手动录入时，只能选择自己进行跟进，不遵循<a href="#_线索分配机制_1">线索分配机制</a>，此种属于特殊情况，允许溢出指标。两种情况都可不填。</p>
+<p>录入人：自动获取时，常规渠道为系统默认，临时渠道的，不区分人时俄日系统默认，区分时，抓取url中的id 信息匹配对应员工。详见渠道管理中的<a href="#_临时渠道">临时渠道</a></p>
+<p>备注：用于客服人员对线索的备注，手动录入时选填，用户输入一般没有此栏目。</p>
+<p>Ps：输入字段如上所列，手动录入时全部显示，全部可编辑，自动提交表单跟进业务实际情况在以上且只能在以上字段中进行选择。</p>
+<p>对于线索的获取进入CRM系统的过程，应优先考虑自动化接入方法。如官网的自动提交，微信公众号的自动提交，地推的二维码自动提交。无法自动获取的线索，进行手工录入，录入过程讲究尽量的方便与快捷。</p>
+<p>特殊情况：手工录入除去客服人员会录入外，校区咨询师也会收到线索信息，关于客服人员以及咨询人员录入后的分配，在下文中的<a href="#_线索分配机制_1">线索分配机制</a>中做详细阐述。</p>
+<h3 id="公海池线索列表中提供操作"><a href="#公海池线索列表中提供操作" class="headerlink" title="公海池线索列表中提供操作"></a>公海池线索列表中提供操作</h3><ol>
+<li>批量导入：公海管理员可使用</li>
+</ol>
+<p>系统要提供批量导入线索功能用于大量线索进入系统中，例如异业给到的电话号码，线下活动获取的线索列表等。首先点击批量导入后，展示导入页面，页面提供上传导入文件以及下载导入模板功能。用户首次使用应下载导入模板，进行上述字段的填写，然后再上传文件。上传后进行以下校验：首先渠道类型，获取时间，姓名，电话必填，且渠道类型比如是系统中已经有的类型。然后对电话号码进行查重验证，对于重复的线索要返回给用户，要求用户二次确认重复的电话线索是否确认导入。</p>
+<ol start="2">
+<li>批量分配客服：公海管理员可使用</li>
+</ol>
+<p>对线索进行多选后，批量分配客服，此种方式输入手工分配，遵循<a href="#_线索分配机制_1">线索分配机制</a>。</p>
+<ol start="3">
+<li>按获取时间过滤线索</li>
+<li>按学员姓名查找线索</li>
+<li>按手机号查找线索</li>
+<li>按来源类型查找线索</li>
+<li>点击领取客户功能——遵循<a href="#_线索分配机制_1">线索分配机制</a>。</li>
+<li>按重复手机号查找线索——查重功能</li>
+<li>单条线条的领取、作废、激活。</li>
+</ol>
+<h3 id="线索作废机制"><a href="#线索作废机制" class="headerlink" title="线索作废机制"></a>线索作废机制</h3><p>Pass</p>
+<h3 id="线索分配机制"><a href="#线索分配机制" class="headerlink" title="线索分配机制"></a>线索分配机制</h3><p>在线索跟进前需要先对线索进行分配，建议分配方案：</p>
+<ol>
+<li>客服分配：对于客服以及业绩相关人自己录入的线索，自己觉得这条线索可以分配给自己跟进，为防止录入后被系统自动分配，可以在录入时，直接分配给自己。但会占用自主领取配额。当然也可以录入至公海池。ps:此种情况适用于手工录入线索</li>
+<li>系统自动分析分配：系统根据当前校区咨询师个人数据进行分配（当前跟进量、跟进成功率、个人KPI等）ps：此种情况适用于自动获取线索，个人数据待设计。（考录因素：公海池总量）</li>
+<li>分配条件：建立客服个人最高线索跟进量上限，方案2中系统自动分配的线索占60%，达到此值时，不在自动分配，但客服可以手动领取公海池中的线索，给予客服人员自主选择适合自己线索的权力，直至手动领取上限为个人最高线索量的40%。</li>
+<li>特殊情况：</li>
+</ol>
+<p>合作校的线索，直接进入报名，客服为系统客服，咨询为系统咨询。</p>
+<p>客服手工录入：此类线索不占用最高线索量，允许线索量溢出。</p>
+<p>咨询手工录入：此类线索不占用最高线索量，允许线索量溢出。</p>
+<p>自然上门线索为咨询手工录入，此类线索录入必须强制选择已到访。</p>
+<p>Ps：自动分配还要考虑在线状态，暂不上线。长时间未被分配的线索要提醒部门长进行及时分配。</p>
+<h2 id="线索跟进"><a href="#线索跟进" class="headerlink" title="线索跟进"></a>线索跟进</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p>当线索经过分配机制分配后，线索进入线索跟进阶段。记录了当客户被分配到客服、咨询师后，客服、咨询师对线索的跟进记录以及跟进进度的记录。此部分是客服人员与咨询人员共同协作的过程。</p>
+<h3 id="字段-1"><a href="#字段-1" class="headerlink" title="字段"></a>字段</h3><p>Ps：线索进入客服环节后，线索获取中的字段进行全部显示，但渠道类型、获取时间、意向课程、备注字段不可再编辑，其他字段可以根据跟进过程中拿到的最新信息进行信息的更新。需要新填写的字段描述如下：</p>
+<p>跟进状态：跟进状态近似于一个线索的进度，进度阶段为：无法成交、意向中、成功约访、已到访、已试听、业务成单。跟进状态的选择为单向，只能向前走，不能回退。如跟进过成中出现意外导致跟进失败，在最后有跟进失败的选择。对每个跟进阶段的描述如下：</p>
+<ol>
+<li>待跟进：未开始跟进的线索。</li>
+<li>下次联系：与用户沟通后，用户表现出有一定的意向，但无到访的意向时，选择此选项，选择此选项后需要填写下次联系时间，用于提醒下次联系时间。</li>
+<li>成功约访：经过沟通后，用户有兴趣来学校看看，则选择此选项。并对客户预约到访的时间进行约访安排。约访时要考虑家长是否要当天试听。不需要试听，只是访问校区，则进行约访安排，选择访问校区、约访时间接待人即可。需要的话要提前安排试听，需要试听点击预约试听中的是，选择校区以及试听课程后，点击查询会显示出该校区此课程的课程表以及该校区有空闲的教师，并提供课程表中课程和教师的试听转单率以及课程目前可<strong>插班人数</strong>，客服根据数据进行选择。Ps：设计要求：选择成功约访后，预约试听默认关闭，并要求输入约访安排中的约访校区、约访时间、接待人。如果打开预约试听，则隐藏约访安排，并选择试听课，根据试听安排生成试听校区、试听时间、接待人、试听课程、试听老师。其中试听安排与约访安排中的三个相同字段储存可以共用。Ps：约访时间或试听时间不得比当天晚于14天（为后面的<a href="#_线索自动回收机制">线索自动回收机制</a>打基础）</li>
+<li>已到访：到这一步则进入咨询师跟进阶段，负责的咨询师为上一步中的接待人。此状态指客户已经到校访问。与成功约访类似，到访后根据到访后的实际情况进行填写。如只是到访并未试听，则要填写到访记录，填写到访校区、到访时间、接待人。如到访后试听了，需要填写试听记录，填写试听校区、试听时间、接待人id、试听课程、试讲老师。在咨询师打开此状态后，读取成功约访中的数据，咨询师按照实际情况修改数据后进行提交。提交数据后，要生成试听记录和到访记录，并且所有的试听记录要展示在线索详情中。</li>
+<li>无法成交：线索被分配后，经过沟通后，用户完全没有需求，则选择此选项，并对选择二级菜单中选项，无需求、号码错误、其他。选择此项基本确定不在跟进此线索，所以不要轻易选择。选择后无法再预约到访、试听，但是可以直接报名。选择此项后，提交数据时弹窗提醒是否直接放回公池。并填写放回原因。（弹窗为优化体验功能，后期迭代更新）</li>
+<li>已报名：即此线索已经报名。此选项无需选择输入，当线索报名后自动更新为已报名。判断条件为点击了线索转学员并新建合同订单且付费后。所有的新学员必须通过线索转创，所以不存在绕过线索新建学员的情况。线索为无法成交的也可以最终更新为已报名。</li>
+</ol>
+<p>以上所有提到的时间，不能选择已过去的时间</p>
+<p>Ps：跟进状态说明：按照以上状态从上至下单向流动，不可回流。当线索状态为成功约访并填写相关数据提交后，因其他原因需要修改，则进入线索中进行修改。已过约访时间后，未填写已到访的，客服要进行原因检查。首先对接接待人确认是否已到访未录入系统，若是，督促录入。若否，对客户进行回电咨询原因并重新确定约访时间。当然，此过程是客服与咨询通力协作的过程，此处为两者交接阶段，两人要交流，客户未能赴约，互相沟通，也不是非要客服去对接咨询师，咨询师发现客户未能按照到访规划到访时，也可及时对接客服了解情况，以免错过销售时机。</p>
+<p>当线索状态进行到已到访并填写相关数据提交后，客户对课程仍有疑惑，此时可能需要再次预约试听。此后咨询在跟进过程中获取到客户最新的到访试听需求则新建一条预约信息，填写内容与成功约访中的填写相同，且提交后更新覆盖此过程中的老数据，只需要保存新的数据即可。但此时此条线索的状态是已到访，因为客户确实已经来过一次，此处保存的是最新的线索状态。只是客户又约了一次到访。</p>
+<p>当客户再次到访后，在线索详情界面新建一次到访记录，填写内容与已到访中相同，提交后要对此次记录储存，而不是覆盖原纪录。当然客户未预约直接到访也是要记录的。也就是说已到访与成功约访没有依赖关系。同样的，两种状态与填写内容的关系仅存在第一次，内容依赖状态，状态更新到相应进度后，是可以修改约访内容和新建到访记录的。</p>
+<p>标签：对线索进行打标。（拓展功能，后期迭代中更新）</p>
+<p>本次跟进记录：此处记录了跟进过程中的各项记录。其中包括：本次跟进时的线索状态，本次跟进时间，本次跟进人，本次跟进的文字记录。对各项数据详细说明如下：</p>
+<ol>
+<li>线索状态：即登记跟进记录时，抓取此刻的线索状态。</li>
+<li>本次跟进时间：即本次跟进的时间。</li>
+<li>本次跟进人：即登陆用户。</li>
+<li>本次跟进记录：即本次跟进过程的详细记录，文字形式。</li>
+</ol>
+<p>放回公池：当跟进状态选择了无法成交后，咨询师可以将线索放回公池。放回时要选择放回的原因（原因待定）。</p>
+<p>报名：按钮放在列表记录的操作中，点击报名打开新新建合同界面在新的标签中，同时悬浮新增学员表单，自动关联此学员，按照<a href="#_学员管理">学员管理</a>录入学员信息，保存后，关联此学员，继续按照合同管理录入合同信息后保存。此操作分为了新建学员和新建合同，如果新建学员过程中保存后中断操作，保存新建的学员信息。此时继续在线索中点击报名时，仍打开新建合同界面在新的标签中，但是不在悬浮新建学员的界面。</p>
+<h3 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h3><p>线索被主动放回时，将跟进状态重置为待跟进并清除下次联系、成功约访、无法成交下级的内容，但已到访的到访记录、试听记录以及跟进记录不清除。线索重新分配后重新开始循环。</p>
+<h3 id="线索自动回收机制"><a href="#线索自动回收机制" class="headerlink" title="线索自动回收机制"></a>线索自动回收机制</h3><p>为促进员工对线索的跟进积极性，我们设计了线索自动回收机制，描述如下：</p>
+<ol>
+<li>线索分配后1天未沟通自动回收。线索分配后，24小时之内必须将线索状态调整为非待跟进状态，否则线索将自动回收至公海池。</li>
+<li>线索分配后3天未成功邀约自动回收。判定时，只要状态在成功邀约或成功邀约之后即可。</li>
+<li>线索分配后15天未能到访或试听，线索自动回收。判定时，线索状态只要在已到访或已到访之后即可。</li>
+<li>线索分配后30天线索未报名自动回收。判定时，线索状态只要不是已报名就自动回收。</li>
+</ol>
+<p>所有时间点判定时，只要状态为无法成交，也自动回收。</p>
+<h2 id="学员管理"><a href="#学员管理" class="headerlink" title="学员管理"></a>学员管理</h2><h3 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h3><p>在线索中点击报名，即开始录入学员信息。（暂时只设置一个录入接口，在此页面只提供查询功能以及修改功能，不提供新增学员功能，所有学员必须通过招生模块，防止出现学员无来源信息）</p>
+<h3 id="新建填写字段"><a href="#新建填写字段" class="headerlink" title="新建填写字段"></a>新建填写字段</h3><p>线索id：来源线索的id；</p>
+<p>学号：学员的编号，按照固定的格式。目前是YYMMDD+4位流水号；</p>
+<p>录入日期：表单录入日期，作为学生入学日期；</p>
+<p>学员姓名：学生的名字, 默认读取对应线索信息，更改保存同时更新线索列表中的性别信息，保持两表信息一致，且每次修改都要更新两表的信息；</p>
+<p>家长信息：学生的家长信息，存入新的表中，同时用于与公众号的对接。一个家长可以同时拥有多个学员。同样，一个学员也可以添加多个家长。</p>
+<p>归属校区：学员的上课校区；</p>
+<p>学管师：负责此学员的学管师；</p>
+<p>来源类型：学员的来源类型。默认读取对应线索的类型不可更改，日后兴许有用；</p>
+<p>来源渠道：学员的来源渠道。默认读取对应线索的类型不可更改，日后兴许有用；</p>
+<p>在读学校：学员目前在读的学校；</p>
+<p>年级：学员目前在读的年级；</p>
+<p>出生日期：学员出生日期，可以做生日关怀。</p>
+<p>学员性别：学生性别，默认读取对应线索信息，更改保存同时更新线索列表中的性别信息，保持两表信息一致，且每次修改都要更新两表的信息。</p>
+<p>状态：</p>
+<p>备注：新增学员时对学员的备注。</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>学员信息录入后不可以删除，特别是已经有关联合同、缴费、排课等记录的学员。</p>
+<h3 id="批量操作"><a href="#批量操作" class="headerlink" title="批量操作"></a>批量操作</h3><p>Pass</p>
+<h3 id="单项操作"><a href="#单项操作" class="headerlink" title="单项操作"></a>单项操作</h3><p>报名：链向<a href="#_合同管理">新增合同</a>页面并关联此学员；</p>
+<p>学生课表：</p>
+<p>查询合同</p>
+<p>关联家长</p>
+<p>回访记录：</p>
+<p>跨校区：</p>
+<p>转校区：</p>
+<h2 id="合同管理"><a href="#合同管理" class="headerlink" title="合同管理"></a>合同管理</h2><p>合同管理用于记录学员报名后选择报读课程后生成的合同明细。</p>
+<h3 id="新建合同字段"><a href="#新建合同字段" class="headerlink" title="新建合同字段"></a>新建合同字段</h3><p>学员：选择以报名的学员，同时带出学员的基本信息，姓名、电话、渠道来源、学校；</p>
+<p>签约日期：合同的签订日期；</p>
+<p>合同类型：分为新签、续签、拓课。自动生成，不可编辑。</p>
+<ol>
+<li>新签：学员之前无任何合同</li>
+<li>续签：学员之前有合同</li>
+<li>拓课：学员之前有合同且本次合同课程与之前类型不同</li>
+</ol>
+<p>报名课程：子表单录入，可以新建多条记录</p>
+<ol>
+<li>课程编号：课程管理中的课程编号</li>
+<li>课程名称：课程管理中的课程名称</li>
+<li>单价：课程管理中的课程单价</li>
+<li>课时：此课程的报名课时</li>
+<li>课程金额：单价*课时</li>
+<li>优惠方案：选择活动管理中的活动</li>
+<li>优惠金额：优惠方案的优惠金额</li>
+<li>折后金额：优惠后的此课程应收金额</li>
+<li>备注：此课程的备注</li>
+<li>删除：点击删除此课程</li>
+</ol>
+<p>结算：对合同的课程金额进行汇总，分以下四个汇总项</p>
+<ol>
+<li>合同金额：课程金额的总和</li>
+<li>优惠总额：优惠金额的总和</li>
+<li>直减优惠：对合同金额直接增减</li>
+<li>合同应收：合同金额-优惠总额-直减优惠</li>
+</ol>
+<p>对内备注：系统内备注</p>
+<p>对外备注：打印在打印单上的备注</p>
+<h2 id="收退款管理"><a href="#收退款管理" class="headerlink" title="收退款管理"></a>收退款管理</h2><p>当合同提交后，需要对合同进行收款，每笔收款进行一次记录，一个合同可以对应多条收款，不能多笔收款进行汇总一次录入，防止财务对账麻烦。</p>
+<p>收款后可进行退款，退款与收款数据可放在同一张表，前端考虑是否要做两个栏目。</p>
+<h3 id="收款-新建收款字段"><a href="#收款-新建收款字段" class="headerlink" title="收款 新建收款字段"></a>收款 新建收款字段</h3><p>收款编号：收款的编号。格式待定</p>
+<p>合同：搜索合同编号选择要收款的合同；</p>
+<p>收款人：读取登陆人，不能更改，虚拟账号没有收款权限；</p>
+<p>操作人：当前操作人-登陆人，不可更改；</p>
+<p>收款项目：定金或尾款；</p>
+<p>收款时间：当前操作时间，可调整；</p>
+<p>待收款额：当前合同总额-已收款额；</p>
+<p>收款额：本次收款金额；</p>
+<p>备注：本次收款说明；</p>
+<p>业绩分配：当以上信息点击保存后，自动弹出业绩分配的界面，业绩分配分为三个部分，线索获取业绩、客服业绩、课程顾问业绩。</p>
+<p>线索获取：获取线索的业绩记录，自动获取对应线索的获取渠道的负责部门和负责人，当线索的渠道为多部门协助渠道时，将此渠道的所有获取部门和此渠道的负责人拉取做业绩平分；</p>
+<p>客服业绩：自动获取对应线索的负责客服，全额分配；</p>
+<p>顾问业绩：自动过去对应线索的负责课程顾问，全额分配；</p>
+<p>Ps：收款业绩的分配从点击收款完成时就将分配记录写入到数据库中，弹窗只做分配结果的展示，同时允许修改。直接写入的目的时防止收款后直接关闭浏览器出现业绩未分配的情况，导致出现收款金额与业绩分配金额不匹配的情况。</p>
+<h1 id="1级标题"><a href="#1级标题" class="headerlink" title="1级标题"></a>1级标题</h1><h2 id="公司管理"><a href="#公司管理" class="headerlink" title="公司管理"></a>公司管理</h2><p>各公司管理，添加公司时填写公司名称、公司电话、公司地址、联系人、联系电话、公司法人后保存。各公司数据不能互通。</p>
+<h2 id="组织架构"><a href="#组织架构" class="headerlink" title="组织架构"></a>组织架构</h2><p>组织管理用于管理一家公司中的分公司、分校、部门以及其他的管理。</p>
+<h3 id="新建填写字段-1"><a href="#新建填写字段-1" class="headerlink" title="新建填写字段"></a>新建填写字段</h3><p>组织名称：组织的名字；</p>
+<p>电话：组织的对外电话。如分公司前台电话，校区前台电话，部门电话。可以为空；</p>
+<p>归属上级：此组织的上级组织；</p>
+<p>类型：组织的类型。（分公司、校区、部门、其他），4个类型可以写死；</p>
+<p>负责人：该组织的负责人，如分公司总经理，校区校长，部门长，小组长；</p>
+<p>联系方式：负责人的联系方式；</p>
+<p>地址：该组织的地址，校区类型一定要填且填清楚，用于前台表单提供校区信息。（可以储存经纬度，用于网页展示地图，给客户更详细的地址信息，后期开发）；</p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>新建组织时，选择组织类型的时候，4个组织类型要分级别，总公司默认已存在且只存在一个，级别从大向小依次为分公司、校区、部门、其他，新建时，大组织下面可以有任何级别的小组织，但是小组织下不能新建大组织。作为教育公司的主体。校区的标识要打好，用于提供给其他模块以及网站表单服务。组织管理中兼并了校区管理。</p>
+<h2 id="权限管理、角色管理、职位管理"><a href="#权限管理、角色管理、职位管理" class="headerlink" title="权限管理、角色管理、职位管理"></a>权限管理、角色管理、职位管理</h2><p>权限管理是管理系统中的重要部分，保证的人员的操作与数据安全。权限管理是可操作权限的最小颗粒，角色管理是桥接员工与权限的桥梁，角色中的角色权限是权限的集合。</p>
+<p>通过将权限授权给角色，再将员工分配角色的方式使得相同角色的员工拥有相同的权限。是否员工可以不通过角色直接获得授权，有两种观点各有利弊。</p>
+<ol>
+<li>员工可以直接获得授权</li>
+</ol>
+<p>参考资料：<a href="https://www.cnblogs.com/hnsongbiao/p/5173878.html" target="_blank" rel="noopener">https://www.cnblogs.com/hnsongbiao/p/5173878.html</a></p>
+<p>判定时，取角色权限与员工直接获得的权限的并集。好处是自由度高，更方便。坏处是影响规范性与可维护性，员工可以不走桥，大家作小船过去了。</p>
+<ol start="2">
+<li>员工只能通过角色获得授权</li>
+</ol>
+<p>参考资料：<a href="https://blog.csdn.net/k7Jz78GeJJ/article/details/78489155" target="_blank" rel="noopener">https://blog.csdn.net/k7Jz78GeJJ/article/details/78489155</a></p>
+<p>用户必须通过角色获得权限，特殊权限也必须通过建立新的角色的方式进行授权，好处就是前者的坏处，坏处就是前者的好处。</p>
+<p>两种方式的选择就在于，企业的员工兼职岗位的复杂性，如一个校长同时他也是一名老师，同时他还负责招生，同时他还要收款。此时员工的角色很复杂，他是一名校长，同时还要上课，有着老师的角色，同时拥有财务的职能。这种情况明显是前者的授权方式方便的多，反之员工角色分明则后者更好。</p>
+<p>归根到底强调一件事情：<strong>权限的管理，如何从公司制度上重视？</strong></p>
+<p>即如何规范权限的分配，即那个部门哪个员工要哪个权限都需要进行审批或邮件知会后才能帮其配置，还有哪些数据要设置权限，哪些操作要设置权限，这些权限管理过程才是权限系统的核心，恰恰这些核心的东西在系统上是体现不出来的。</p>
+<p>前期的不经意就会在后期会变成麻烦，不仅影响业务效率，更会导致风险危机。</p>
+<p>权限管理最终是为了风控，如果权限的风控意识没做好，权限系统做的再好也是枉然。</p>
+<h2 id="员工管理"><a href="#员工管理" class="headerlink" title="员工管理"></a>员工管理</h2><p>公司员工管理，同时也是系统用户管理。</p>
+<h3 id="新建填写字段-2"><a href="#新建填写字段-2" class="headerlink" title="新建填写字段"></a>新建填写字段</h3><p>登录名：系统登陆名称；</p>
+<p>账号类型：分为：1、全职，即全职员工。2、兼职，即兼职员工。3、虚拟，即虚拟账号，不能登陆，只作为其他模块的支持标识。例如机器客服、虚拟教师。同时，若系统按用户量销售定价，虚拟账户不占用额度；</p>
+<p>姓名：员工姓名；</p>
+<p>电话：员工电话；</p>
+<p>是否教师：此员工是否为教师；</p>
+<p>公司：员工所在公司；</p>
+<p>部门：员工所在部门；</p>
+<p>角色：员工拥有的角色权限；</p>
+<h2 id="课程管理"><a href="#课程管理" class="headerlink" title="课程管理"></a>课程管理</h2><p>课程即学校的产品，有课程以及其他的产品，例如材料费等，这里的课程其实就是收费项目。</p>
+<h3 id="新建填写字段-3"><a href="#新建填写字段-3" class="headerlink" title="新建填写字段"></a>新建填写字段</h3><p>分类：大的选择分类，可以分两个页面，选择项目的分类，是主营的课程还是其他的费用；</p>
+<p><strong>第一类-主产品：课程 填写字段：</strong></p>
+<p>课程名称：课程的名称，命名最好是有一定的规律；</p>
+<p>适用校区：课程适用的校区，并填写在课程此校区的价格；</p>
+<p>课时数：课程的课时数，默认为1；</p>
+<p>课程单价：课程一个课时的价格；</p>
+<p>课程时长：课程上一个课时的时间；</p>
+<p>可用活动：此课程可以使用的活动；</p>
+<p>锁定课程：在新建合同时，此课时的课时是否可以修改，一般固定课时包时不能修改课时的。</p>
+<p><strong>第二类-附属品-其 他 填写字段</strong></p>
+<p>项目名称：收费项目的名称——&gt;与<strong><em>课程名称</em></strong>共用；</p>
+<p><strong><em>适用校区：</em></strong>收费项目可用的校区；</p>
+<p>课时数：空</p>
+<p>价格：收费项目价格——&gt;与<strong><em>课程单价</em></strong>共用；</p>
+<p>课程时长：空</p>
+<p><strong><em>可用活动</em></strong>：收费项目可参加的活动。</p>
+<h3 id="课程查询功能"><a href="#课程查询功能" class="headerlink" title="课程查询功能"></a>课程查询功能</h3><ol>
+<li>按课程名称模糊查找</li>
+<li>按校区查找</li>
+<li>按大类查找</li>
+</ol>
+<h2 id="分班管理"><a href="#分班管理" class="headerlink" title="分班管理"></a>分班管理</h2><h3 id="一对一分班"><a href="#一对一分班" class="headerlink" title="一对一分班"></a>一对一分班</h3><h3 id="一对多分班"><a href="#一对多分班" class="headerlink" title="一对多分班"></a>一对多分班</h3><h3 id="班课分班"><a href="#班课分班" class="headerlink" title="班课分班"></a>班课分班</h3><h2 id="教师管理"><a href="#教师管理" class="headerlink" title="教师管理"></a>教师管理</h2><p>此模块对教师进行管理，包含教师的可教科目、校区、等信息。</p>
+<h3 id="字段-2"><a href="#字段-2" class="headerlink" title="字段"></a>字段</h3><p>关联员工：选择教师的登陆账号；</p>
+<p>教师姓名：教师的名字，学则关联员工后，直接读取员工信息，与员工表保持同步，不能编辑。</p>
+<p>用户类型：读取员工管理中的用户类型；</p>
+<p>可教科目：选择课程管理中的课程；</p>
+<p>性别：读取员工管理中的性别，不可编辑；</p>
+<p>联系方式：读取员工管理中的联系方式，不可编辑；</p>
+<p>所属校区：教师所属的校区，默认是员工管理中的组织；</p>
+<p>可跨校区：可以在非所属校区上课的校区，可多选。</p>
+<p>教师等级：教师的级别，用于区分课时费；</p>
+<p><em>课时薪资：每课时或人头的薪资，用于计算教师业绩，后期更新；</em></p>
+<h2 id="渠道管理"><a href="#渠道管理" class="headerlink" title="渠道管理"></a>渠道管理</h2><p>渠道管理为线索获取中渠道来源服务，提供线索分类。渠道讲分为常规渠道与临时渠道。常规渠道为长期使用的渠道，临时渠道为阶段性使用的渠道，例如一次活动。</p>
+<h3 id="渠道分类"><a href="#渠道分类" class="headerlink" title="渠道分类"></a>渠道分类</h3><p>渠道分类为下面的两个节点服务，新建分类时，填写分类名称，选择分类归属，确定归属后，只能在相应的节点中使用。</p>
+<h3 id="常规渠道"><a href="#常规渠道" class="headerlink" title="常规渠道"></a>常规渠道</h3><p>新建常规渠道需要选择渠道分类中分类归属为常规渠道的分类名称，填写渠道来源、负责部门。输入url正则式，正则式用于匹配自动获取的线索的来源url，若渠道没有自动接入，则url正则式为空。</p>
+<h3 id="临时渠道"><a href="#临时渠道" class="headerlink" title="临时渠道"></a>临时渠道</h3><p>临时渠道用于临时的活动，需要选择渠道分类中分类归属为临时渠道的分类名称，填写活动主题、活动时间、负责部门、负责人、活动地点、描述等信息。输入url正则式，正则式用于匹配自动获取的线索的来源url，若渠道没有自动接入，则url正则式为空。如果此次活动只有一个url则直接输入url，如果活动有多个url同时进行推广，如多人推广，则输入正则式进行匹配。若要识别推广人，建议url中带有员工id或工号，并将推广人信息抓取到线索获取中的录入人中。</p>
+<h2 id="基础参数"><a href="#基础参数" class="headerlink" title="基础参数"></a>基础参数</h2><p>作废原因——&gt;线索-&gt;线索获取-&gt;标记作废</p>
+<p>无法成交原因——&gt;线索-&gt;线索跟进-&gt;跟进状态—&gt;无法成交</p>
+<p><strong>放回公池原因——&gt;线索-&gt;线索跟进-&gt;放回共池</strong></p>
+<p>课程科目设置——&gt;课程管理-&gt;课程科目</p>
+<h2 id="活动管理"><a href="#活动管理" class="headerlink" title="活动管理"></a>活动管理</h2><h3 id="概述-3"><a href="#概述-3" class="headerlink" title="概述"></a>概述</h3><p>活动管理不仅仅是为了新建合同中的价格调整，更多的是为了记录活动，活动结束后对活动进行复盘。</p>
+<p>活动管理分为两个层级，活动和优惠方案，一次活动可以对应多个优惠方案。下面讲如何一档活动。</p>
+<h3 id="填写字段"><a href="#填写字段" class="headerlink" title="填写字段"></a>填写字段</h3><p><strong>首先讲活动的情况填写</strong></p>
+<p>活动名称：活动的主题名称；</p>
+<p>活动状态：活动有效或无效；</p>
+<p>活动时间：活动的可用时间，精确到时间；</p>
+<p>适用校区：参加活动的校区；</p>
+<p><strong>每档活动可以又不同的优惠方案，设计一个子表单：</strong></p>
+<p><strong>打折：</strong></p>
+<p>优惠类型：选择打折；</p>
+<p>优惠数值：输入两位数字，后面自动追加%号；</p>
+<p>优惠名称：默认生成打XX折，可以修改；</p>
+<p>适用课程：优惠方案的可用课程。</p>
+<p><strong>满减：</strong></p>
+<p>优惠类型：选择满减;</p>
+<p>满足金额：输入一个金额，单位为元；</p>
+<p>减免金额：当付费金额达满足金额时，减免的金额；</p>
+<p>优惠名称：默认生成减XX元，可以修改；</p>
+<p>适用课程：优惠方案的可用课程。</p>
+<p><strong>赠送：</strong></p>
+<p>优惠类型：选择赠送;</p>
+<p>赠送类型：选择礼品或者课时；</p>
+<p>礼品名称/课时数：选择礼品时输入礼品名称（考虑建立礼品库或者做礼品库存管理），选择课时时，输入赠送课时数；</p>
+<p>优惠名称：默认生成总送XX礼品或XX课时，可以修改；</p>
+<p>适用课程：优惠方案的可用课程。</p>
+<h2 id="员工管理-1"><a href="#员工管理-1" class="headerlink" title="员工管理"></a>员工管理</h2><h3 id="工作交接"><a href="#工作交接" class="headerlink" title="工作交接"></a>工作交接</h3><p>根据资源是公司且不跟员工走的原则，当员工发生变动时，例如离职、调岗等，在工作交接完成时，系统中所有归属原负责人的线索，全部转移到新员工。对此，系统要设计员工交接模块，模块详情，在文档后面会详细描述。且此原则适用于所有又员工字段的模块。</p>
+<h1 id="OA"><a href="#OA" class="headerlink" title="OA"></a>OA</h1><h2 id="商品资料"><a href="#商品资料" class="headerlink" title="商品资料"></a>商品资料</h2><h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><p>用于录入查看可供采购的商品明细以及资料</p>
+<h3 id="填写说明"><a href="#填写说明" class="headerlink" title="填写说明"></a>填写说明</h3><p>商品编号：商品的唯一编号；</p>
+<p>大类：分为教学用品(JX)、办公用品(BG)、日用品(RY)。；</p>
+<p>中类：大类的下级分类；</p>
+<p>小类：中类的下级分类；</p>
+<p>商品名称：商品的名称，要求阅读后可以知道商品大概是什么；</p>
+<p>品牌：商品的品牌</p>
+<p>规格：商品规格参数，如XX支/盒，XX张/包</p>
+<p>采购单位：采购时给到供应商的单位，如盒、箱、包；</p>
+<p>入库单位：最终进入公司仓库的单位，如一盒笔有12支，采购时采购单位为盒，但领用时会按支出库，则入库单位为 支 。入库单位即领用时出库的最小单位；</p>
+<p>单位比例：即采购单位与入库单位的比，如12支/盒，则比例为1：12；</p>
+<h2 id="采购申请"><a href="#采购申请" class="headerlink" title="采购申请"></a>采购申请</h2><h3 id="用途-1"><a href="#用途-1" class="headerlink" title="用途"></a>用途</h3><p>用于校区以及总部采购物品审批</p>
+<h3 id="填写说明-1"><a href="#填写说明-1" class="headerlink" title="填写说明"></a>填写说明</h3><p>申请类型：采购单的申请类型，分为集中采购与零散采购，集中采购发起申请后由相关部门人员审核通过后统一集中进行采购。零散采购发起申请由相关部门审核通过后，自行采购；</p>
+<p>申请人：默认填单人，不可更改；</p>
+<p>申请部门：申请人所在部门，不可更改；</p>
+<p>采购仓库：商品采购完成后，将入库的仓库；</p>
+<p>申请日期：申请单填写日期</p>
+<p>商品信息：商品编号、大类、中类、小类、品牌、规格、比例，取商品资料。</p>
+<p>申请量：申请采购量，单位为采购单位。</p>
+<p>入库单位量：通过申请量与比例计算得出入库单位量，自动计算，不可手动更改；</p>
+<p>采购仓库存：采购仓库当前商品库存量；</p>
+<p>总库存：所有仓库当前商品的库存量；</p>
+<p>采购总量：整张采购单采购商品的总量；</p>
+<p>操作：</p>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/11/09/python-xue-xi-bi-ji/8.python-lei/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="8.python-类">
+                        
+                        <span class="card-title">8.python-类</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            面向对象编程是最有效的软件编写方法之一，在面向对象编程过程中，编写表示现实世界中的实物个情景的类，并基于这些类创建对象。
+创建和使用类创建一个Dog类创建一个Dog类，每个实例储存名字和年龄，并且赋予每条小狗蹲下和打滚的能力。
+class 
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-09
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python学习笔记/" class="post-category" target="_blank">
+                                    Python学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/" target="_blank">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/面向对象/" target="_blank">
+                        <span class="chip bg-color">面向对象</span>
+                    </a>
+                    
+                    <a href="/tags/类/" target="_blank">
+                        <span class="chip bg-color">类</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/11/03/python-xue-xi-bi-ji/pyhton-si-wei-dao-tu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="pyhton思维导图">
+                        
+                        <span class="card-title">pyhton思维导图</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python学习笔记/" class="post-category" target="_blank">
+                                    Python学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Hello-Z<br />'
+            + '作者: Hello-Z<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            <!-- 本站由&nbsp;&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>&nbsp;基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>&nbsp;主题搭建 -->
+            <br>
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">27.5k</span>&nbsp;字
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fa fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            <br>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+            <script>
+                var now = new Date();
+
+                function createtime() {
+                    var grt = new Date("10/06/2019 00:00:00");
+                    now.setTime(now.getTime() + 250);
+                    days = (now - grt) / 1000 / 60 / 60 / 24;
+                    dnum = Math.floor(days);
+                    hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+                    hnum = Math.floor(hours);
+                    if (String(hnum).length == 1) {
+                        hnum = "0" + hnum;
+                    }
+                    minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+                    mnum = Math.floor(minutes);
+                    if (String(mnum).length == 1) {
+                        mnum = "0" + mnum;
+                    }
+                    seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                    snum = Math.round(seconds);
+                    if (String(snum).length == 1) {
+                        snum = "0" + snum;
+                    }
+                    document.getElementById("timeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+                    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+                }
+                setInterval("createtime()", 250);
+            </script>
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Zhangyanqingz" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=984430071" class="tooltipped" data-tooltip="QQ联系我: 984430071" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<!-- 配置 mermaid流程图 start-->
+<div class="progress-bar"></div>
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+<!-- 配置 mermaid流程图 end-->
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

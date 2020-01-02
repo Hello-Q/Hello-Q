@@ -33,9 +33,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> python </tag>
             
             <tag> 高级 </tag>
             
@@ -172,11 +172,11 @@
       
         <tags>
             
-            <tag> Ubuntu </tag>
-            
             <tag> java </tag>
             
             <tag> 软件安装 </tag>
+            
+            <tag> Ubuntu </tag>
             
         </tags>
       
@@ -434,9 +434,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> python </tag>
             
             <tag> 数据类型 </tag>
             
@@ -664,11 +664,11 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 学习笔记 </tag>
             
             <tag> 入门 </tag>
+            
+            <tag> python </tag>
             
         </tags>
       
@@ -821,6 +821,33 @@
       <url>/2019/05/20/django/django-log-ri-zhi-mo-kuai/</url>
       
         <content type="html"><![CDATA[<h2 id="Django-日志模块"><a href="#Django-日志模块" class="headerlink" title="Django 日志模块"></a>Django 日志模块</h2><h3 id="日志生产过程"><a href="#日志生产过程" class="headerlink" title="日志生产过程"></a>日志生产过程</h3><pre class="mermaid">graph LR产生日志-日志实例-->渲染格式-格式器渲染格式-格式器-->匹配过滤-过滤器匹配过滤-过滤器-->持久化-处理器</pre><h3 id="日志模块的使用"><a href="#日志模块的使用" class="headerlink" title="日志模块的使用"></a>日志模块的使用</h3><ul><li>格式器 formatters</li></ul><ol><li>主要用于配置日志格式</li><li>沿用python语言里面的格式属性</li></ol><table><thead><tr><th>关键词</th><th>描述</th></tr></thead><tbody><tr><td>%(name)s</td><td>记录器的名称</td></tr><tr><td>%(levelno)s</td><td>数字形式的日志记录级别</td></tr><tr><td>%(levelname)s</td><td>日志记录级别的文本名称</td></tr><tr><td>%(filename)s</td><td>执行日志记录调用的源文件的文件名称</td></tr><tr><td>%(pathname)s</td><td>执行日志记录调用的源文件的路径名称</td></tr><tr><td>%(funcName)s</td><td>执行日志记录调用的函数名称</td></tr><tr><td>%(module)s</td><td>执行日志记录调用的模块名称</td></tr><tr><td>%(lineno)s</td><td>执行日志记录调用的行号</td></tr><tr><td>%(created)s</td><td>执行日志记录的时间</td></tr><tr><td>%(asctime)s</td><td>日期和时间</td></tr><tr><td>%(msecs)s</td><td>毫秒部分</td></tr><tr><td>%(thread)d</td><td>线程ID</td></tr><tr><td>%(threadName)s</td><td>线程名称</td></tr><tr><td>%(process)d</td><td>进程ID</td></tr><tr><td>%(message)s</td><td>记录的消息</td></tr></tbody></table><ul><li>过滤器 filter<ol><li>用于过滤符合条件的日志<br>Django 自带里三个过滤器<ol><li>django.utils.log.RequireDebugTrue - 读取设置中的调试设置</li><li>django.utils.log.RequireDebugFalse - 读取设置中的调试设置</li><li>CallbackFilter(callback) - 这个过滤器接受一个回调函数，并对每个传递给过滤器的记录调用它。如果回调函数返回False，将不会进行记录的处理。</li><li>还可以使用自定义过滤器。</li></ol></li></ol></li></ul><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 自定义过滤器</span><span class="token keyword">class</span> <span class="token class-name">TestFilter</span><span class="token punctuation">(</span>logging<span class="token punctuation">.</span>Filter<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">def</span> <span class="token function">filter</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> record<span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token keyword">if</span> <span class="token string">'----'</span> <span class="token keyword">in</span> record<span class="token punctuation">.</span>msg<span class="token punctuation">:</span>            <span class="token keyword">return</span> <span class="token boolean">False</span>        <span class="token keyword">else</span><span class="token punctuation">:</span>            <span class="token keyword">return</span> <span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li><p>处理器 handler</p><ol><li>用于日志的持久化</li></ol></li><li><p>日志实例 logger</p><ol><li>用于生成日志</li></ol></li><li><p>日志代码例子</p><pre class="line-numbers language-python"><code class="language-python">LOGGING <span class="token operator">=</span> <span class="token punctuation">{</span>  <span class="token string">'version'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token string">'formatters'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true"># 格式化器</span>      <span class="token string">'standard'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true"># 格式化器名称</span>          <span class="token string">'format'</span><span class="token punctuation">:</span> <span class="token string">'%(asctime)s [%(threadName)s: %(thread)d]'</span>          <span class="token string">'%(pathname)s: %(funcName)s: %(lineno)d %(levelname)s - %(message)s'</span>      <span class="token punctuation">}</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>  <span class="token string">'filters'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true"># 过滤器</span>      <span class="token string">'test'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true"># 过滤器名称-自定义的过滤器</span>          <span class="token string">'()'</span><span class="token punctuation">:</span> <span class="token string">'ops.TestFilter'</span>  <span class="token comment" spellcheck="true"># 自定义的过滤器</span>      <span class="token punctuation">}</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>  <span class="token string">'handlers'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true"># 处理器</span>      <span class="token string">'console_handler'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true"># 处理器名称</span>          <span class="token string">'level'</span><span class="token punctuation">:</span> <span class="token string">'INFO'</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># 处理log级别</span>          <span class="token string">'class'</span><span class="token punctuation">:</span> <span class="token string">'logging.StreamHandler'</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># 处理器类-流处理器, 直接在控制台打印信息</span>          <span class="token string">'formatter'</span><span class="token punctuation">:</span> <span class="token string">'standard'</span>  <span class="token comment" spellcheck="true"># 指定使用的格式化器</span>      <span class="token punctuation">}</span><span class="token punctuation">,</span>      <span class="token string">'file_handler'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true"># 处理器名称</span>          <span class="token string">'level'</span><span class="token punctuation">:</span> <span class="token string">'DEBUG'</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># 处理log级别</span>          <span class="token string">'class'</span><span class="token punctuation">:</span> <span class="token string">'logging.handlers.RotatingFileHandler'</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># 处理器类-文件,此类自动将log文件分割</span>          <span class="token string">'filename'</span><span class="token punctuation">:</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>LOG_DIR<span class="token punctuation">,</span> <span class="token string">'backend.log'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># 文件存放路径及名称</span>          <span class="token string">'maxBytes'</span><span class="token punctuation">:</span> <span class="token number">1024</span><span class="token operator">*</span><span class="token number">1024</span><span class="token operator">*</span><span class="token number">5</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># 单个log文件大小</span>          <span class="token string">'backupCount'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># 文件记录数量</span>          <span class="token string">'formatter'</span><span class="token punctuation">:</span> <span class="token string">'standard'</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># 指定使用的格式化器</span>          <span class="token string">'encoding'</span><span class="token punctuation">:</span> <span class="token string">'utf-8'</span>  <span class="token comment" spellcheck="true"># 文件编码格式</span>      <span class="token punctuation">}</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>  <span class="token string">'loggers'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true"># 日志实例</span>      <span class="token string">'django'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>          <span class="token string">'handlers'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'console_handler'</span><span class="token punctuation">,</span> <span class="token string">'file_handler'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># 选择日志处理器</span>          <span class="token string">'filters'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'test'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># 日志过滤器</span>          <span class="token string">'level'</span><span class="token punctuation">:</span> <span class="token string">'DEBUG'</span>  <span class="token comment" spellcheck="true"># 处理日志级别</span>      <span class="token punctuation">}</span>  <span class="token punctuation">}</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Django </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Django </tag>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Django ORM 模型优化</title>
+      <link href="/2019/05/18/django/django-orm-mo-xing-you-hua/"/>
+      <url>/2019/05/18/django/django-orm-mo-xing-you-hua/</url>
+      
+        <content type="html"><![CDATA[<ul><li><h2 id="模型变更与迁移"><a href="#模型变更与迁移" class="headerlink" title="模型变更与迁移"></a>模型变更与迁移</h2><ul><li><h3 id="模型迁移的操作"><a href="#模型迁移的操作" class="headerlink" title="模型迁移的操作"></a>模型迁移的操作</h3>  <pre class="mermaid">        graphLR  模型变更 --> makemigrations  makemigrations --> migrate  用户层面-->Django层面  Django层面-->数据库层面</pre></li><li><h3 id="迁移相关的命令"><a href="#迁移相关的命令" class="headerlink" title="迁移相关的命令"></a>迁移相关的命令</h3><table><thead><tr><th>命令</th><th>用途</th></tr></thead><tbody><tr><td>makemigrations</td><td>将模型变更用Django的形式记录下来</td></tr><tr><td>migrate</td><td>执行模型变更，同步到数据库</td></tr><tr><td>sqlmigrate</td><td>显示每次迁移执行的sql语句</td></tr><tr><td>showmigrations</td><td>显示某个应用的模型变更和迁移历史</td></tr></tbody></table></li><li><h3 id="迁移文件详解"><a href="#迁移文件详解" class="headerlink" title="迁移文件详解"></a>迁移文件详解</h3><table><thead><tr><th>字段</th><th>用途</th></tr></thead><tbody><tr><td>dependencies</td><td>本次迁移的依赖app和依赖迁移记录</td></tr><tr><td>operations</td><td>本次迁移的相关操作</td></tr></tbody></table></li></ul></li><li><h2 id="懒加载与预加载"><a href="#懒加载与预加载" class="headerlink" title="懒加载与预加载"></a>懒加载与预加载</h2><ul><li><h3 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h3><p>  &emsp;&emsp;django懒加载是指在存在关系的表中进行数据查询的时候，只查询本体数据，不查询关联对象的数据，调用关联对象数据时，会再次查询数据库。造成二次查询，对数据库造成压力。</p></li><li><h3 id="预加载"><a href="#预加载" class="headerlink" title="预加载"></a>预加载</h3><ul><li><p>方法</p><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>select_related</td><td>预加载单个关联对象</td></tr><tr><td>prefetch_related</td><td>预加载多个关联对象</td></tr></tbody></table></li><li><p>例子</p><pre class="line-numbers language-pyhton"><code class="language-pyhton">  user = User.objects.prefetch_related('menu')<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><blockquote><p>User为模型，menu为User模型中的外键，是一对多关系</p></blockquote><blockquote><p>说明<br>select_related 用于一对一、多对一<br>prefetch_related 用于一对多、多对多</p></blockquote></li></ul></li></ul></li><li><h2 id="长连接"><a href="#长连接" class="headerlink" title="长连接"></a>长连接</h2><p>  pass</p></li><li><h2 id="数据库操作规范"><a href="#数据库操作规范" class="headerlink" title="数据库操作规范"></a>数据库操作规范</h2><ul><li><h3 id="合理使用索引"><a href="#合理使用索引" class="headerlink" title="合理使用索引"></a>合理使用索引</h3><ul><li>正确使索引</li><li>在经常查询、排序、比较的字段建立索引</li></ul></li><li><h3 id="使用迭代器itertor迭代较大的QuerySet"><a href="#使用迭代器itertor迭代较大的QuerySet" class="headerlink" title="使用迭代器itertor迭代较大的QuerySet"></a>使用迭代器itertor迭代较大的QuerySet</h3><ul><li>查询数据较大时，使用迭代器节省内存</li></ul></li><li><h3 id="对象属性缓存"><a href="#对象属性缓存" class="headerlink" title="对象属性缓存"></a>对象属性缓存</h3><ul><li>不可调用的属性会被ORM框架缓存</li><li>可调用的属性不会被ORM框架缓存  <br>```pythonuser = User.objects.all()[0]user.name  # 不可调用属性user.menu.all()  # 可调用属性 menu是外键```  > 通过函数方式调用的就是可调用属性，否则就是不可调用属性，不可调用属性不会被缓存，尽量储存在变量中以供下次使用</li></ul></li><li><h3 id="数据库的操作由数据库来做"><a href="#数据库的操作由数据库来做" class="headerlink" title="数据库的操作由数据库来做"></a>数据库的操作由数据库来做</h3><ul><li>过滤： 使用filter、exclude等属性</li><li>聚合： 使用annotate函数进行聚合</li><li>使用原生SQL查询</li></ul></li><li><h3 id="使用检索时，尽量使用有索引的字段"><a href="#使用检索时，尽量使用有索引的字段" class="headerlink" title="使用检索时，尽量使用有索引的字段"></a>使用检索时，尽量使用有索引的字段</h3></li><li><h3 id="不进行不必要的检索"><a href="#不进行不必要的检索" class="headerlink" title="不进行不必要的检索"></a>不进行不必要的检索</h3><ul><li>QuserSet使用values()、 value_list() 函数返回pyhton结构容器</li><li>查询结果长度使用QuerySet.count()而不是len(QuerySet)</li></ul></li></ul></li></ul>]]></content>
       
       
       <categories>

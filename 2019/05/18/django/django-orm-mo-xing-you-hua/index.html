@@ -4,28 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux常用命令, Hello-Z">
+    <meta name="keywords" content="Django ORM 模型优化, Hello-Z">
     <meta name="description" content="
-
-
-命令
-描述
-
-
-
-chgrp 用户名 文件名 -R
-更改文件组 -R表示向下递归
-
-
-chown 用户名 文件名 -R
-更改文件所有者 -R 表示向下递归
-
-
-touch file_name
-新建文件
-
-
-">
+模型变更与迁移
+模型迁移的操作          graphLR
+  模型变更 --&gt; makemigrations
+  makemigrations --&gt; migrate
+  用户层面--&gt;Django层面
+  Django层面--&gt;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -33,7 +19,7 @@ touch file_name
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Linux常用命令 | Hello-Z</title>
+    <title>Django ORM 模型优化 | Hello-Z</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -262,7 +248,7 @@ touch file_name
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Linux常用命令
+                        Django ORM 模型优化
                     </div>
                 </div>
             </div>
@@ -373,16 +359,12 @@ touch file_name
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/" target="_blank">
-                                <span class="chip bg-color">Linux</span>
+                            <a href="/tags/Django/" target="_blank">
+                                <span class="chip bg-color">Django</span>
                             </a>
                         
-                            <a href="/tags/命令/" target="_blank">
-                                <span class="chip bg-color">命令</span>
-                            </a>
-                        
-                            <a href="/tags/收藏/" target="_blank">
-                                <span class="chip bg-color">收藏</span>
+                            <a href="/tags/Python/" target="_blank">
+                                <span class="chip bg-color">Python</span>
                             </a>
                         
                     </div>
@@ -393,8 +375,8 @@ touch file_name
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Linux/" class="post-category" target="_blank">
-                                Linux
+                            <a href="/categories/Django/" class="post-category" target="_blank">
+                                Django
                             </a>
                         
                     </div>
@@ -405,21 +387,21 @@ touch file_name
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-12
+                    2019-05-18
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        52
+                        566
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -435,26 +417,132 @@ touch file_name
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <table>
+                <ul>
+<li><h2 id="模型变更与迁移"><a href="#模型变更与迁移" class="headerlink" title="模型变更与迁移"></a>模型变更与迁移</h2><ul>
+<li><h3 id="模型迁移的操作"><a href="#模型迁移的操作" class="headerlink" title="模型迁移的操作"></a>模型迁移的操作</h3>  <pre class="mermaid">        graphLR
+  模型变更 --> makemigrations
+  makemigrations --> migrate
+  用户层面-->Django层面
+  Django层面-->数据库层面</pre>
+</li>
+<li><h3 id="迁移相关的命令"><a href="#迁移相关的命令" class="headerlink" title="迁移相关的命令"></a>迁移相关的命令</h3><table>
 <thead>
 <tr>
 <th>命令</th>
-<th>描述</th>
+<th>用途</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>chgrp 用户名 文件名 -R</td>
-<td>更改文件组 -R表示向下递归</td>
+<td>makemigrations</td>
+<td>将模型变更用Django的形式记录下来</td>
 </tr>
 <tr>
-<td>chown 用户名 文件名 -R</td>
-<td>更改文件所有者 -R 表示向下递归</td>
+<td>migrate</td>
+<td>执行模型变更，同步到数据库</td>
 </tr>
 <tr>
-<td>touch <strong>file_name</strong></td>
-<td>新建文件</td>
+<td>sqlmigrate</td>
+<td>显示每次迁移执行的sql语句</td>
+</tr>
+<tr>
+<td>showmigrations</td>
+<td>显示某个应用的模型变更和迁移历史</td>
 </tr>
 </tbody></table>
+</li>
+<li><h3 id="迁移文件详解"><a href="#迁移文件详解" class="headerlink" title="迁移文件详解"></a>迁移文件详解</h3><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>dependencies</td>
+<td>本次迁移的依赖app和依赖迁移记录</td>
+</tr>
+<tr>
+<td>operations</td>
+<td>本次迁移的相关操作</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><h2 id="懒加载与预加载"><a href="#懒加载与预加载" class="headerlink" title="懒加载与预加载"></a>懒加载与预加载</h2><ul>
+<li><h3 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h3><p>  &emsp;&emsp;django懒加载是指在存在关系的表中进行数据查询的时候，只查询本体数据，不查询关联对象的数据，调用关联对象数据时，会再次查询数据库。造成二次查询，对数据库造成压力。</p>
+</li>
+<li><h3 id="预加载"><a href="#预加载" class="headerlink" title="预加载"></a>预加载</h3><ul>
+<li><p>方法</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>select_related</td>
+<td>预加载单个关联对象</td>
+</tr>
+<tr>
+<td>prefetch_related</td>
+<td>预加载多个关联对象</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>例子</p>
+<pre class="line-numbers language-pyhton"><code class="language-pyhton">  user = User.objects.prefetch_related('menu')<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>User为模型，menu为User模型中的外键，是一对多关系</p>
+</blockquote>
+<blockquote>
+<p>说明<br>select_related 用于一对一、多对一<br>prefetch_related 用于一对多、多对多</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h2 id="长连接"><a href="#长连接" class="headerlink" title="长连接"></a>长连接</h2><p>  pass</p>
+</li>
+<li><h2 id="数据库操作规范"><a href="#数据库操作规范" class="headerlink" title="数据库操作规范"></a>数据库操作规范</h2><ul>
+<li><h3 id="合理使用索引"><a href="#合理使用索引" class="headerlink" title="合理使用索引"></a>合理使用索引</h3><ul>
+<li>正确使索引</li>
+<li>在经常查询、排序、比较的字段建立索引</li>
+</ul>
+</li>
+<li><h3 id="使用迭代器itertor迭代较大的QuerySet"><a href="#使用迭代器itertor迭代较大的QuerySet" class="headerlink" title="使用迭代器itertor迭代较大的QuerySet"></a>使用迭代器itertor迭代较大的QuerySet</h3><ul>
+<li>查询数据较大时，使用迭代器节省内存</li>
+</ul>
+</li>
+<li><h3 id="对象属性缓存"><a href="#对象属性缓存" class="headerlink" title="对象属性缓存"></a>对象属性缓存</h3><ul>
+<li>不可调用的属性会被ORM框架缓存</li>
+<li>可调用的属性不会被ORM框架缓存  <br>
+```python
+user = User.objects.all()[0]
+user.name  # 不可调用属性
+user.menu.all()  # 可调用属性 menu是外键
+```
+  > 通过函数方式调用的就是可调用属性，否则就是不可调用属性，不可调用属性不会被缓存，尽量储存在变量中以供下次使用
+</li>
+</ul>
+</li>
+<li><h3 id="数据库的操作由数据库来做"><a href="#数据库的操作由数据库来做" class="headerlink" title="数据库的操作由数据库来做"></a>数据库的操作由数据库来做</h3><ul>
+<li>过滤： 使用filter、exclude等属性</li>
+<li>聚合： 使用annotate函数进行聚合</li>
+<li>使用原生SQL查询</li>
+</ul>
+</li>
+<li><h3 id="使用检索时，尽量使用有索引的字段"><a href="#使用检索时，尽量使用有索引的字段" class="headerlink" title="使用检索时，尽量使用有索引的字段"></a>使用检索时，尽量使用有索引的字段</h3></li>
+<li><h3 id="不进行不必要的检索"><a href="#不进行不必要的检索" class="headerlink" title="不进行不必要的检索"></a>不进行不必要的检索</h3><ul>
+<li>QuserSet使用values()、 value_list() 函数返回pyhton结构容器</li>
+<li>查询结果长度使用QuerySet.count()而不是len(QuerySet)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -620,51 +708,41 @@ touch file_name
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/22/shou-cang/shou-cang-yi-xie-hao-dong-xi/">
+                <a href="/2019/05/20/django/django-log-ri-zhi-mo-kuai/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="收藏一些好东西">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Django log日志模块">
                         
-                        <span class="card-title">收藏一些好东西</span>
+                        <span class="card-title">Django log日志模块</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Django 日志模块日志生产过程graph LR
+产生日志-日志实例-->渲染格式-格式器
+渲染格式-格式器-->匹配过滤-过滤器
+匹配过滤-过滤器-->持久化-处理器
 
 
-地址
-名称
-简介
+日志模块的使用
+格式器 formatters
 
 
-
-https://sm.ms
-SM.MS 图床
-免费的图床网站
-
-
-https://wordhtml.com/
-WORDHTML
-在线word转HTML
-
-
-https://tool.lu/markdown/
-m
+主要用于配置日
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-22
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-20
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/收藏/" class="post-category" target="_blank">
-                                    收藏
+                            <a href="/categories/Django/" class="post-category" target="_blank">
+                                    Django
                                 </a>
                             
                             
@@ -674,16 +752,12 @@ m
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/收藏/" target="_blank">
-                        <span class="chip bg-color">收藏</span>
+                    <a href="/tags/Django/" target="_blank">
+                        <span class="chip bg-color">Django</span>
                     </a>
                     
-                    <a href="/tags/工具/" target="_blank">
-                        <span class="chip bg-color">工具</span>
-                    </a>
-                    
-                    <a href="/tags/网站/" target="_blank">
-                        <span class="chip bg-color">网站</span>
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -694,79 +768,56 @@ m
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/12/shou-cang/git-chang-yong-ming-ling/">
+                <a href="/2019/05/18/django/django-orm-mo-xing-you-hua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="git常用命令">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Django ORM 模型优化">
                         
-                        <span class="card-title">git常用命令</span>
+                        <span class="card-title">Django ORM 模型优化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
-
-
-
-命令
-描述
-
-
-
-git branch 
-新建本地分支
-
-
-git branch
-查看本地分支
-
-
-git remote -v
-查看远程仓库地址
-
-
-git branch -r
-查看远程分支
-
-
-git branch -a
-查看本地
+模型变更与迁移
+模型迁移的操作          graphLR
+  模型变更 --> makemigrations
+  makemigrations --> migrate
+  用户层面-->Django层面
+  Django层面-->
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-12
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-18
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/收藏/" class="post-category" target="_blank">
-                                    收藏
+                            <a href="/categories/Django/" class="post-category" target="_blank">
+                                    Django
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/命令/" target="_blank">
-                        <span class="chip bg-color">命令</span>
+                    <a href="/tags/Django/" target="_blank">
+                        <span class="chip bg-color">Django</span>
                     </a>
                     
-                    <a href="/tags/git/" target="_blank">
-                        <span class="chip bg-color">git</span>
-                    </a>
-                    
-                    <a href="/tags/积累/" target="_blank">
-                        <span class="chip bg-color">积累</span>
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>

@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>1. Django-创建项目</title>
+      <link href="/2020/01/03/django/1.django-chuang-jian-xiang-mu/"/>
+      <url>/2020/01/03/django/1.django-chuang-jian-xiang-mu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Django安装"><a href="#Django安装" class="headerlink" title="Django安装"></a>Django安装</h2><p>直接使用pip</p><pre><code>pip install django</code></pre><h2 id="创建一个Django-项目"><a href="#创建一个Django-项目" class="headerlink" title="创建一个Django 项目"></a>创建一个Django 项目</h2><p>使用django-admin模块</p><pre><code># django-admin startproject &lt;project_name&gt;django-admin startproject mysite</code></pre><h2 id="运行Django项目"><a href="#运行Django项目" class="headerlink" title="运行Django项目"></a>运行Django项目</h2><p>使用Django manage 工具</p><pre><code>python manage.py runserver</code></pre><p>默认端口8000</p><ul><li>也可以指定端口<pre><code>python manage.py runserver 8001</code></pre></li><li>指定IP<pre><code>python manage.py 0:8001</code></pre></li></ul><p>在浏览器打开对应ip+端口可以祝贺页面代表成功</p><blockquote><p>django 自带的web服务器支持热更新，但创建新文件等操作需要手动重启服务</p></blockquote><h2 id="创建一个应用"><a href="#创建一个应用" class="headerlink" title="创建一个应用"></a>创建一个应用</h2><p>使用django manage工具创建应用</p><pre><code>python manage.py start app polls</code></pre><h2 id="编写app视图"><a href="#编写app视图" class="headerlink" title="编写app视图"></a>编写app视图</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>http <span class="token keyword">import</span> HttpResponse<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">"Hello, world. You're at the polls index."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="为视图编写路由"><a href="#为视图编写路由" class="headerlink" title="为视图编写路由"></a>为视图编写路由</h3><p>在app的目录下创建urls.py</p><p>编写对应代码<br>*app下的urls.py</p><pre><code>from django.urls import pathfrom . import viewsurlpatterns = [    path(&#39;&#39;, views.index, name=&#39;index&#39;),]</code></pre><p>在项目目录urls.py中插入include()将路由指向app中的路由文件url.py</p><p><em>项目目录下的urls.py</em></p><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>contrib <span class="token keyword">import</span> admin<span class="token keyword">from</span> django<span class="token punctuation">.</span>urls <span class="token keyword">import</span> include<span class="token punctuation">,</span> pathurlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>    path<span class="token punctuation">(</span><span class="token string">'polls/'</span><span class="token punctuation">,</span> include<span class="token punctuation">(</span><span class="token string">'polls.urls'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>    path<span class="token punctuation">(</span><span class="token string">'admin/'</span><span class="token punctuation">,</span> admin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>urls<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="path-参数"><a href="#path-参数" class="headerlink" title="path()参数"></a>path()参数</h3><table><thead><tr><th>参数</th><th>描述</th></tr></thead><tbody><tr><td>route</td><td>url路径，匹配用户访问的路径</td></tr><tr><td>view</td><td>url匹配后调用的视图</td></tr><tr><td>kwargs</td><td>任意个关键字参数可以作为一个字典传递给目标视图函数</td></tr><tr><td>name</td><td>为url命名，主要用在模板中</td></tr></tbody></table>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>11.python-测试</title>
       <link href="/2019/12/29/python-xue-xi-bi-ji/11.python-ce-shi/"/>
       <url>/2019/12/29/python-xue-xi-bi-ji/11.python-ce-shi/</url>
@@ -33,9 +46,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> python </tag>
             
             <tag> 高级 </tag>
             
@@ -434,13 +447,13 @@
       
         <tags>
             
+            <tag> 学习笔记 </tag>
+            
             <tag> python </tag>
             
             <tag> 数据类型 </tag>
             
             <tag> 基础 </tag>
-            
-            <tag> 学习笔记 </tag>
             
         </tags>
       
@@ -664,11 +677,11 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 学习笔记 </tag>
             
             <tag> 入门 </tag>
+            
+            <tag> python </tag>
             
         </tags>
       

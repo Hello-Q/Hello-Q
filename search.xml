@@ -20,9 +20,38 @@
       
         <tags>
             
+            <tag> Python </tag>
+            
             <tag> Django </tag>
             
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2.Django-模型和admin站点</title>
+      <link href="/2020/01/03/django/2.django-mo-xing-he-admin-zhan-dian/"/>
+      <url>/2020/01/03/django/2.django-mo-xing-he-admin-zhan-dian/</url>
+      
+        <content type="html"><![CDATA[<h2 id="数据库配置"><a href="#数据库配置" class="headerlink" title="数据库配置"></a>数据库配置</h2><p>配置settings中的 DATABASES 变量</p><ul><li>ENGINE 数据库引擎<ul><li>django.db.backends.sqlite3</li><li>django.db.backends.postgresql</li><li>django.db.backends.mysql</li><li>django.db.backends.oracle</li></ul></li><li>NAME 数据库的名称<br>  使用SQLite则指定文件的路径</li></ul><h3 id="mysql配置示例"><a href="#mysql配置示例" class="headerlink" title="mysql配置示例"></a>mysql配置示例</h3><pre class="line-numbers language-python"><code class="language-python">DATABASES <span class="token operator">=</span> <span class="token punctuation">{</span>    <span class="token string">'default'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>        <span class="token string">'ENGINE'</span><span class="token punctuation">:</span> <span class="token string">'django.db.backends.mysql'</span><span class="token punctuation">,</span>        <span class="token string">'HOST'</span><span class="token punctuation">:</span> <span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span>        <span class="token string">'PORT'</span><span class="token punctuation">:</span> <span class="token number">3306</span><span class="token punctuation">,</span>        <span class="token string">'NAME'</span><span class="token punctuation">:</span> <span class="token string">'crm'</span><span class="token punctuation">,</span>        <span class="token string">'USER'</span><span class="token punctuation">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>        <span class="token string">'PASSWORD'</span><span class="token punctuation">:</span> <span class="token string">'crm2019'</span><span class="token punctuation">,</span>    <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="设置时区"><a href="#设置时区" class="headerlink" title="设置时区"></a>设置时区</h3><p>setting文件</p><pre class="line-numbers language-python"><code class="language-python">TIME_ZONE <span class="token operator">=</span> <span class="token string">'UTC'</span>TIME_ZONE<span class="token operator">=</span><span class="token string">'Asia/Shanghai'</span> <span class="token comment" spellcheck="true"># 中国时区</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>设置正确时区用于正确处理时间</p><h2 id="迁移数据库"><a href="#迁移数据库" class="headerlink" title="迁移数据库"></a>迁移数据库</h2><p>Django 自带了一些app（INSTALLED_APPS列表中），使用这些app需要先把app所需要的表创建。</p><ul><li><p>生成迁移文件</p><pre><code>python manage.py makemigrations &lt;app_name&gt;</code></pre><blockquote><p>忽略app_name 将为所用installed_apps列表中的app生成迁移文件</p></blockquote></li><li><p>执行迁移</p><pre class="line-numbers language-python"><code class="language-python">python manage<span class="token punctuation">.</span>py migrate <span class="token operator">&lt;</span>app_name<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><blockquote><p>忽略app_name 将为所用installed_apps列表中的app生成的迁移文件执行生效</p></blockquote></li><li><p>查看迁移sql语句</p><pre><code>python manage.py sqlmigrate &lt;app_name&gt; &lt;index&gt;</code></pre></li></ul><h2 id="创建模型"><a href="#创建模型" class="headerlink" title="创建模型"></a>创建模型</h2><p>Django的模型用类表示，继承<strong>django.db.models.Model</strong>类</p><p>示例</p><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> models<span class="token keyword">class</span> <span class="token class-name">Question</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>    question_text <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">200</span><span class="token punctuation">)</span>    pub_date <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span><span class="token string">'date published'</span><span class="token punctuation">)</span><span class="token keyword">class</span> <span class="token class-name">Choice</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>    question <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>Question<span class="token punctuation">,</span> on_delete<span class="token operator">=</span>models<span class="token punctuation">.</span>CASCADE<span class="token punctuation">)</span>    choice_text <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">200</span><span class="token punctuation">)</span>    votes <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li>每个字段都是Field类的实例，映射到数据库中对应一个字段</li></ul><p>Django常用Field字段参考<br>字段|描述<br>-|-<br>AutoField|自增长字段<br>CharField|字符串类型<br>BoolField|布尔型<br>DateField|日期<br>DateTimeField|日期时间<br>EmailField|会检查是否合法Email地址<br>FileField|存文件的<br>ImageField|继承FileField，存图片的</p><h3 id="字段参数"><a href="#字段参数" class="headerlink" title="字段参数"></a>字段参数</h3><h4 id="所有字段都有的参数"><a href="#所有字段都有的参数" class="headerlink" title="所有字段都有的参数"></a>所有字段都有的参数</h4><table><thead><tr><th>参数</th><th>描述</th></tr></thead><tbody><tr><td>db_column=””</td><td>数据库中的表名</td></tr><tr><td>primmary_key=True</td><td>设置数据库主键</td></tr><tr><td>verbose_name=””</td><td>设置别名、备注</td></tr><tr><td>unique=True</td><td>设置唯一键</td></tr><tr><td>null=True</td><td>设置允许为空（数据库层级）</td></tr><tr><td>blank=True</td><td>设置允许为空（表达层面）</td></tr><tr><td>db_index</td><td>设置索引字段</td></tr><tr><td>help_text=””</td><td>在表单中显示帮助信息</td></tr><tr><td>editable=Ture</td><td>设置允许用户编辑此字段</td></tr></tbody></table><h3 id="个别字段有的参数"><a href="#个别字段有的参数" class="headerlink" title="个别字段有的参数"></a>个别字段有的参数</h3><ul><li>CharField<ul><li>max_length=100 设置允许的最大长度</li></ul></li><li>Date、DateTime<ul><li>unique_for_date=True  设置日期唯一</li><li>unique_for_month  设置月份唯一</li><li>auto_now=True  设置更新当前记录的时间</li><li>auto_now_add  设置新增当前记录的时间</li></ul></li><li>Deccimal<ul><li>max_digits=4  设置数据总位数为4位</li><li>decimal_places=2  设置小数位数为2位</li></ul></li><li>关系型字段的参数<ul><li>relates_name  父表查询子表时使用</li><li>db_constraint  bool值，是否启用物理外键</li><li>on_delete<blockquote><p>当一个被外键关联的对象被删除时，Django将模仿on_delete参数定义的SQL约束执行相应操作<br>如下6种操作</p></blockquote></li></ul></li></ul><pre><code>    - CASCADE：模拟SQL语言中的ON DELETE CASCADE约束，将定义有外键的模型对象同时删除！（该操作为当前Django版本的默认操作！）    - PROTECT:阻止上面的删除操作，但是弹出ProtectedError异常    - SET_NULL：将外键字段设为null，只有当字段设置了null=True时，方可使用该值。    - SET_DEFAULT:将外键字段设为默认值。只有当字段设置了default参数时，方可使用。    - DO_NOTHING：什么也不做。    - SET()：设置为一个传递给SET()的值或者一个回调函数的返回值。注意大小写</code></pre><h2 id="Django管理界面admin"><a href="#Django管理界面admin" class="headerlink" title="Django管理界面admin"></a>Django管理界面admin</h2><h3 id="创建管理员账号"><a href="#创建管理员账号" class="headerlink" title="创建管理员账号"></a>创建管理员账号</h3><p>执行</p><pre><code>python manage.py createsuperuser</code></pre><p>按照提示输入用户名、密码等信息</p><h3 id="向admin注册app"><a href="#向admin注册app" class="headerlink" title="向admin注册app"></a>向admin注册app</h3><p>在app的admin.py中写</p><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>contrib <span class="token keyword">import</span> admin<span class="token keyword">from</span> <span class="token punctuation">.</span>models <span class="token keyword">import</span> Questionadmin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>register<span class="token punctuation">(</span>Question<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Django </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
             <tag> Python </tag>
+            
+            <tag> Django </tag>
+            
+            <tag> 基础 </tag>
             
         </tags>
       
@@ -47,9 +76,9 @@
       
         <tags>
             
-            <tag> Django </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Django </tag>
             
             <tag> 基础 </tag>
             
@@ -89,9 +118,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> python </tag>
             
             <tag> 高级 </tag>
             
@@ -228,11 +257,11 @@
       
         <tags>
             
+            <tag> Ubuntu </tag>
+            
             <tag> java </tag>
             
             <tag> 软件安装 </tag>
-            
-            <tag> Ubuntu </tag>
             
         </tags>
       
@@ -492,9 +521,9 @@
             
             <tag> 基础 </tag>
             
-            <tag> python </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> python </tag>
             
             <tag> 数据类型 </tag>
             
@@ -720,11 +749,11 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 学习笔记 </tag>
             
             <tag> 入门 </tag>
+            
+            <tag> python </tag>
             
         </tags>
       
@@ -807,9 +836,9 @@
       
         <tags>
             
-            <tag> Django </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Django </tag>
             
             <tag> Restfull </tag>
             
@@ -836,9 +865,9 @@
       
         <tags>
             
-            <tag> Django </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Django </tag>
             
             <tag> UWSGI </tag>
             
@@ -892,9 +921,9 @@
       
         <tags>
             
-            <tag> Django </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Django </tag>
             
         </tags>
       
@@ -919,9 +948,9 @@
       
         <tags>
             
-            <tag> Django </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Django </tag>
             
         </tags>
       
@@ -946,9 +975,9 @@
       
         <tags>
             
-            <tag> Django </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Django </tag>
             
         </tags>
       
@@ -973,9 +1002,9 @@
       
         <tags>
             
-            <tag> Django </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Django </tag>
             
         </tags>
       
@@ -1000,9 +1029,9 @@
       
         <tags>
             
-            <tag> Django </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Django </tag>
             
             <tag> ORM </tag>
             
@@ -1029,9 +1058,9 @@
       
         <tags>
             
-            <tag> Django </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Django </tag>
             
             <tag> ORM </tag>
             

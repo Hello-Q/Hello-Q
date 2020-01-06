@@ -4,10 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="&lt;转&gt;Gitee(码云)、Github同时配置ssh key, Hello-Z">
-    <meta name="description" content="一、cd ~/.ssh二、通过下面的命令，依次生成两个平台的key
-$ ssh-keygen -t rsa -C &amp;quot;xxxxxxx@qq.com&amp;quot; -f &amp;quot;github_id_rsa&amp;quot;
-$ ssh-k">
+    <meta name="keywords" content="2.Django-模型和admin站点, Hello-Z">
+    <meta name="description" content="数据库配置配置settings中的 DATABASES 变量
+
+ENGINE 数据库引擎
+django.db.backends.sqlite3
+django.db.backends.postgresql
+django.db.backends">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +18,7 @@ $ ssh-k">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>&lt;转&gt;Gitee(码云)、Github同时配置ssh key | Hello-Z</title>
+    <title>2.Django-模型和admin站点 | Hello-Z</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -238,13 +241,13 @@ $ ssh-k">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        &lt;转&gt;Gitee(码云)、Github同时配置ssh key
+                        2.Django-模型和admin站点
                     </div>
                 </div>
             </div>
@@ -355,12 +358,16 @@ $ ssh-k">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/" target="_blank">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/Python/" target="_blank">
+                                <span class="chip bg-color">Python</span>
                             </a>
                         
-                            <a href="/tags/ssh/" target="_blank">
-                                <span class="chip bg-color">ssh</span>
+                            <a href="/tags/Django/" target="_blank">
+                                <span class="chip bg-color">Django</span>
+                            </a>
+                        
+                            <a href="/tags/基础/" target="_blank">
+                                <span class="chip bg-color">基础</span>
                             </a>
                         
                     </div>
@@ -371,8 +378,8 @@ $ ssh-k">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/软件安装与配置/" class="post-category" target="_blank">
-                                软件安装与配置
+                            <a href="/categories/Django/" class="post-category" target="_blank">
+                                Django
                             </a>
                         
                     </div>
@@ -383,21 +390,21 @@ $ ssh-k">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-26
+                    2020-01-03
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        248
+                        820
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        3 分
                     </div>
                     
                 
@@ -413,32 +420,149 @@ $ ssh-k">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>一、cd ~/.ssh<br>二、通过下面的命令，依次生成两个平台的key</p>
-<pre><code>$ ssh-keygen -t rsa -C &quot;xxxxxxx@qq.com&quot; -f &quot;github_id_rsa&quot;
-$ ssh-keygen -t rsa -C &quot;xxxxxxx@qq.com&quot; -f &quot;gitee_id_rsa&quot;</code></pre><p>完成后，.ssh文件夹生成以下文件</p>
-<p>gitee_id_rsa<br>gitee_id_rsa.pub<br>github_id_rsa<br>github_id_rsa.pub</p>
-<p>三、把public key复制到gitee和github<br>把github_id_rsa.pub中内容复制到github的ssh中保存</p>
-<p>同样的操作，添加gitee的ssh</p>
-<p>四、创建config文件解决ssh冲突<br>在.ssh文件夹下执行命令vi config<br>文件中添加以下内容</p>
-<pre><code># gitee
-Host gitee.com
-HostName gitee.com
-PreferredAuthentications publickey
-IdentityFile ~/.ssh/gitee_id_rsa
+                <h2 id="数据库配置"><a href="#数据库配置" class="headerlink" title="数据库配置"></a>数据库配置</h2><p>配置settings中的 DATABASES 变量</p>
+<ul>
+<li>ENGINE 数据库引擎<ul>
+<li>django.db.backends.sqlite3</li>
+<li>django.db.backends.postgresql</li>
+<li>django.db.backends.mysql</li>
+<li>django.db.backends.oracle</li>
+</ul>
+</li>
+<li>NAME 数据库的名称<br>  使用SQLite则指定文件的路径</li>
+</ul>
+<h3 id="mysql配置示例"><a href="#mysql配置示例" class="headerlink" title="mysql配置示例"></a>mysql配置示例</h3><pre class="line-numbers language-python"><code class="language-python">DATABASES <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'default'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">'ENGINE'</span><span class="token punctuation">:</span> <span class="token string">'django.db.backends.mysql'</span><span class="token punctuation">,</span>
+        <span class="token string">'HOST'</span><span class="token punctuation">:</span> <span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span>
+        <span class="token string">'PORT'</span><span class="token punctuation">:</span> <span class="token number">3306</span><span class="token punctuation">,</span>
+        <span class="token string">'NAME'</span><span class="token punctuation">:</span> <span class="token string">'crm'</span><span class="token punctuation">,</span>
+        <span class="token string">'USER'</span><span class="token punctuation">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>
+        <span class="token string">'PASSWORD'</span><span class="token punctuation">:</span> <span class="token string">'crm2019'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="设置时区"><a href="#设置时区" class="headerlink" title="设置时区"></a>设置时区</h3><p>setting文件</p>
+<pre class="line-numbers language-python"><code class="language-python">TIME_ZONE <span class="token operator">=</span> <span class="token string">'UTC'</span>
+TIME_ZONE<span class="token operator">=</span><span class="token string">'Asia/Shanghai'</span> <span class="token comment" spellcheck="true"># 中国时区</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>设置正确时区用于正确处理时间</p>
+<h2 id="迁移数据库"><a href="#迁移数据库" class="headerlink" title="迁移数据库"></a>迁移数据库</h2><p>Django 自带了一些app（INSTALLED_APPS列表中），使用这些app需要先把app所需要的表创建。</p>
+<ul>
+<li><p>生成迁移文件</p>
+<pre><code>python manage.py makemigrations &lt;app_name&gt;</code></pre><blockquote>
+<p>忽略app_name 将为所用installed_apps列表中的app生成迁移文件</p>
+</blockquote>
+</li>
+<li><p>执行迁移</p>
+<pre class="line-numbers language-python"><code class="language-python">python manage<span class="token punctuation">.</span>py migrate <span class="token operator">&lt;</span>app_name<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>忽略app_name 将为所用installed_apps列表中的app生成的迁移文件执行生效</p>
+</blockquote>
+</li>
+<li><p>查看迁移sql语句</p>
+<pre><code>python manage.py sqlmigrate &lt;app_name&gt; &lt;index&gt;</code></pre></li>
+</ul>
+<h2 id="创建模型"><a href="#创建模型" class="headerlink" title="创建模型"></a>创建模型</h2><p>Django的模型用类表示，继承<strong>django.db.models.Model</strong>类</p>
+<p>示例</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> models
 
-# github
-Host github.com
-HostName github.com
-PreferredAuthentications publickey
-IdentityFile ~/.ssh/github_id_rsa</code></pre><p>五、测试<br>执行</p>
-<pre class="line-numbers language-cmd"><code class="language-cmd">ssh -T git@gitee.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>成功则返回</p>
-<pre class="line-numbers language-cmd"><code class="language-cmd">Welcome to Gitee.com ,yourname!<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>执行</p>
-<pre class="line-numbers language-cmd"><code class="language-cmd">ssh -T git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>成功则返回</p>
-<pre class="line-numbers language-cmd"><code class="language-cmd">Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>————————————————<br>版权声明：本文为CSDN博主「Allen Leung」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/londa/article/details/92065424" target="_blank" rel="noopener">https://blog.csdn.net/londa/article/details/92065424</a></p>
+
+<span class="token keyword">class</span> <span class="token class-name">Question</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    question_text <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">200</span><span class="token punctuation">)</span>
+    pub_date <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span><span class="token string">'date published'</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Choice</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    question <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>Question<span class="token punctuation">,</span> on_delete<span class="token operator">=</span>models<span class="token punctuation">.</span>CASCADE<span class="token punctuation">)</span>
+    choice_text <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">200</span><span class="token punctuation">)</span>
+    votes <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>每个字段都是Field类的实例，映射到数据库中对应一个字段</li>
+</ul>
+<p>Django常用Field字段参考<br>字段|描述<br>-|-<br>AutoField|自增长字段<br>CharField|字符串类型<br>BoolField|布尔型<br>DateField|日期<br>DateTimeField|日期时间<br>EmailField|会检查是否合法Email地址<br>FileField|存文件的<br>ImageField|继承FileField，存图片的</p>
+<h3 id="字段参数"><a href="#字段参数" class="headerlink" title="字段参数"></a>字段参数</h3><h4 id="所有字段都有的参数"><a href="#所有字段都有的参数" class="headerlink" title="所有字段都有的参数"></a>所有字段都有的参数</h4><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>db_column=””</td>
+<td>数据库中的表名</td>
+</tr>
+<tr>
+<td>primmary_key=True</td>
+<td>设置数据库主键</td>
+</tr>
+<tr>
+<td>verbose_name=””</td>
+<td>设置别名、备注</td>
+</tr>
+<tr>
+<td>unique=True</td>
+<td>设置唯一键</td>
+</tr>
+<tr>
+<td>null=True</td>
+<td>设置允许为空（数据库层级）</td>
+</tr>
+<tr>
+<td>blank=True</td>
+<td>设置允许为空（表达层面）</td>
+</tr>
+<tr>
+<td>db_index</td>
+<td>设置索引字段</td>
+</tr>
+<tr>
+<td>help_text=””</td>
+<td>在表单中显示帮助信息</td>
+</tr>
+<tr>
+<td>editable=Ture</td>
+<td>设置允许用户编辑此字段</td>
+</tr>
+</tbody></table>
+<h3 id="个别字段有的参数"><a href="#个别字段有的参数" class="headerlink" title="个别字段有的参数"></a>个别字段有的参数</h3><ul>
+<li>CharField<ul>
+<li>max_length=100 设置允许的最大长度</li>
+</ul>
+</li>
+<li>Date、DateTime<ul>
+<li>unique_for_date=True  设置日期唯一</li>
+<li>unique_for_month  设置月份唯一</li>
+<li>auto_now=True  设置更新当前记录的时间</li>
+<li>auto_now_add  设置新增当前记录的时间</li>
+</ul>
+</li>
+<li>Deccimal<ul>
+<li>max_digits=4  设置数据总位数为4位</li>
+<li>decimal_places=2  设置小数位数为2位</li>
+</ul>
+</li>
+<li>关系型字段的参数<ul>
+<li>relates_name  父表查询子表时使用</li>
+<li>db_constraint  bool值，是否启用物理外键</li>
+<li>on_delete<blockquote>
+<p>当一个被外键关联的对象被删除时，Django将模仿on_delete参数定义的SQL约束执行相应操作<br>如下6种操作</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>    - CASCADE：模拟SQL语言中的ON DELETE CASCADE约束，将定义有外键的模型对象同时删除！（该操作为当前Django版本的默认操作！）
+    - PROTECT:阻止上面的删除操作，但是弹出ProtectedError异常
+    - SET_NULL：将外键字段设为null，只有当字段设置了null=True时，方可使用该值。
+    - SET_DEFAULT:将外键字段设为默认值。只有当字段设置了default参数时，方可使用。
+    - DO_NOTHING：什么也不做。
+    - SET()：设置为一个传递给SET()的值或者一个回调函数的返回值。注意大小写</code></pre><h2 id="Django管理界面admin"><a href="#Django管理界面admin" class="headerlink" title="Django管理界面admin"></a>Django管理界面admin</h2><h3 id="创建管理员账号"><a href="#创建管理员账号" class="headerlink" title="创建管理员账号"></a>创建管理员账号</h3><p>执行</p>
+<pre><code>python manage.py createsuperuser</code></pre><p>按照提示输入用户名、密码等信息</p>
+<h3 id="向admin注册app"><a href="#向admin注册app" class="headerlink" title="向admin注册app"></a>向admin注册app</h3><p>在app的admin.py中写</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>contrib <span class="token keyword">import</span> admin
+
+<span class="token keyword">from</span> <span class="token punctuation">.</span>models <span class="token keyword">import</span> Question
+
+admin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>register<span class="token punctuation">(</span>Question<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -604,40 +728,34 @@ IdentityFile ~/.ssh/github_id_rsa</code></pre><p>五、测试<br>执行</p>
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/12/28/python-xue-xi-bi-ji/9.python-wen-jian/">
+                <a href="/2020/01/03/django/django-setting-chang-yong-she-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="9.python-文件">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Django-setting常用设置">
                         
-                        <span class="card-title">9.python-文件</span>
+                        <span class="card-title">Django-setting常用设置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            f = open(r'./test.txt', 'r')
-contents = f.read()
-f.close()
-print(contents)
-输出
-静夜思
-【作者】李白
-床前明月光，疑是地上霜。
-举头望明月，低头思故乡。
-使用ope
+                            设置中国时区TIME_ZONE = 'UTC'
+TIME_ZONE='Asia/Shanghai' # 中国时区
+设置中文LANGUAGE_CODE = 'zh-hans'
+
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-28
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-03
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python学习笔记/" class="post-category" target="_blank">
-                                    Python学习笔记
+                            <a href="/categories/Django/" class="post-category" target="_blank">
+                                    Django
                                 </a>
                             
                             
@@ -651,12 +769,8 @@ print(contents)
                         <span class="chip bg-color">Python</span>
                     </a>
                     
-                    <a href="/tags/学习笔记/" target="_blank">
-                        <span class="chip bg-color">学习笔记</span>
-                    </a>
-                    
-                    <a href="/tags/高级/" target="_blank">
-                        <span class="chip bg-color">高级</span>
+                    <a href="/tags/Django/" target="_blank">
+                        <span class="chip bg-color">Django</span>
                     </a>
                     
                 </div>
@@ -670,38 +784,35 @@ print(contents)
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/25/java-xue-xi-bi-ji/di-yi-ge-java-cheng-xu-shu-chu-hello-world/">
+                <a href="/2020/01/03/django/1.django-chuang-jian-xiang-mu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="第一个java程序-输出hello world">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="1. Django-请求与响应">
                         
-                        <span class="card-title">第一个java程序-输出hello world</span>
+                        <span class="card-title">1. Django-请求与响应</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JAVA 程序编写流程
-新建拓展名为.java的文件
-编写相关代码
-在文件的路径下启动命令行
-使用javac对编写的文件进行编译，生成.class文件
-使用java对生成的文件进行解释执行
+                            Django安装直接使用pip
+pip install django创建一个Django 项目使用django-admin模块
+# django-admin startproject &lt;project_name&gt;
 
-第一个java程序编写程序文件名为Hello.j
+django
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-25
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-03
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java学习笔记/" class="post-category" target="_blank">
-                                    Java学习笔记
+                            <a href="/categories/Django/" class="post-category" target="_blank">
+                                    Django
                                 </a>
                             
                             
@@ -711,8 +822,16 @@ print(contents)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/Django/" target="_blank">
+                        <span class="chip bg-color">Django</span>
+                    </a>
+                    
+                    <a href="/tags/基础/" target="_blank">
+                        <span class="chip bg-color">基础</span>
                     </a>
                     
                 </div>

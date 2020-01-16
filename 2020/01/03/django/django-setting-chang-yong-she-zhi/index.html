@@ -8,7 +8,8 @@
     <meta name="description" content="设置中国时区TIME_ZONE = &#39;UTC&#39;
 TIME_ZONE=&#39;Asia/Shanghai&#39; # 中国时区
 设置中文LANGUAGE_CODE = &#39;zh-hans&#39;
-">
+添加django导入包搜索路径import sys
+# 添加搜索路">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -391,7 +392,7 @@ TIME_ZONE=&#39;Asia/Shanghai&#39; # 中国时区
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        22
+                        48
                     </div>
                     
 
@@ -417,6 +418,9 @@ TIME_ZONE=&#39;Asia/Shanghai&#39; # 中国时区
                 <h2 id="设置中国时区"><a href="#设置中国时区" class="headerlink" title="设置中国时区"></a>设置中国时区</h2><pre class="line-numbers language-python"><code class="language-python">TIME_ZONE <span class="token operator">=</span> <span class="token string">'UTC'</span>
 TIME_ZONE<span class="token operator">=</span><span class="token string">'Asia/Shanghai'</span> <span class="token comment" spellcheck="true"># 中国时区</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="设置中文"><a href="#设置中文" class="headerlink" title="设置中文"></a>设置中文</h2><pre class="line-numbers language-python"><code class="language-python">LANGUAGE_CODE <span class="token operator">=</span> <span class="token string">'zh-hans'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="添加django导入包搜索路径"><a href="#添加django导入包搜索路径" class="headerlink" title="添加django导入包搜索路径"></a>添加django导入包搜索路径</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> sys
+<span class="token comment" spellcheck="true"># 添加搜索路径</span>
+sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span> <span class="token string">'apps'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -851,7 +855,7 @@ django.db.backends
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">32.6k</span>&nbsp;字
+                class="white-color">33.3k</span>&nbsp;字
             
             
             

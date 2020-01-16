@@ -459,7 +459,7 @@
         <span class="token keyword">return</span> HttpResponseRedirect<span class="token punctuation">(</span>reverse<span class="token punctuation">(</span><span class="token string">'polls:results'</span><span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>question<span class="token punctuation">.</span>id<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>request.POST 可以获取post的数据，字典格式</li>
-<li>reqeust.POST 没用内容将依法一个错误，要求用户重新选择一个选项</li>
+<li>reqeust.POST 没有内容将依法一个错误，要求用户重新选择一个选项</li>
 <li>获取用户选择的投票，增加票数，HttpResponseRedirect会将链接重定向</li>
 <li>reverse()函数避免使用硬编码url，接受url的那么参数，转换成对应的url。</li>
 </ul>
@@ -743,12 +743,12 @@ Django的test代码写在app下的test.py文件中
                         <span class="chip bg-color">基础</span>
                     </a>
                     
-                    <a href="/tags/Django官方文档/" target="_blank">
-                        <span class="chip bg-color">Django官方文档</span>
-                    </a>
-                    
                     <a href="/tags/Ddjango/" target="_blank">
                         <span class="chip bg-color">Ddjango</span>
+                    </a>
+                    
+                    <a href="/tags/Django官方文档/" target="_blank">
+                        <span class="chip bg-color">Django官方文档</span>
                     </a>
                     
                 </div>
@@ -969,7 +969,7 @@ urlpatterns = [
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">32.6k</span>&nbsp;字
+                class="white-color">33.3k</span>&nbsp;字
             
             
             

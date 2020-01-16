@@ -398,7 +398,7 @@ urlpatterns = [
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        691
+                        696
                     </div>
                     
 
@@ -431,7 +431,8 @@ urlpatterns = [
 <p>views.py</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">detail</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> question_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">"You're looking at question %s."</span> <span class="token operator">%</span> question_id<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="在视图中填充并返回模板"><a href="#在视图中填充并返回模板" class="headerlink" title="在视图中填充并返回模板"></a>在视图中填充并返回模板</h3><pre class="line-numbers language-pyhton.from"><code class="language-pyhton.from">from django.template import loader
+<h3 id="在视图中填充并返回模板"><a href="#在视图中填充并返回模板" class="headerlink" title="在视图中填充并返回模板"></a>在视图中填充并返回模板</h3><pre class="line-numbers language-pyhton"><code class="language-pyhton">from django.http import HttpResponse
+from django.template import loader
 from .models import Question
 
 def index(request):
@@ -440,7 +441,7 @@ def index(request):
     context = {
         'latest_question_list': latest_question_list,
     }
-    return HttpResponse(template.render(context, request))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    return HttpResponse(template.render(context, request))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>使用loader加载模板，并调用render讲上下文内容填充返回客户端。</p>
 <h3 id="使用快捷函数render"><a href="#使用快捷函数render" class="headerlink" title="使用快捷函数render()"></a>使用快捷函数render()</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>shortcuts <span class="token keyword">import</span> render
 
@@ -939,7 +940,7 @@ TIME_ZONE='Asia/Shanghai' # 中国时区
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">33.3k</span>&nbsp;字
+                class="white-color">33.7k</span>&nbsp;字
             
             
             

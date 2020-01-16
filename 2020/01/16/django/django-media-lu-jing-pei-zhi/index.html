@@ -4,13 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="7-Djano-自定义Admin站点, Hello-Z">
-    <meta name="description" content="自定义后台表单from django.contrib import admin
+    <meta name="keywords" content="Django-MEDIA路径配置, Hello-Z">
+    <meta name="description" content="settings
+在setting中设置MEDIA根目录以及urlMEDIA_URL = &#39;/media/&#39;
+MEDIA_ROOT = os.path.join(BASE_DIR, &#39;media&#39;)
 
-from .models import Question
-
-# @admin.register(Question)
-class QuestionAdmin(a">
+设置TEMPLATES如果需要在模板文">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +17,7 @@ class QuestionAdmin(a">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>7-Djano-自定义Admin站点 | Hello-Z</title>
+    <title>Django-MEDIA路径配置 | Hello-Z</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -241,13 +240,13 @@ class QuestionAdmin(a">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        7-Djano-自定义Admin站点
+                        Django-MEDIA路径配置
                     </div>
                 </div>
             </div>
@@ -356,9 +355,17 @@ class QuestionAdmin(a">
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Django/" target="_blank">
+                                <span class="chip bg-color">Django</span>
+                            </a>
+                        
+                            <a href="/tags/配置/" target="_blank">
+                                <span class="chip bg-color">配置</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -378,14 +385,14 @@ class QuestionAdmin(a">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-09
+                    2020-01-16
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        305
+                        129
                     </div>
                     
 
@@ -408,72 +415,23 @@ class QuestionAdmin(a">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="自定义后台表单"><a href="#自定义后台表单" class="headerlink" title="自定义后台表单"></a>自定义后台表单</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>contrib <span class="token keyword">import</span> admin
-
-<span class="token keyword">from</span> <span class="token punctuation">.</span>models <span class="token keyword">import</span> Question
-
-<span class="token comment" spellcheck="true"># @admin.register(Question)</span>
-<span class="token keyword">class</span> <span class="token class-name">QuestionAdmin</span><span class="token punctuation">(</span>admin<span class="token punctuation">.</span>ModelAdmin<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    fields <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'pub_date'</span><span class="token punctuation">,</span> <span class="token string">'question_text'</span><span class="token punctuation">]</span>
-
-admin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>register<span class="token punctuation">(</span>Question<span class="token punctuation">,</span> QuestionAdmin<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>通过fields可以设置后台表单显示编辑的字段</li>
-<li>可以通过@admin.register()装饰器注册模型</li>
+                <h2 id="settings"><a href="#settings" class="headerlink" title="settings"></a>settings</h2><ul>
+<li>在setting中设置MEDIA根目录以及url<pre class="line-numbers language-python"><code class="language-python">MEDIA_URL <span class="token operator">=</span> <span class="token string">'/media/'</span>
+MEDIA_ROOT <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span> <span class="token string">'media'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li>设置TEMPLATES<br>如果需要在模板文件中使用&#123;&#123;MEDIA_URL&#125;&#125;，需要设置settings中的TEMPLATES<pre class="line-numbers language-python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 </ul>
-<h3 id="分字段集显示字段"><a href="#分字段集显示字段" class="headerlink" title="分字段集显示字段"></a>分字段集显示字段</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">QuestionAdmin</span><span class="token punctuation">(</span>admin<span class="token punctuation">.</span>ModelAdmin<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    fieldsets <span class="token operator">=</span> <span class="token punctuation">[</span>
-        <span class="token punctuation">(</span>None<span class="token punctuation">,</span>               <span class="token punctuation">{</span><span class="token string">'fields'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'question_text'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token punctuation">(</span><span class="token string">'Date information'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">'fields'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'pub_date'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>通过fieldsets属性设置字段集的分组</li>
-</ul>
-<h3 id="添加关联对象"><a href="#添加关联对象" class="headerlink" title="添加关联对象"></a>添加关联对象</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># ...</span>
-<span class="token keyword">class</span> <span class="token class-name">ChoiceInline</span><span class="token punctuation">(</span>admin<span class="token punctuation">.</span>StackedInline<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    model <span class="token operator">=</span> Choice
-    extra <span class="token operator">=</span> <span class="token number">3</span>
+<p>TEMPLATES = [<br>    {<br>        ‘BACKEND’: ‘django.template.backends.django.DjangoTemplates’,<br>        ‘DIRS’: [os.path.join(BASE_DIR, ‘templates’)]<br>        ,<br>        ‘APP_DIRS’: True,<br>        ‘OPTIONS’: {<br>            ‘context_processors’: [<br>                ‘django.template.context_processors.debug’,<br>                ‘django.template.context_processors.request’,<br>                ‘django.contrib.auth.context_processors.auth’,<br>                ‘django.contrib.messages.context_processors.messages’,<br>                # 添加一项<br>                ‘django.template.context_processors.media’,<br>            ],<br>        },<br>    },<br>]</p>
+<pre><code>## 设置url
+处理 media 信息，用于图片获取
+```python
+from MxShop.settings import MEDIA_ROOT
+from django.views.static import serve
 
-
-<span class="token keyword">class</span> <span class="token class-name">QuestionAdmin</span><span class="token punctuation">(</span>admin<span class="token punctuation">.</span>ModelAdmin<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    fieldsets <span class="token operator">=</span> <span class="token punctuation">[</span>
-        <span class="token punctuation">(</span>None<span class="token punctuation">,</span>               <span class="token punctuation">{</span><span class="token string">'fields'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'question_text'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token punctuation">(</span><span class="token string">'Date information'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">'fields'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'pub_date'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'classes'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'collapse'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token punctuation">]</span>
-    inlines <span class="token operator">=</span> <span class="token punctuation">[</span>ChoiceInline<span class="token punctuation">]</span>
-<span class="token comment" spellcheck="true"># ...</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>通过inlines可以设置在编辑界面默认提供3个选项字段</li>
-<li>ChoiceInline需要指定选项的模型、默认显示的选项个数</li>
-<li>继承admin.TabularInline 会让选项显得更加紧凑</li>
-</ul>
-<h2 id="定制列表页"><a href="#定制列表页" class="headerlink" title="定制列表页"></a>定制列表页</h2><p>admin.py</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">QuestionAdmin</span><span class="token punctuation">(</span>admin<span class="token punctuation">.</span>ModelAdmin<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># ...</span>
-    list_display <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'question_text'</span><span class="token punctuation">,</span> <span class="token string">'pub_date'</span><span class="token punctuation">,</span> <span class="token string">'was_published_recently'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>models.py</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Question</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># ...</span>
-    <span class="token keyword">def</span> <span class="token function">was_published_recently</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        now <span class="token operator">=</span> timezone<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> now <span class="token operator">-</span> datetime<span class="token punctuation">.</span>timedelta<span class="token punctuation">(</span>days<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&lt;=</span> self<span class="token punctuation">.</span>pub_date <span class="token operator">&lt;=</span> now
-    was_published_recently<span class="token punctuation">.</span>admin_order_field <span class="token operator">=</span> <span class="token string">'pub_date'</span>
-    was_published_recently<span class="token punctuation">.</span>boolean <span class="token operator">=</span> <span class="token boolean">True</span>
-    was_published_recently<span class="token punctuation">.</span>short_description <span class="token operator">=</span> <span class="token string">'Published recently?'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>list_display设置列表页显示的字段</li>
-<li>admin_order_field 可以设置排序依据字段</li>
-<li>boolean 可是设置是否时返回布尔值的图标</li>
-<li>short_description 定制admin表列名</li>
-</ul>
-<h3 id="为列表页设置过滤器"><a href="#为列表页设置过滤器" class="headerlink" title="为列表页设置过滤器"></a>为列表页设置过滤器</h3><p>admin.py</p>
-<pre class="line-numbers language-python"><code class="language-python">list_filter <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'pub_date'</span><span class="token punctuation">]</span>
-search_fields <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'question_text'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<ul>
-<li>lsit_filter 在侧边生成筛选栏</li>
-<li>search_fields 在顶部生成搜索栏</li>
-</ul>
-
+urlpatterns = [
+    url(r&#39;^media/(?P&lt;path&gt;.*)$&#39;, serve, {&quot;document_root&quot;: MEDIA_ROOT}),
+]</code></pre>
             </div>
             <hr/>
 
@@ -638,51 +596,35 @@ search_fields <span class="token operator">=</span> <span class="token punctuati
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/01/11/django/django-tuo-zhan-user-mo-xing/">
+                <a href="/2020/01/16/django/django-xu-lie-hua-shu-ju/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Django-拓展User模型">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Django-序列化数据">
                         
-                        <span class="card-title">Django-拓展User模型</span>
+                        <span class="card-title">Django-序列化数据</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            继承AbstractUser编写用户拓展模型models.py
-from django.db import models
-from django.contrib.auth.models import AbstractUser
-# Creat
+                            Django类视图返回使用json加载数据class GoodsView(View):
+    def get(self, request):
+        json_list = []
+        goods = models.Go
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-11
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-16
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Django/" class="post-category" target="_blank">
-                                    Django
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Hello-Z
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Django/" target="_blank">
-                        <span class="chip bg-color">Django</span>
-                    </a>
-                    
-                    <a href="/tags/Python/" target="_blank">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -694,63 +636,35 @@ from django.contrib.auth.models import AbstractUser
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/09/django/6-django-jing-tai-wen-jian/">
+                <a href="/2020/01/16/django/django-lian-jie-mysql/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="6-Django-静态文件">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">6-Django-静态文件</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            来源第6节: 静态文件
-简单配置
-将静态文件放在app下的static文件夹中，django会自动查找这些文件
-建议放入/static//中，防止命名冲突
+                            
+title: Django-连接Mysqldate: 2020-1-11 14:57:51top: falsecover: falsepassword:toc: truemathjax: truesummary:tags:
 
-在模板文件中引用静态文件{% load static %}
-
-&lt;link r
+DJango
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-16
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Django/" class="post-category" target="_blank">
-                                    Django
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Hello-Z
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Django/" target="_blank">
-                        <span class="chip bg-color">Django</span>
-                    </a>
-                    
-                    <a href="/tags/Python/" target="_blank">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
-                    <a href="/tags/基础/" target="_blank">
-                        <span class="chip bg-color">基础</span>
-                    </a>
-                    
-                    <a href="/tags/Django官方文档/" target="_blank">
-                        <span class="chip bg-color">Django官方文档</span>
-                    </a>
-                    
                 </div>
                 
             </div>

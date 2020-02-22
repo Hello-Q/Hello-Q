@@ -4,13 +4,22 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="python基础-1函数, Hello-Z">
-    <meta name="description" content="
-函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。函数能提高应用的模块性，和代码的重复利用率。
+    <meta name="keywords" content="python入门-2条件与循环语句, Hello-Z">
+    <meta name="description" content="程序结构
+顺序
+循环
+分支
 
-定义一个函数
-函数代码块由def关键字开头，后面接函数的名称和小括号 () 
-任何传入参数和自变量必须放在圆括号中间。圆括号">
+条件语句分支
+分支结构基本语法if 判断条件：
+  执行语句1……
+  执行语句2……
+
+Python程序语言中指定任何非0和非空（null）值为True，0或者null为false  
+
+
+
+当判断条件成立（">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +27,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>python基础-1函数 | Hello-Z</title>
+    <title>python入门-2条件与循环语句 | Hello-Z</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -241,13 +250,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        python基础-1函数
+                        python入门-2条件与循环语句
                     </div>
                 </div>
             </div>
@@ -358,16 +367,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/基础/" target="_blank">
-                                <span class="chip bg-color">基础</span>
+                            <a href="/tags/学习笔记/" target="_blank">
+                                <span class="chip bg-color">学习笔记</span>
+                            </a>
+                        
+                            <a href="/tags/入门/" target="_blank">
+                                <span class="chip bg-color">入门</span>
                             </a>
                         
                             <a href="/tags/python/" target="_blank">
                                 <span class="chip bg-color">python</span>
-                            </a>
-                        
-                            <a href="/tags/函数/" target="_blank">
-                                <span class="chip bg-color">函数</span>
                             </a>
                         
                     </div>
@@ -397,14 +406,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.1k
+                        831
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        3 分
                     </div>
                     
                 
@@ -420,101 +429,110 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。<br>函数能提高应用的模块性，和代码的重复利用率。</p>
-</blockquote>
-<h2 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h2><ul>
-<li>函数代码块由def关键字开头，后面接函数的名称和小括号 <strong>()</strong> </li>
-<li>任何传入参数和自变量必须放在圆括号中间。圆括号之间可以用于定义参数。</li>
-<li>函数的第一行语句可以选择性地使用文档字符串—用于存放函数说明。</li>
-<li>函数内容以冒号起始，并且缩进</li>
-<li>return [表达式] 结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 None。</li>
+                <h1 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a>程序结构</h1><ul>
+<li>顺序</li>
+<li>循环</li>
+<li>分支</li>
 </ul>
-<p><strong>基本语法</strong></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> functionname <span class="token punctuation">(</span>parameters<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token string">"此处放函数的文档说明"</span>
-    function_suite
-    <span class="token keyword">return</span> <span class="token punctuation">[</span>expression<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>实例</strong></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">print_str</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token string">"将传入的文本打印出来"</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
-    <span class="token keyword">return</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="函数的调用"><a href="#函数的调用" class="headerlink" title="函数的调用"></a>函数的调用</h2><p>直接输入函数的名字加上括号即可调用，括号中是否由内容根据实际情况</p>
-<p><strong>调用函数实例</strong></p>
-<pre class="line-numbers language-python"><code class="language-python">print_str<span class="token punctuation">(</span><span class="token string">"我调用函数"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h2><ul>
-<li>调用函数时，函数返回的一个执行结果  </li>
-<li>使用return返回 </li>
-<li>可以没有返回值，但建议没有返回值时也写一个return None， 没有返回值的函数默认返回None</li>
-<li>函数一旦执行return， 则函数立即结束，后面的代码不再执行</li>
-</ul>
-<h2 id="参数的传递"><a href="#参数的传递" class="headerlink" title="参数的传递"></a>参数的传递</h2><p> <em>参数负责给函数传递一些必要的数据或者信息</em></p>
-<ul>
-<li>形参：在函数定义的时候要用到的参数，没有具体的值，占位</li>
-<li>实参： 在函数调用时，实际传入的值</li>
-</ul>
-<h3 id="实参的传递"><a href="#实参的传递" class="headerlink" title="实参的传递"></a>实参的传递</h3><h4 id="位置实参"><a href="#位置实参" class="headerlink" title="位置实参"></a>位置实参</h4><blockquote>
-<p>在调用函数时，Python必须将函数调用中的每个实参关联到函数定义中的一个形参，最简单的关联方式是基于实参的顺序，这种关联方式称为位置实参</p>
-</blockquote>
-<p><em>实例</em></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">test</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> None
-
-test<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 调用函数时将实参1, 2, 3 分别对应到形参a, b, c</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><font color="red" size="3">位置实参的顺序以及数量很重要，必须一一对应关联</font></p>
-<h4 id="关键字实参"><a href="#关键字实参" class="headerlink" title="关键字实参"></a>关键字实参</h4><blockquote>
-<p>关键子实参是调用函数时传递给函数的名称-值对，直接在实参中将名称和值关联起来了，因此向函数传递参数时不会混淆，关键字实参无需考虑函数调用的实参顺序</p>
-</blockquote>
-<p><em>实例</em></p>
-<pre class="line-numbers language-python"><code class="language-python">test<span class="token punctuation">(</span>b<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><font color="red" size="3">使用关键子参数时，一定要准确的指定函数中定义的形参名</font></p>
-<h4 id="默认值实参"><a href="#默认值实参" class="headerlink" title="默认值实参"></a>默认值实参</h4><blockquote>
-<p>在编写函数时，可以给每个形参指定默认值。在调用函数时给形参提供了实参时，Python将使用提供的实参，否则使用形参的默认值</p>
-</blockquote>
-<p><em>实例</em></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">test</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token operator">+</span>b<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> None
-
-test<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
-test<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 这两种调用方法都是可以的，第一个未提供c值，pyhton会使用默认值3。第二种提供c=4，pyhton会使用提供的实参4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><font color="red" size="3">使用默认值时，在形参中必须先列出没有默认值的形参，再列出有默认值的形参，否则Python无法正确理解位置实参</font></p>
-<h4 id="收集实参"><a href="#收集实参" class="headerlink" title="收集实参"></a>收集实参</h4><blockquote>
-<p>有时候并不知道函数需要接受多少个实参，python允许函数从调用语句中收集任意数量的实参。</p>
-</blockquote>
-<p><em>实例</em></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 定义一个函数，打印出班级学生姓名</span>
-
-<span class="token keyword">def</span> <span class="token function">stu_name</span><span class="token punctuation">(</span><span class="token operator">*</span>names<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> name <span class="token keyword">in</span> names<span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
-
-stu_name<span class="token punctuation">(</span><span class="token string">'zhang'</span><span class="token punctuation">,</span> <span class="token string">'liu'</span><span class="token punctuation">,</span> <span class="token string">'wang'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>形参<em>name是. 中的\</em>会创建一个名为names的空元祖，在调用时，会将所有的值装入元祖。</p>
-<ul>
-<li>关键字收集实参</li>
-</ul>
+<h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><ul>
+<li>分支结构基本语法<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">if</span> 判断条件：
+  执行语句<span class="token number">1</span>……
+  执行语句<span class="token number">2</span>……<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>有时候需要接受任意数量的的实参，但预先并不知道传递给函数的是什么信息，可以使用关键字收集实参。</p>
+<p>Python程序语言中指定任何非0和非空（null）值为True，0或者null为false  </p>
 </blockquote>
-<p><em>实例</em></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 收集班级中所有的学生的相关信息</span>
-<span class="token keyword">def</span> <span class="token function">stu_info</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> <span class="token operator">**</span>info<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    info <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-    info<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span> <span class="token operator">=</span> name
-    info<span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span> <span class="token operator">=</span> age
-    <span class="token keyword">for</span> k<span class="token punctuation">,</span> v <span class="token keyword">in</span> info<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        info<span class="token punctuation">[</span><span class="token string">'k'</span><span class="token punctuation">]</span> <span class="token operator">=</span> v
-    <span class="token keyword">return</span> info
-
-stu_info<span class="token punctuation">(</span><span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token string">'18'</span><span class="token punctuation">,</span> tel<span class="token operator">=</span><span class="token string">'1302566'</span><span class="token punctuation">,</span> hobby<span class="token operator">=</span><span class="token string">'basketball'</span><span class="token punctuation">,</span> <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>**会收集多余位置实参的信息，并将信息在函数内部组成一个dict，在函数直接将info当成一个dict使用。</p>
-<p><font color="red" size="3">以上实参可以混合使用，但在定义函数是必须按照<strong>位置实参</strong>→<strong>收集实参</strong>→<strong>收集关键字实参</strong>的顺序定义，在调用时，对应位置的参数进入位置实参，多余的进入收集实参，键值对进入收集关键字实参。 </font></p>
+</li>
+</ul>
+<p><strong>当判断条件成立（返回True）时执行语句1、 2，可以有多行，但必须在相同的缩进内。</strong></p>
+<h3 id="双向分支"><a href="#双向分支" class="headerlink" title="双向分支"></a>双向分支</h3><ul>
+<li>双向分支基本语句<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">if</span> 判断条件<span class="token punctuation">:</span>
+  执行语句<span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  执行语句<span class="token number">2</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+  执行语句<span class="token number">3</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  执行语句<span class="token number">4</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<p><strong>当判断条件成立时，执行语句1、 2，否则执行语句3、 4</strong></p>
+<h3 id="多路分支"><a href="#多路分支" class="headerlink" title="多路分支"></a>多路分支</h3><p>有很多分支的情况</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">if</span> 判断条件<span class="token number">1</span><span class="token punctuation">:</span>
+    执行语句<span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    执行语句<span class="token number">2</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">elif</span> 判断条件<span class="token number">2</span><span class="token punctuation">:</span>
+    执行语句<span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    执行语句<span class="token number">2</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    执行语句<span class="token number">3</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    执行语句<span class="token number">4</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>由于 python 并不支持 switch 语句，所以多个条件判断，只能用 elif 来实现，如果判断需要多个条件需同时判断时，可以使用 or （或），表示两个条件有一个成立时判断条件成功；使用 and （与）时，表示只有两个条件同时成立的情况下，判断条件才成功。</p>
+</blockquote>
+<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><p><em>循环语句允许我们执行一个语句或语句组多次</em></p>
+<p>python中的循环类型</p>
+<table>
+<thead>
+<tr>
+<th>循环类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>while循环</td>
+<td>给定的判断条件为True时执行循环体，否则退出循环</td>
+</tr>
+<tr>
+<td>for循环</td>
+<td>重复执行语句</td>
+</tr>
+</tbody></table>
+<p>循环控制语句</p>
+<table>
+<thead>
+<tr>
+<th>控制语句</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>break语句</td>
+<td>在语句块执行过程中终止循环，并跳出整个循环</td>
+</tr>
+<tr>
+<td>continue语句</td>
+<td>在语句块执行过程中终止当前循环，执行下一次循环</td>
+</tr>
+<tr>
+<td>pass语句</td>
+<td>pass 是空语句，保持程序的完整性，什么也不做</td>
+</tr>
+</tbody></table>
+<h3 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h3><p>基本语句</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">while</span> 判断条件<span class="token punctuation">:</span>
+    语句<span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token comment" spellcheck="true"># 另一种，else不是必须的</span>
+<span class="token keyword">while</span> 判断条件<span class="token punctuation">:</span>
+    语句<span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">else</span>：
+    语句<span class="token number">2</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当判断条件为True时，语句1将执行，执行完成后再次判断<strong>判断条件</strong>是否成立，如还是成立的则继续循环执行，直至<strong>判断条件</strong>不成立为止。</p>
+<p>while 可以使用continue和break来跳过循环，continue跳过本次，break跳出整个循环</p>
+<p><strong>无限循环：</strong> 如果条件判断永远为True，循环将无限的执行下去</p>
+<h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><p><em>Python for循环可以遍历任何序列的项目，如一个列表或者一个字符串。</em></p>
+<p>基本语法格式</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> list<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="break-语句"><a href="#break-语句" class="headerlink" title="break 语句"></a>break 语句</h3><p>break语句用来终止循环语句，即循环条件没有False条件或者序列还没被完全递归完，也会停止执行循环语句。</p>
+<p>break语句用在while和for循环中。<br>在嵌套循环中，会终止当前循环块</p>
+<h3 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h3><p>Python continue 语句跳出本次循环，而break跳出整个循环。<br>continue 语句用来告诉Python跳过当前循环的剩余语句，然后继续进行下一轮循环。<br>continue语句用在while和for循环中。</p>
+<h3 id="pass"><a href="#pass" class="headerlink" title="pass"></a>pass</h3><p>Python pass 是空语句，是为了保持程序结构的完整性。<br>pass 不做任何事情，一般用做占位语句。</p>
+<h3 id="range函数"><a href="#range函数" class="headerlink" title="range函数"></a>range函数</h3><ul>
+<li>生成有序数列</li>
+<li>生成的序列可以定制<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 生成1-100的序列</span>
+number <span class="token operator">=</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">101</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 生成时左包括右不包括 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -680,29 +698,29 @@ stu_info<span class="token punctuation">(</span><span class="token string">'张�
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/11/python-xue-xi-bi-ji/02.python-shu-ju-lei-xing-str-zi-fu-chuan/">
+                <a href="/2019/10/10/python-xue-xi-bi-ji/06.python-han-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="python-数据类型-str字符串">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="python基础-1函数">
                         
-                        <span class="card-title">python-数据类型-str字符串</span>
+                        <span class="card-title">python基础-1函数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            字符串是一系列的字符，在Python中，用引号括起来的是字符串，可以使单引号，也可以是双引号。三引号可以表示多行
-字符串_官方文档
-字符串的表示
-单引号定义 ‘’
-双引号定义 “”
-三引号定义(内容可换行) “”” “”” 或者 ‘’’ ‘
+                            
+函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。函数能提高应用的模块性，和代码的重复利用率。
+
+定义一个函数
+函数代码块由def关键字开头，后面接函数的名称和小括号 () 
+任何传入参数和自变量必须放在圆括号中间。圆括号
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-11
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-10
                         </span>
                         <span class="publish-author">
                             
@@ -727,8 +745,8 @@ stu_info<span class="token punctuation">(</span><span class="token string">'张�
                         <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/数据类型/" target="_blank">
-                        <span class="chip bg-color">数据类型</span>
+                    <a href="/tags/函数/" target="_blank">
+                        <span class="chip bg-color">函数</span>
                     </a>
                     
                 </div>
@@ -742,38 +760,31 @@ stu_info<span class="token punctuation">(</span><span class="token string">'张�
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/10/python-xue-xi-bi-ji/5.python-tiao-jian-yu-xun-huan-yu-ju/">
+                <a href="/2019/10/07/python-xue-xi-bi-ji/01.python-ru-men-bian-liang-shu-ju-lei-xing-yun-suan-fu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="python入门-2条件与循环语句">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="python入门-1变量、数据类型、运算符">
                         
-                        <span class="card-title">python入门-2条件与循环语句</span>
+                        <span class="card-title">python入门-1变量、数据类型、运算符</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            程序结构
-顺序
-循环
-分支
+                            风格指南
+Python风格指南
 
-条件语句分支
-分支结构基本语法if 判断条件：
-  执行语句1……
-  执行语句2……
-
-Python程序语言中指定任何非0和非空（null）值为True，0或者null为false  
-
-
-
-当判断条件成立（
+注释注释解释器不会去执行,直接跳过
+注释的写法
+行注释:以井号(#)开头 可以单独行,也可以在代码后面
+块注释:以三个单引号或者双引号开头并结束,中间可以包裹多行内容# 这里是行注释,机器不会运行
+prin
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-10
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-07
                             </span>
                         <span class="publish-author">
                             
@@ -790,16 +801,16 @@ Python程序语言中指定任何非0和非空（null）值为True，0或者null
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
                     <a href="/tags/学习笔记/" target="_blank">
                         <span class="chip bg-color">学习笔记</span>
                     </a>
                     
                     <a href="/tags/入门/" target="_blank">
                         <span class="chip bg-color">入门</span>
-                    </a>
-                    
-                    <a href="/tags/python/" target="_blank">
-                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>
@@ -957,7 +968,7 @@ Python程序语言中指定任何非0和非空（null）值为True，0或者null
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">35.5k</span>&nbsp;字
+                class="white-color">36.2k</span>&nbsp;字
             
             
             

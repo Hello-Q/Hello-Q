@@ -399,14 +399,14 @@ prin">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.9k
+                        2.6k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        7 分
+                        10 分
                     </div>
                     
                 
@@ -534,10 +534,12 @@ zhang
 san
 """</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="列表-list"><a href="#列表-list" class="headerlink" title="列表 list"></a>列表 list</h3><p>通常用来记录一些列数据</p>
-<p>列表的定义</p>
+<p>列表的创建</p>
 <ul>
 <li>使用一对方括号来表示空列表: [] 或者是list()</li>
 <li>使用方括号，其中的项以逗号分隔: [a], [a, b, c]</li>
+<li>其中的项成为元素</li>
+<li>元素可以是其他的任意类型</li>
 </ul>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> l1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
 <span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>l1<span class="token punctuation">,</span> type<span class="token punctuation">(</span>l1<span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -548,6 +550,37 @@ san
 <span class="token operator">>></span><span class="token operator">></span> l3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
 <span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>l3<span class="token punctuation">,</span> type<span class="token punctuation">(</span>l3<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'list'</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="元组-tuple"><a href="#元组-tuple" class="headerlink" title="元组 tuple"></a>元组 tuple</h3><p>元组是不可变序列，与列表相似，区别是其中的元素不可改变</p>
+<p>元祖的创建</p>
+<ul>
+<li>使用一对圆括号来表示空元组: ()</li>
+<li>使用一个后缀的逗号来表示单元组: a, 或 (a,)</li>
+<li>使用以逗号分隔的多个项: a, b, c or (a, b, c)</li>
+<li>使用内置的 tuple(): tuple() 或 tuple(iterable)</li>
+</ul>
+<p><em>元祖只有一个元素时，最后要加一个逗号。</em></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> t1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> t2 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token operator">>></span><span class="token operator">></span> t3 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> t4 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span>
+<span class="token operator">>></span><span class="token operator">></span> t5 <span class="token operator">=</span> tuple<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> 
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>t1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'tuple'</span><span class="token operator">></span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'tuple'</span><span class="token operator">></span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'tuple'</span><span class="token operator">></span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'tuple'</span><span class="token operator">></span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'tuple'</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="字典-dict"><a href="#字典-dict" class="headerlink" title="字典 dict"></a>字典 dict</h3><ul>
+<li>字典是用于储存一组或多组的数据</li>
+<li>字典是键值对形式</li>
+<li>键的名字不能重复，否则会覆盖</li>
+<li>键必须是字符串或者数字，值可以是任何类型</li>
+</ul>
+<p>字典的创建</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> a <span class="token operator">=</span> dict<span class="token punctuation">(</span>one<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> two<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> three<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> b <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'one'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'two'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'three'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">}</span>
+<span class="token operator">>></span><span class="token operator">></span> c <span class="token operator">=</span> dict<span class="token punctuation">(</span>zip<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'one'</span><span class="token punctuation">,</span> <span class="token string">'two'</span><span class="token punctuation">,</span> <span class="token string">'three'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> d <span class="token operator">=</span> dict<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'two'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'one'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'three'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> e <span class="token operator">=</span> dict<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'three'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'one'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'two'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> a <span class="token operator">==</span> b <span class="token operator">==</span> c <span class="token operator">==</span> d <span class="token operator">==</span> e
+<span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h3><ul>
 <li>布尔值用来表示真假</li>
 <li>只有两个值 Ture/False</li>
@@ -557,18 +590,61 @@ san
 <li>表示没有，返回一个空</li>
 </ul>
 <h3 id="数据类型的检测"><a href="#数据类型的检测" class="headerlink" title="数据类型的检测"></a>数据类型的检测</h3><p>使用type()函数进行检测</p>
-<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">10</span>
-b <span class="token operator">=</span> <span class="token boolean">True</span>
-c <span class="token operator">=</span> <span class="token string">'hello world'</span>
-d <span class="token operator">=</span> <span class="token number">1.01</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> type<span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> type<span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> type<span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>10 &lt;class &#39;int&#39;&gt;
-True &lt;class &#39;bool&#39;&gt;
-hello world &lt;class &#39;str&#39;&gt;
-1.01 &lt;class &#39;float&#39;&gt;</code></pre><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>运算符的分类  </p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> a <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token operator">>></span><span class="token operator">></span> b <span class="token operator">=</span> <span class="token boolean">True</span>
+<span class="token operator">>></span><span class="token operator">></span> c <span class="token operator">=</span> <span class="token string">'hello world'</span>
+<span class="token operator">>></span><span class="token operator">></span> d <span class="token operator">=</span> <span class="token number">1.01</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token number">10</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'int'</span><span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> type<span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'bool'</span><span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> type<span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span>
+hello world <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> type<span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token number">1.01</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'float'</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="数据类型分类"><a href="#数据类型分类" class="headerlink" title="数据类型分类"></a>数据类型分类</h3><h4 id="是否可变"><a href="#是否可变" class="headerlink" title="是否可变"></a>是否可变</h4><p><em>是否可变指内容创建后，内容是否可变</em></p>
+<ul>
+<li>可变数据类型<ul>
+<li>列表</li>
+<li>字典</li>
+<li>集合</li>
+</ul>
+</li>
+<li>不可变数据类型<ul>
+<li>字符串</li>
+<li>数字</li>
+<li>元组</li>
+</ul>
+</li>
+</ul>
+<h4 id="是否容器类"><a href="#是否容器类" class="headerlink" title="是否容器类"></a>是否容器类</h4><p><em>容器类型数据指此类型数据可以容纳其他数据</em></p>
+<ul>
+<li>容器类型数据<ul>
+<li>字符串</li>
+<li>列表</li>
+<li>元组</li>
+<li>集合</li>
+<li>字典</li>
+</ul>
+</li>
+<li>非容器类型数据<ul>
+<li>数字</li>
+<li>布尔值</li>
+</ul>
+</li>
+</ul>
+<h2 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h2><p>数据类型转换指的是讲一种数据类型转换为另一种数据类型，目的是解决不同数据类型之间的运算问题。</p>
+<h3 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h3><ul>
+<li>数字与布尔值运算会将布尔值自动转为数字<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> n <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token operator">>></span><span class="token operator">></span> b <span class="token operator">=</span> <span class="token boolean">True</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>n<span class="token operator">+</span>b<span class="token punctuation">)</span>
+<span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>逻辑判断时数字会自动转为布尔值</li>
+<li>整数与浮点数运算时，整数会转为浮点数</li>
+</ul>
+<h3 id="手动类型转换"><a href="#手动类型转换" class="headerlink" title="手动类型转换"></a>手动类型转换</h3><p>通过特定的函数，可以将一种数据类型转为另一种数据类型<br>函数|转换后类型|可转换类型<br>-|-|-<br>str()|字符串|所有类型都可以<br>int()|整数|纯数字字符串、布尔值、浮点数，其他容器类类型不能转<br>float()|浮点数|纯数字字符串、布尔值、整数<br>bool()|布尔值|所有类型都可以<br>list()|列表|字符串、数组、字典（只保留键）集合<br>tuple()|元组|数字类型和非容器类型不能转换、容器类型可以<br>dict()|字典|只有特定的列表和元组可以转，要求列表中的每个元素都是一个只包含俩个元素的列表，其中第一个元素转为字典的键，第二个为值 [[1, a], [2, b], [3, c]]，元组要求类似。<br>set()|集合|非容器类不可以转换，容器类转换后无序、去重、字典只保留键。</p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>运算符的分类  </p>
 <ul>
 <li>算术运算符</li>
 <li>比较(关系)运算符</li>
@@ -986,7 +1062,7 @@ c <span class="token operator">=</span> a<span class="token punctuation">(</span
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/10/python-xue-xi-bi-ji/5.python-tiao-jian-yu-xun-huan-yu-ju/">
+                <a href="/2019/10/10/python-xue-xi-bi-ji/05.python-tiao-jian-yu-xun-huan-yu-ju/">
                     <div class="card-image">
                         
                         
@@ -1262,7 +1338,7 @@ CDN  &lt;!--对于制作原型或学习，你可以这样使用最新版本-->
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">35.5k</span>&nbsp;字
+                class="white-color">36.2k</span>&nbsp;字
             
             
             

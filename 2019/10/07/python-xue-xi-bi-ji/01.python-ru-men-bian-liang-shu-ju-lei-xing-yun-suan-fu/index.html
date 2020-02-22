@@ -399,14 +399,14 @@ prin">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.7k
+                        1.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        6 分
+                        7 分
                     </div>
                     
                 
@@ -464,30 +464,37 @@ prin">
 </blockquote>
 </li>
 </ul>
-<h3 id="变量的赋值"><a href="#变量的赋值" class="headerlink" title="变量的赋值"></a>变量的赋值</h3><ul>
-<li><p>常用赋值方法</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 将10 赋值给size</span>
-size <span class="token operator">=</span><span class="token number">10</span>
+<h3 id="变量的赋值"><a href="#变量的赋值" class="headerlink" title="变量的赋值"></a>变量的赋值</h3><h4 id="常用赋值方法"><a href="#常用赋值方法" class="headerlink" title="常用赋值方法"></a>常用赋值方法</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 将10 赋值给size</span>
+size <span class="token operator">=</span> <span class="token number">10</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span>
 <span class="token operator">>></span><span class="token operator">></span><span class="token number">10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>给多个变量赋同一个值</p>
-<pre class="line-numbers language-python"><code class="language-python">size1 <span class="token operator">=</span> size2 <span class="token operator">=</span> size3 <span class="token operator">=</span> <span class="token number">10</span>
+<h4 id="给多个变量赋同一个值"><a href="#给多个变量赋同一个值" class="headerlink" title="给多个变量赋同一个值"></a>给多个变量赋同一个值</h4><pre class="line-numbers language-python"><code class="language-python">size1 <span class="token operator">=</span> size2 <span class="token operator">=</span> size3 <span class="token operator">=</span> <span class="token number">10</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>size1<span class="token punctuation">)</span>
 <span class="token operator">>></span><span class="token operator">></span><span class="token number">10</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>size2<span class="token punctuation">)</span>
 <span class="token operator">>></span><span class="token operator">></span><span class="token number">10</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>size3<span class="token punctuation">)</span>
 <span class="token operator">>></span><span class="token operator">></span><span class="token number">10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>一行代码给多个变量赋值</p>
-<pre class="line-numbers language-python"><code class="language-python">size1<span class="token punctuation">,</span> size2<span class="token punctuation">,</span> size3 <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">16</span>
+<h4 id="一行代码给多个变量赋值"><a href="#一行代码给多个变量赋值" class="headerlink" title="一行代码给多个变量赋值"></a>一行代码给多个变量赋值</h4><pre class="line-numbers language-python"><code class="language-python">size1<span class="token punctuation">,</span> size2<span class="token punctuation">,</span> size3 <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">16</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>size1<span class="token punctuation">)</span>
 <span class="token operator">>></span><span class="token operator">></span><span class="token number">10</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>size2<span class="token punctuation">)</span>
 <span class="token operator">>></span><span class="token operator">></span><span class="token number">12</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>size3<span class="token punctuation">)</span>
 <span class="token operator">>></span><span class="token operator">></span><span class="token number">16</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="变量交换"><a href="#变量交换" class="headerlink" title="变量交换"></a>变量交换</h4><ul>
+<li><p>普通方式</p>
+<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">10</span>
+b <span class="token operator">=</span> <span class="token number">20</span>
+c <span class="token operator">=</span> a  <span class="token comment" spellcheck="true"># 讲a变量赋值给c, 此时c的值为10</span>
+a <span class="token operator">=</span> b  <span class="token comment" spellcheck="true"># 讲b变量复制给a, 此时a的值为20</span>
+b <span class="token operator">=</span> c  <span class="token comment" spellcheck="true"># 讲c变量复制给b, 此时b的值为10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>通过中间变量c进行变量的交换</p>
+</blockquote>
+</li>
+<li><p>利用python定义变量的语法实现</p>
+<pre class="line-numbers language-python"><code class="language-python">a<span class="token punctuation">,</span> b <span class="token operator">=</span> b<span class="token punctuation">,</span> a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 </ul>
 <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
@@ -495,7 +502,7 @@ size <span class="token operator">=</span><span class="token number">10</span>
 <li>数字 Number</li>
 <li>字符串 Str</li>
 <li>列表 List</li>
-<li>原则 tuper</li>
+<li>元祖 tuper</li>
 <li>字典 dict</li>
 <li>集合 set</li>
 <li>布尔值 bool</li>
@@ -505,32 +512,20 @@ size <span class="token operator">=</span><span class="token number">10</span>
 </ul>
 <p><strong>使用字符串时注意引号匹配</strong></p>
 <h3 id="数字类型Number"><a href="#数字类型Number" class="headerlink" title="数字类型Number"></a>数字类型Number</h3><ul>
-<li>数字类型分类<ul>
-<li>整数<ul>
+<li>数字类型分类<h4 id="整数-int"><a href="#整数-int" class="headerlink" title="整数 int"></a>整数 int</h4></li>
 <li>没有小数部分</li>
-<li>包含正数、复数、0</li>
-</ul>
-</li>
-<li>浮点数<ul>
-<li>带小数点的数字称为浮点数 </li>
-</ul>
-</li>
-<li>科学计数法<ul>
+<li>包含正数、复数、0<h4 id="浮点数-float"><a href="#浮点数-float" class="headerlink" title="浮点数 float"></a>浮点数 float</h4></li>
+<li>带小数点的数字称为浮点数 <h4 id="科学计数法"><a href="#科学计数法" class="headerlink" title="科学计数法"></a>科学计数法</h4></li>
 <li>科学计数法在python中的表示<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">10e2</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
 <span class="token operator">>></span><span class="token operator">></span><span class="token number">1000.0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li>复数<br>复数在python中的表示<pre class="line-numbers language-python"><code class="language-python">python中，用j<span class="token operator">/</span>J表示复数的虚部
+<h4 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h4>复数在python中的表示<pre class="line-numbers language-python"><code class="language-python">python中，用j<span class="token operator">/</span>J表示复数的虚部
 a <span class="token operator">=</span> <span class="token number">4</span><span class="token operator">+</span><span class="token number">3j</span>
 b <span class="token operator">=</span> <span class="token number">3j</span>
 c <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">3j</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
-</li>
-</ul>
-<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p><em>字符串是一系列的字符，在Python中，用引号括起来的是字符串，可以使单引号，也可以是双引号。三引号可以表示多行</em></p>
+<h3 id="字符串-str"><a href="#字符串-str" class="headerlink" title="字符串 str"></a>字符串 str</h3><p><em>字符串是一系列的字符，在Python中，用引号括起来的是字符串，可以使单引号，也可以是双引号。三引号可以表示多行</em></p>
 <p>字符串的表示</p>
 <pre class="line-numbers language-python"><code class="language-python">name <span class="token operator">=</span>  <span class="token string">'zhangsan'</span>
 name <span class="token operator">=</span> <span class="token string">"zhangsan"</span>
@@ -538,6 +533,21 @@ name <span class="token operator">=</span> <span class="token triple-quoted-stri
 zhang
 san
 """</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="列表-list"><a href="#列表-list" class="headerlink" title="列表 list"></a>列表 list</h3><p>通常用来记录一些列数据</p>
+<p>列表的定义</p>
+<ul>
+<li>使用一对方括号来表示空列表: [] 或者是list()</li>
+<li>使用方括号，其中的项以逗号分隔: [a], [a, b, c]</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> l1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>l1<span class="token punctuation">,</span> type<span class="token punctuation">(</span>l1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'list'</span><span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> l2 <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>l2<span class="token punctuation">,</span> type<span class="token punctuation">(</span>l2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'list'</span><span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> l3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>l3<span class="token punctuation">,</span> type<span class="token punctuation">(</span>l3<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'list'</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h3><ul>
 <li>布尔值用来表示真假</li>
 <li>只有两个值 Ture/False</li>
@@ -546,7 +556,19 @@ san
 <h3 id="None"><a href="#None" class="headerlink" title="None"></a>None</h3><ul>
 <li>表示没有，返回一个空</li>
 </ul>
-<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>运算符的分类  </p>
+<h3 id="数据类型的检测"><a href="#数据类型的检测" class="headerlink" title="数据类型的检测"></a>数据类型的检测</h3><p>使用type()函数进行检测</p>
+<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">10</span>
+b <span class="token operator">=</span> <span class="token boolean">True</span>
+c <span class="token operator">=</span> <span class="token string">'hello world'</span>
+d <span class="token operator">=</span> <span class="token number">1.01</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> type<span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> type<span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> type<span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>10 &lt;class &#39;int&#39;&gt;
+True &lt;class &#39;bool&#39;&gt;
+hello world &lt;class &#39;str&#39;&gt;
+1.01 &lt;class &#39;float&#39;&gt;</code></pre><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>运算符的分类  </p>
 <ul>
 <li>算术运算符</li>
 <li>比较(关系)运算符</li>
@@ -1240,7 +1262,7 @@ CDN  &lt;!--对于制作原型或学习，你可以这样使用最新版本-->
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">33.7k</span>&nbsp;字
+                class="white-color">35.5k</span>&nbsp;字
             
             
             

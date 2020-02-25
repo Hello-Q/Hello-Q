@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Python-变量、数据类型、运算符, Hello-Z">
+    <meta name="keywords" content="01.Python-变量、数据类型、运算符, Hello-Z">
     <meta name="description" content="风格指南
 Python风格指南
 
@@ -20,7 +20,7 @@ prin">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Python-变量、数据类型、运算符 | Hello-Z</title>
+    <title>01.Python-变量、数据类型、运算符 | Hello-Z</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -243,13 +243,13 @@ prin">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Python-变量、数据类型、运算符
+                        01.Python-变量、数据类型、运算符
                     </div>
                 </div>
             </div>
@@ -399,14 +399,14 @@ prin">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.6k
+                        3.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        10 分
+                        12 分
                     </div>
                     
                 
@@ -690,6 +690,19 @@ hello world <span class="token operator">&lt;</span><span class="token keyword">
 <td>非容器类不可以转换，容器类转换后无序、去重、字典只保留键。</td>
 </tr>
 </tbody></table>
+<p>使用函数转换类型</p>
+<ul>
+<li>a 为数字类型</li>
+<li>b经过str()函数将a转为字符串类型</li>
+<li>c经过int()函数将b转回数字类型</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> a <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token operator">>></span><span class="token operator">></span> b <span class="token operator">=</span> str<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> c <span class="token operator">=</span> int<span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> type<span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token number">1</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> type<span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token number">1</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'int'</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>运算符的分类  </p>
 <ul>
 <li>算术运算符</li>
@@ -925,7 +938,53 @@ c <span class="token operator">=</span> a<span class="token punctuation">(</span
 <blockquote>
 <p>可以简单理解为他们指向的内存地址是否相同<br>is 与 == 区别：<br>is 用于判断两个变量引用对象是否为同一个(同一块内存空间)， == 用于判断引用变量的值是否相等。</p>
 </blockquote>
-<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><p>按位运算符是把数字看作二进制来进行计算的</p>
+<h4 id="二进制转换"><a href="#二进制转换" class="headerlink" title="二进制转换"></a>二进制转换</h4><p>使用bin()函数可以讲一个数字转换为二进制数字</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>bin<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'-'</span><span class="token punctuation">,</span> bin<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'-'</span><span class="token punctuation">,</span> bin<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token number">0b1</span> <span class="token operator">-</span> <span class="token number">0b10</span> <span class="token operator">-</span> <span class="token number">0b11</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>使用int()函数可以讲一个二进制转为十进制</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>int<span class="token punctuation">(</span><span class="token number">0b1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'-'</span><span class="token punctuation">,</span> int<span class="token punctuation">(</span><span class="token number">0b10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'-'</span><span class="token punctuation">,</span> int<span class="token punctuation">(</span><span class="token number">0b11</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token number">1</span> <span class="token operator">-</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="二进制位运算"><a href="#二进制位运算" class="headerlink" title="二进制位运算"></a>二进制位运算</h3><p>下表中变量 a 为 60，b 为 13，二进制格式如下：</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;</td>
+<td>按位与运算符：参与运算的两个值,如果两个相应位都为1,则该位的结果为1,否则为0</td>
+<td>(a &amp; b) 输出结果 12 ，二进制解释： 0000 1100</td>
+</tr>
+<tr>
+<td>|</td>
+<td>按位或运算符：只要对应的二个二进位有一个为1时，结果位就为1。</td>
+<td>(a | b) 输出结果 61 ，二进制解释： 0011 1101</td>
+</tr>
+<tr>
+<td>^</td>
+<td>按位异或运算符：当两对应的二进位相异时，结果为1</td>
+<td>(a ^ b) 输出结果 49 ，二进制解释： 0011 0001</td>
+</tr>
+<tr>
+<td>~</td>
+<td>按位取反运算符：对数据的每个二进制位取反,即把1变为0,把0变为1 。~x 类似于 -x-1</td>
+<td>(~a ) 输出结果 -61 ，二进制解释： 1100 0011，在一个有符号二进制数的补码形式。</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>左移动运算符：运算数的各二进位全部左移若干位，由 &lt;&lt; 右边的数字指定了移动的位数，高位丢弃，低位补0。</td>
+<td>a &lt;&lt; 2 输出结果 240 ，二进制解释： 1111 0000</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>右移动运算符：把”&gt;&gt;”左边的运算数的各二进位全部右移若干位，&gt;&gt; 右边的数字指定了移动的位数</td>
+<td>a &gt;&gt; 2 输出结果 15 ，二进制解释： 0000 1111</td>
+</tr>
+</tbody></table>
 <h3 id="运算优先级"><a href="#运算优先级" class="headerlink" title="运算优先级"></a>运算优先级</h3><p>从高到底以此为：</p>
 <ul>
 <li>小括号内优先级最高</li>
@@ -1384,7 +1443,7 @@ CDN  &lt;!--对于制作原型或学习，你可以这样使用最新版本-->
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.2k</span>&nbsp;字
+                class="white-color">36.7k</span>&nbsp;字
             
             
             

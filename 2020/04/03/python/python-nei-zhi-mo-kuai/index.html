@@ -5,8 +5,11 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Python-内置模块, Hello-Z">
-    <meta name="description" content="zipfile — 使用ZIP存档ZIP 文件格式是一个常用的归档与压缩标准。 这个模块提供了创建、读取、写入、添加及列出 ZIP 文件的工具。
-语法： zipfile.``ZipFile(file, mode=’r’, compressi">
+    <meta name="description" content="
+内置模块是安装完Python解释器后，系统提供的模块
+
+pickle — Python 对象序列化
+序列化是指可以把Python中的数据，以文本（json）或二进制（pickle）的方式进行转换，并且在需要的时候进行反序列化恢复成原来的P">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -389,14 +392,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        263
+                        1.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        5 分
                     </div>
                     
                 
@@ -412,7 +415,89 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="zipfile-—-使用ZIP存档"><a href="#zipfile-—-使用ZIP存档" class="headerlink" title="zipfile — 使用ZIP存档"></a><a href="https://docs.python.org/zh-cn/3/library/zipfile.html#module-zipfile" target="_blank" rel="noopener"><code>zipfile</code></a> — 使用ZIP存档</h2><p>ZIP 文件格式是一个常用的归档与压缩标准。 这个模块提供了创建、读取、写入、添加及列出 ZIP 文件的工具。</p>
+                <blockquote>
+<p>内置模块是安装完Python解释器后，系统提供的模块</p>
+</blockquote>
+<h2 id="pickle-—-Python-对象序列化"><a href="#pickle-—-Python-对象序列化" class="headerlink" title="pickle — Python 对象序列化"></a><a href="https://docs.python.org/zh-cn/3/library/pickle.html#module-pickle" target="_blank" rel="noopener"><code>pickle</code></a> — Python 对象序列化</h2><blockquote>
+<p>序列化是指可以把Python中的数据，以文本（json）或二进制（pickle）的方式进行转换，并且在需要的时候进行反序列化恢复成原来的Python数据。</p>
+</blockquote>
+<h3 id="pickle-dumps-序列化"><a href="#pickle-dumps-序列化" class="headerlink" title="pickle.dumps- 序列化"></a><code>pickle.dumps</code>- 序列化</h3><p><strong>语法：</strong> <code>pickle.dumps</code>(<em>obj</em>, <em>protocol=None</em>, <em>**, *fix_imports=True</em>, <em>buffer_callback=None</em>)<a href="https://docs.python.org/zh-cn/3/library/pickle.html#pickle.dumps" target="_blank" rel="noopener">¶</a></p>
+<p><em>obj</em>：Python对象</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> pickle
+ls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+res <span class="token operator">=</span> pickle<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>ls<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> type<span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> b<span class="token string">'\x80\x03]q\x00(K\x01K\x02K\x03K\x04e.'</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'bytes'</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="pickle-loads-反序列化"><a href="#pickle-loads-反序列化" class="headerlink" title="pickle.loads - 反序列化"></a><code>pickle.loads</code> - 反序列化</h3><p><strong>语法：</strong> <code>pickle.``loads</code>(<em>bytes_object</em>, <em>**, *fix_imports=True</em>, <em>encoding=”ASCII”</em>, <em>errors=”strict”</em>, <em>buffers=None</em>)</p>
+<p><em>bytes_object</em>：封存生成的对象</p>
+<pre class="line-numbers language-python"><code class="language-python">res <span class="token operator">=</span> pickle<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> type<span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'list'</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="pickle-dump-序列化数据并保存文件"><a href="#pickle-dump-序列化数据并保存文件" class="headerlink" title="pickle.dump - 序列化数据并保存文件"></a><code>pickle.dump</code> - 序列化数据并保存文件</h3><p><strong>语法：</strong> <code>pickle.dump</code>(<em>obj</em>, <em>file</em>, <em>protocol=None</em>, <em>**, *fix_imports=True</em>, <em>buffer_callback=None</em>)<a href="https://docs.python.org/zh-cn/3/library/pickle.html#pickle.dump" target="_blank" rel="noopener">¶</a></p>
+<p><em>obj</em>：需要序列化的Python对象</p>
+<p><em>file</em>：保存序列化数据的文件对象（要求以二级制可写模式（wb）打开）</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> pickle
+ls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+
+<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'test'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>ls<span class="token punctuation">,</span> f<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>执行完成会在当前目录生成一个test文件</p>
+<h3 id="pickle-load-读取序列化文件中的数据"><a href="#pickle-load-读取序列化文件中的数据" class="headerlink" title="pickle.load - 读取序列化文件中的数据"></a><code>pickle.load</code> - 读取序列化文件中的数据</h3><p><strong>语法：</strong> <code>pickle.``load</code>(<em>file</em>, <em>**, *fix_imports=True</em>, <em>encoding=”ASCII”</em>, <em>errors=”strict”</em>, <em>buffers=None</em>)<a href="https://docs.python.org/zh-cn/3/library/pickle.html#pickle.load" target="_blank" rel="noopener">¶</a></p>
+<p><em>file</em>： file object 对象（二进制只读打开（rb)）</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'test'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    res <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> type<span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'list'</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="json-—-JSON-编码和解码器"><a href="#json-—-JSON-编码和解码器" class="headerlink" title="json — JSON 编码和解码器"></a><a href="https://docs.python.org/zh-cn/3/library/json.html#module-json" target="_blank" rel="noopener"><code>json</code></a> — JSON 编码和解码器</h2><blockquote>
+<p><a href="https://docs.python.org/zh-cn/3/library/json.html#module-json" target="_blank" rel="noopener"><code>json</code></a> 提供了与标准库 <a href="https://docs.python.org/zh-cn/3/library/marshal.html#module-marshal" target="_blank" rel="noopener"><code>marshal</code></a> 和 <a href="https://docs.python.org/zh-cn/3/library/pickle.html#module-pickle" target="_blank" rel="noopener"><code>pickle</code></a> 相似的API接口。</p>
+</blockquote>
+<h3 id="json-dumps-将Python对象序列化为json字符串"><a href="#json-dumps-将Python对象序列化为json字符串" class="headerlink" title="json.dumps - 将Python对象序列化为json字符串"></a><code>json.dumps</code> - 将Python对象序列化为json字符串</h3><p><strong>语法：</strong> <code>json.dumps</code>(<em>obj</em>, <em>, *skipkeys=False</em>, <em>ensure_ascii=True</em>, <em>check_circular=True</em>, <em>allow_nan=True</em>, <em>cls=None</em>, <em>indent=None</em>, <em>separators=None</em>, <em>default=None</em>, <em>sort_keys=False</em>, <em>**kw</em>)<a href="https://docs.python.org/zh-cn/3/library/json.html#json.dumps" target="_blank" rel="noopener">¶</a></p>
+<p><em>obj</em>：Python对象</p>
+<p><strong>功能：</strong>按照下表对python数据进行转换</p>
+<table>
+<thead>
+<tr>
+<th align="left">Python</th>
+<th align="left">JSON</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">dict</td>
+<td align="left">object</td>
+</tr>
+<tr>
+<td align="left">list, tuple</td>
+<td align="left">array</td>
+</tr>
+<tr>
+<td align="left">str</td>
+<td align="left">string</td>
+</tr>
+<tr>
+<td align="left">int, float, int 和 float 派生的枚举</td>
+<td align="left">number</td>
+</tr>
+<tr>
+<td align="left">True</td>
+<td align="left">true</td>
+</tr>
+<tr>
+<td align="left">False</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">None</td>
+<td align="left">null</td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> json
+res <span class="token operator">=</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'xiaoming'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token string">'sex'</span><span class="token punctuation">:</span> None<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> type<span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token punctuation">{</span><span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"xiaoming"</span><span class="token punctuation">,</span> <span class="token string">"age"</span><span class="token punctuation">:</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token string">"sex"</span><span class="token punctuation">:</span> null<span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="json-loads-将json字符串反序列换为Python对象"><a href="#json-loads-将json字符串反序列换为Python对象" class="headerlink" title="json.loads - 将json字符串反序列换为Python对象"></a><code>json.loads</code> - 将json字符串反序列换为Python对象</h3><p><strong>语法：</strong><code>json.loads</code>(<em>s</em>, <em>, *cls=None</em>, <em>object_hook=None</em>, <em>parse_float=None</em>, <em>parse_int=None</em>, <em>parse_constant=None</em>, <em>object_pairs_hook=None</em>, <em>**kw</em>)<a href="https://docs.python.org/zh-cn/3/library/json.html#json.loads" target="_blank" rel="noopener">¶</a></p>
+<h2 id="zipfile-—-压缩模块"><a href="#zipfile-—-压缩模块" class="headerlink" title="zipfile — 压缩模块"></a><a href="https://docs.python.org/zh-cn/3/library/zipfile.html#module-zipfile" target="_blank" rel="noopener"><code>zipfile</code></a> — 压缩模块</h2><p>ZIP 文件格式是一个常用的归档与压缩标准。 这个模块提供了创建、读取、写入、添加及列出 ZIP 文件的工具。</p>
 <p><strong>语法：</strong> <code>zipfile.``ZipFile</code>(<em>file</em>, <em>mode=’r’</em>, <em>compression=ZIP_STORED</em>, <em>allowZip64=True</em>, <em>compresslevel=None</em>, <em>**, *strict_timestamps=True</em>)</p>
 <p><em>file</em>： 文件路径</p>
 <p><em>mode</em>： 打开模式（r：读取文件，w：写入文件、a：追加写入文件）</p>
@@ -431,9 +516,52 @@
 <span class="token keyword">with</span> zipfile<span class="token punctuation">.</span>ZipFile<span class="token punctuation">(</span><span class="token string">'test.zip'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> zipf<span class="token punctuation">:</span>
     zipf<span class="token punctuation">.</span>extractall<span class="token punctuation">(</span><span class="token string">'./'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>执行以上代码后会把<strong>test.zip</strong>中的所有文件解压到代码目录</p>
-<h2 id="shutil-—-高阶文件操作"><a href="#shutil-—-高阶文件操作" class="headerlink" title="shutil — 高阶文件操作"></a><a href="https://docs.python.org/zh-cn/3/library/shutil.html#module-shutil" target="_blank" rel="noopener"><code>shutil</code></a> — 高阶文件操作</h2><h2 id="压缩文档-1"><a href="#压缩文档-1" class="headerlink" title="压缩文档"></a>压缩文档</h2><p><strong>语法：</strong>  <code>shutil.make_archive</code>(<em>base_name</em>, <em>format</em>[, <em>root_dir</em>[, <em>base_dir</em>[, <em>verbose</em>[, <em>dry_run</em>[, <em>owner</em>[, <em>group</em>[, <em>logger</em>]]]]]]])</p>
+<h2 id="shutil-—-高阶文件操作"><a href="#shutil-—-高阶文件操作" class="headerlink" title="shutil — 高阶文件操作"></a><a href="https://docs.python.org/zh-cn/3/library/shutil.html#module-shutil" target="_blank" rel="noopener"><code>shutil</code></a> — 高阶文件操作</h2><h3 id="shutil-make-archive-压缩文档"><a href="#shutil-make-archive-压缩文档" class="headerlink" title="shutil.make_archive - 压缩文档"></a><code>shutil.make_archive</code> - 压缩文档</h3><p><strong>语法：</strong>  <code>shutil.make_archive</code>(<em>base_name</em>, <em>format</em>[, <em>root_dir</em>[, <em>base_dir</em>[, <em>verbose</em>[, <em>dry_run</em>[, <em>owner</em>[, <em>group</em>[, <em>logger</em>]]]]]]])</p>
 <p><em>base_name</em>：文件名（不带后缀）</p>
 <p><em>format</em>：压缩后的格式（zip、tar、gztar、xztar）</p>
+<p><em>root_dir</em>：要归档的根目录</p>
+<p><em>base_dir</em>：要归档的起始目录</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> shutil
+
+shutil<span class="token punctuation">.</span>make_archive<span class="token punctuation">(</span><span class="token string">'test'</span><span class="token punctuation">,</span> <span class="token string">'zip'</span><span class="token punctuation">,</span> <span class="token string">'c:/qq/abc'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 1</span>
+shutil<span class="token punctuation">.</span>make_archive<span class="token punctuation">(</span><span class="token string">'test'</span><span class="token punctuation">,</span> <span class="token string">'zip'</span><span class="token punctuation">,</span> <span class="token string">'c:/qq/'</span><span class="token punctuation">,</span> <span class="token string">'abc'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 2</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>#1处会在当前目录创建一个test.zip的文件，内容包含c:/qq/abc目录下的文件</li>
+<li>#2处会在当前目录创建一个test.zip的文件，包含一个名为‘abc’的文件夹，文件夹中的内容问‘c:/qq/abc’中的内容</li>
+</ul>
+<h3 id="shutil-copy-拷贝文件"><a href="#shutil-copy-拷贝文件" class="headerlink" title="shutil.copy - 拷贝文件"></a><code>shutil.copy</code> - 拷贝文件</h3><p><strong>语法：</strong> <code>shutil.``copy</code>(<em>src</em>, <em>dst</em>, <em>**, *follow_symlinks=True</em>)</p>
+<p><em>src</em>：待拷贝文件</p>
+<p><em>dst</em>：目标文件或文件</p>
+<p><strong>功能：</strong> 将文件 <em>src</em> 拷贝到文件或目录 <em>dst*。 *src</em> 和 <em>dst</em> 应为字符串。 如果 <em>dst</em> 指定了一个目录，文件将使用 <em>src</em> 中的基准文件名拷贝到 <em>dst</em>。 返回新创建文件的路径。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> shutil
+
+shutil<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token string">'test.zip'</span><span class="token punctuation">,</span> <span class="token string">'C:/Users/zhang/Desktop/'</span><span class="token punctuation">)</span>
+shutil<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token string">'test.zip'</span><span class="token punctuation">,</span> <span class="token string">'C:/Users/zhang/Desktop/test.zip'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="shutil-copy2-拷贝文件保留元数据（操作时间、权限等信息）"><a href="#shutil-copy2-拷贝文件保留元数据（操作时间、权限等信息）" class="headerlink" title="shutil.copy2 - 拷贝文件保留元数据（操作时间、权限等信息）"></a><code>shutil.copy2</code> - 拷贝文件保留元数据（操作时间、权限等信息）</h3><p><strong>语法：</strong> 与<code>shutil.copy</code>类似</p>
+<p><code>shutil.``copyfile</code>(<em>src</em>, <em>dst</em>, <em>**, *follow_symlinks=True</em>)<a href="https://docs.python.org/zh-cn/3/library/shutil.html#shutil.copyfile" target="_blank" rel="noopener">¶</a></p>
+<h3 id="shutil-copyfile-拷贝文件内容（不包括元数据）"><a href="#shutil-copyfile-拷贝文件内容（不包括元数据）" class="headerlink" title="shutil.copyfile - 拷贝文件内容（不包括元数据）"></a><code>shutil.copyfile</code> - 拷贝文件内容（不包括元数据）</h3><p><strong>语法：</strong> 与<code>shutil.copy</code>类似</p>
+<p><code>shutil.``copyfile</code>(<em>src</em>, <em>dst</em>, <em>**, *follow_symlinks=True</em>)<a href="https://docs.python.org/zh-cn/3/library/shutil.html#shutil.copyfile" target="_blank" rel="noopener">¶</a></p>
+<p><strong><em>dst</em> 必须是完整的目标文件名，操作会将src内容写入dst</strong></p>
+<h3 id="shutil-copytree-拷贝文件夹"><a href="#shutil-copytree-拷贝文件夹" class="headerlink" title="shutil.copytree - 拷贝文件夹"></a><code>shutil.copytree</code> - 拷贝文件夹</h3><p><strong>语法：</strong> <code>shutil.``copytree</code>(<em>src</em>, <em>dst</em>, <em>symlinks=False</em>, <em>ignore=None</em>, <em>copy_function=copy2</em>, <em>ignore_dangling_symlinks=False</em>, <em>dirs_exist_ok=False</em>)<a href="https://docs.python.org/zh-cn/3/library/shutil.html#shutil.copytree" target="_blank" rel="noopener">¶</a></p>
+<p><em>src</em>：待拷贝文件夹</p>
+<p><em>dst</em>：目标文件夹</p>
+<p><strong>功能：</strong> 将以 <em>src</em> 为根起点的整个目录树拷贝到名为 <em>dst</em> 的目录并返回目标目录。 <em>dirs_exist_ok</em> 指明是否要在 <em>dst</em> 或任何丢失的父目录已存在的情况下引发异常。</p>
+<p>目录的权限和时间会通过 <a href="https://docs.python.org/zh-cn/3/library/shutil.html#shutil.copystat" target="_blank" rel="noopener"><code>copystat()</code></a> 来拷贝，单个文件则会使用 <a href="https://docs.python.org/zh-cn/3/library/shutil.html#shutil.copy2" target="_blank" rel="noopener"><code>copy2()</code></a> 来拷贝。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> shutil
+res <span class="token operator">=</span> shutil<span class="token punctuation">.</span>copytree<span class="token punctuation">(</span><span class="token string">'/home/zhang/downloads'</span><span class="token punctuation">,</span> <span class="token string">'/home/zhang/a'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>将’/home/zhang/downloads’拷贝到’/home/zhang/‘并将文件夹命名为a，并且要求目标文件夹不能已经存在</p>
+<h3 id="shutil-rmtree-删除目录"><a href="#shutil-rmtree-删除目录" class="headerlink" title="shutil.rmtree - 删除目录"></a><code>shutil.rmtree</code> - 删除目录</h3><p><strong>语法：</strong> <code>shutil.``rmtree</code>(<em>path</em>, <em>ignore_errors=False</em>, <em>onerror=None</em>)<a href="https://docs.python.org/zh-cn/3/library/shutil.html#shutil.rmtree" target="_blank" rel="noopener">¶</a></p>
+<p><em>path</em>：要删除的文件夹</p>
+<pre class="line-numbers language-python"><code class="language-python">shutil<span class="token punctuation">.</span>rmtree<span class="token punctuation">(</span><span class="token string">'/home/zhang/test'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="shutil-move-移动目录、文件"><a href="#shutil-move-移动目录、文件" class="headerlink" title="shutil.move - 移动目录、文件"></a><code>shutil.move</code> - 移动目录、文件</h3><p><strong>语法：</strong> <code>shutil.``move</code>(<em>src</em>, <em>dst</em>, <em>copy_function=copy2</em>)<a href="https://docs.python.org/zh-cn/3/library/shutil.html#shutil.move" target="_blank" rel="noopener">¶</a></p>
+<p><em>src</em>： 要移动的文件或文件夹</p>
+<p><em>dst</em>：目标文件夹</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> shutil
+res <span class="token operator">=</span> shutil<span class="token punctuation">.</span>move<span class="token punctuation">(</span><span class="token string">'/home/zhang/downloads/a'</span><span class="token punctuation">,</span> <span class="token string">'/home/zhang/'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<blockquote>
+<p>类似于Liunx 的mv 也可用作重命名。</p>
+</blockquote>
 
             </div>
             <hr/>
@@ -612,8 +740,11 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            zipfile — 使用ZIP存档ZIP 文件格式是一个常用的归档与压缩标准。 这个模块提供了创建、读取、写入、添加及列出 ZIP 文件的工具。
-语法： zipfile.``ZipFile(file, mode=’r’, compressi
+                            
+内置模块是安装完Python解释器后，系统提供的模块
+
+pickle — Python 对象序列化
+序列化是指可以把Python中的数据，以文本（json）或二进制（pickle）的方式进行转换，并且在需要的时候进行反序列化恢复成原来的P
                         
                     </div>
                     <div class="publish-info">
@@ -837,7 +968,7 @@
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">44.8k</span>&nbsp;字
+                class="white-color">45.8k</span>&nbsp;字
             
             
             

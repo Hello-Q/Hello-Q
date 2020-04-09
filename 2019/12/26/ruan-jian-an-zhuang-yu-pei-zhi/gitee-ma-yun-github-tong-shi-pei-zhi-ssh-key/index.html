@@ -5,9 +5,9 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="&lt;转&gt;Gitee(码云)、Github同时配置ssh key, Hello-Z">
-    <meta name="description" content="一、cd ~/.ssh二、通过下面的命令，依次生成两个平台的key
-$ ssh-keygen -t rsa -C &amp;quot;xxxxxxx@qq.com&amp;quot; -f &amp;quot;github_id_rsa&amp;quot;
-$ ssh-k">
+    <meta name="description" content="切换ssh文件夹cd ~/.ssh
+通过下面的命令，依次生成两个平台的key$ ssh-keygen -t rsa -C &amp;quot;xxxxxxx@qq.com&amp;quot; -f &amp;quot;github_id_rsa&amp;quot;
+$ s">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -390,7 +390,7 @@ $ ssh-k">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        248
+                        268
                     </div>
                     
 
@@ -413,14 +413,14 @@ $ ssh-k">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>一、cd ~/.ssh<br>二、通过下面的命令，依次生成两个平台的key</p>
-<pre><code>$ ssh-keygen -t rsa -C &quot;xxxxxxx@qq.com&quot; -f &quot;github_id_rsa&quot;
+                <h2 id="切换ssh文件夹"><a href="#切换ssh文件夹" class="headerlink" title="切换ssh文件夹"></a>切换ssh文件夹</h2><p>cd ~/.ssh</p>
+<h2 id="通过下面的命令，依次生成两个平台的key"><a href="#通过下面的命令，依次生成两个平台的key" class="headerlink" title="通过下面的命令，依次生成两个平台的key"></a>通过下面的命令，依次生成两个平台的key</h2><pre><code>$ ssh-keygen -t rsa -C &quot;xxxxxxx@qq.com&quot; -f &quot;github_id_rsa&quot;
 $ ssh-keygen -t rsa -C &quot;xxxxxxx@qq.com&quot; -f &quot;gitee_id_rsa&quot;</code></pre><p>完成后，.ssh文件夹生成以下文件</p>
 <p>gitee_id_rsa<br>gitee_id_rsa.pub<br>github_id_rsa<br>github_id_rsa.pub</p>
-<p>三、把public key复制到gitee和github<br>把github_id_rsa.pub中内容复制到github的ssh中保存</p>
+<h2 id="把public-key复制到gitee和github"><a href="#把public-key复制到gitee和github" class="headerlink" title="把public key复制到gitee和github"></a>把public key复制到gitee和github</h2><p>把github_id_rsa.pub中内容复制到github的ssh中保存</p>
 <p>同样的操作，添加gitee的ssh</p>
-<p>四、创建config文件解决ssh冲突<br>在.ssh文件夹下执行命令vi config<br>文件中添加以下内容</p>
-<pre><code># gitee
+<h2 id="创建config文件解决ssh冲突"><a href="#创建config文件解决ssh冲突" class="headerlink" title="创建config文件解决ssh冲突"></a>创建config文件解决ssh冲突</h2><p>在.ssh文件夹下执行命令vi config<br>文件中添加以下内容</p>
+<pre class="line-numbers language-shell"><code class="language-shell"># gitee
 Host gitee.com
 HostName gitee.com
 PreferredAuthentications publickey
@@ -430,7 +430,8 @@ IdentityFile ~/.ssh/gitee_id_rsa
 Host github.com
 HostName github.com
 PreferredAuthentications publickey
-IdentityFile ~/.ssh/github_id_rsa</code></pre><p>五、测试<br>执行</p>
+IdentityFile ~/.ssh/github_id_rsa<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>执行</p>
 <pre class="line-numbers language-cmd"><code class="language-cmd">ssh -T git@gitee.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>成功则返回</p>
 <pre class="line-numbers language-cmd"><code class="language-cmd">Welcome to Gitee.com ,yourname!<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -438,6 +439,8 @@ IdentityFile ~/.ssh/github_id_rsa</code></pre><p>五、测试<br>执行</p>
 <pre class="line-numbers language-cmd"><code class="language-cmd">ssh -T git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>成功则返回</p>
 <pre class="line-numbers language-cmd"><code class="language-cmd">Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="conf文件权限问题"><a href="#conf文件权限问题" class="headerlink" title="conf文件权限问题"></a>conf文件权限问题</h2><p>Bad owner or permissions on .ssh/config的解决</p>
+<pre class="line-numbers language-shell"><code class="language-shell">sudo chmod 600 config<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>————————————————<br>版权声明：本文为CSDN博主「Allen Leung」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/londa/article/details/92065424" target="_blank" rel="noopener">https://blog.csdn.net/londa/article/details/92065424</a></p>
 
             </div>
@@ -604,7 +607,7 @@ IdentityFile ~/.ssh/github_id_rsa</code></pre><p>五、测试<br>执行</p>
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/12/28/python-xue-xi-bi-ji/09.python-wen-jian/">
+                <a href="/2019/12/28/python/09.python-wen-jian/">
                     <div class="card-image">
                         
                         
@@ -670,7 +673,7 @@ print(contents)
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/25/java-xue-xi-bi-ji/di-yi-ge-java-cheng-xu-shu-chu-hello-world/">
+                <a href="/2019/12/25/java/di-yi-ge-java-cheng-xu-shu-chu-hello-world/">
                     <div class="card-image">
                         
                         
@@ -870,7 +873,7 @@ print(contents)
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">38.5k</span>&nbsp;字
+                class="white-color">44.8k</span>&nbsp;字
             
             
             

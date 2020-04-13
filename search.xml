@@ -48,8 +48,14 @@
       <link href="/2020/02/26/linux/centos7-pei-zhi-fang-huo-qiang/"/>
       <url>/2020/02/26/linux/centos7-pei-zhi-fang-huo-qiang/</url>
       
-        <content type="html"><![CDATA[<h2 id="查看firewall服务状态"><a href="#查看firewall服务状态" class="headerlink" title="查看firewall服务状态"></a>查看firewall服务状态</h2><pre><code>systemctl status firewalld</code></pre><pre><code>● firewalld.service - firewalld - dynamic firewall daemon   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)   Active: active (running) since 三 2020-02-26 19:46:16 CST; 5min ago     Docs: man:firewalld(1) Main PID: 22556 (firewalld)    Tasks: 2   CGroup: /system.slice/firewalld.service           └─22556 /usr/bin/python2 -Es /usr/sbin/firewalld --nofork --nopid</code></pre><h2 id="查看firewall的状态"><a href="#查看firewall的状态" class="headerlink" title="查看firewall的状态"></a>查看firewall的状态</h2><pre><code>firewall-cmd --state</code></pre><pre><code>running</code></pre><h2 id="开启、重启、关闭、firewalld-service服务"><a href="#开启、重启、关闭、firewalld-service服务" class="headerlink" title="开启、重启、关闭、firewalld.service服务"></a>开启、重启、关闭、firewalld.service服务</h2><pre><code># 开启service firewalld start# 重启service firewalld restart# 关闭service firewalld stop</code></pre><h2 id="查看防火墙规则"><a href="#查看防火墙规则" class="headerlink" title="查看防火墙规则"></a>查看防火墙规则</h2><pre><code>public (active)  target: default  icmp-block-inversion: no  interfaces: ens33  sources:  services: dhcpv6-client ssh  # 主要是这个  ports: 8000/tcp 80/tcp  protocols:  masquerade: no  forward-ports:  source-ports:  icmp-blocks:  rich rules:</code></pre><h2 id="查询、开放、关闭端口"><a href="#查询、开放、关闭端口" class="headerlink" title="查询、开放、关闭端口"></a>查询、开放、关闭端口</h2><pre><code># 查询端口是否开放firewall-cmd --query-port=8080/tcp# 开放80端口firewall-cmd --permanent --add-port=80/tcp# 移除端口firewall-cmd --permanent --remove-port=8080/tcp#重启防火墙(修改配置后要重启防火墙)firewall-cmd --reload# 参数解释1、firwall-cmd：是Linux提供的操作firewall的一个工具；2、--permanent：表示设置为持久；3、--add-port：标识添加的端口；</code></pre>]]></content>
+        <content type="html"><![CDATA[<h2 id="查看firewall服务状态"><a href="#查看firewall服务状态" class="headerlink" title="查看firewall服务状态"></a>查看firewall服务状态</h2><pre class="line-numbers language-shell"><code class="language-shell">systemctl status firewalld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre><code>● firewalld.service - firewalld - dynamic firewall daemon   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)   Active: active (running) since 三 2020-02-26 19:46:16 CST; 5min ago     Docs: man:firewalld(1) Main PID: 22556 (firewalld)    Tasks: 2   CGroup: /system.slice/firewalld.service           └─22556 /usr/bin/python2 -Es /usr/sbin/firewalld --nofork --nopid</code></pre><h2 id="查看firewall的状态"><a href="#查看firewall的状态" class="headerlink" title="查看firewall的状态"></a>查看firewall的状态</h2><pre class="line-numbers language-shell"><code class="language-shell">firewall-cmd --state<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-shell"><code class="language-shell">running<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="开启、重启、关闭、firewalld-service服务"><a href="#开启、重启、关闭、firewalld-service服务" class="headerlink" title="开启、重启、关闭、firewalld.service服务"></a>开启、重启、关闭、firewalld.service服务</h2><pre class="line-numbers language-shell"><code class="language-shell"># 开启service firewalld start# 重启service firewalld restart# 关闭service firewalld stop<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="查看防火墙规则"><a href="#查看防火墙规则" class="headerlink" title="查看防火墙规则"></a>查看防火墙规则</h2><pre class="line-numbers language-shell"><code class="language-shell">public (active)  target: default  icmp-block-inversion: no  interfaces: ens33  sources:  services: dhcpv6-client ssh  # 主要是这个  ports: 8000/tcp 80/tcp  protocols:  masquerade: no  forward-ports:  source-ports:  icmp-blocks:  rich rules:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="查询、开放、关闭端口"><a href="#查询、开放、关闭端口" class="headerlink" title="查询、开放、关闭端口"></a>查询、开放、关闭端口</h2><pre class="line-numbers language-shell"><code class="language-shell"># 查询端口是否开放firewall-cmd --query-port=8080/tcp# 开放80端口firewall-cmd --permanent --add-port=80/tcp# 移除端口firewall-cmd --permanent --remove-port=8080/tcp#重启防火墙(修改配置后要重启防火墙)firewall-cmd --reload# 参数解释1、firwall-cmd：是Linux提供的操作firewall的一个工具；2、--permanent：表示设置为持久；3、--add-port：标识添加的端口；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
       
       
         <tags>
@@ -197,9 +203,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -243,9 +249,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
             <tag> 基础 </tag>
             
@@ -305,9 +311,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
             <tag> 基础 </tag>
             
@@ -334,9 +340,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
             <tag> 基础 </tag>
             
@@ -363,9 +369,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -390,9 +396,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
             <tag> 基础 </tag>
             
@@ -419,9 +425,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
             <tag> 基础 </tag>
             
@@ -881,9 +887,9 @@
             
             <tag> 基础 </tag>
             
-            <tag> 数据类型 </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> 数据类型 </tag>
             
         </tags>
       
@@ -1165,9 +1171,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
             <tag> Restfull </tag>
             
@@ -1194,9 +1200,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
             <tag> UWSGI </tag>
             
@@ -1250,9 +1256,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -1277,9 +1283,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -1304,9 +1310,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -1331,9 +1337,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -1358,9 +1364,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
             <tag> ORM </tag>
             
@@ -1387,9 +1393,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
             <tag> ORM </tag>
             

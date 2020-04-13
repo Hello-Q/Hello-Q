@@ -5,8 +5,9 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="centos7配置防火墙, Hello-Z">
-    <meta name="description" content="查看firewall服务状态systemctl status firewalld● firewalld.service - firewalld - dynamic firewall daemon
-   Loaded: loaded (/us">
+    <meta name="description" content="查看firewall服务状态systemctl status firewalld
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/u">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -367,6 +368,15 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Linux/" class="post-category" target="_blank">
+                                Linux
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
@@ -380,7 +390,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        242
+                        244
                     </div>
                     
 
@@ -403,19 +413,23 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="查看firewall服务状态"><a href="#查看firewall服务状态" class="headerlink" title="查看firewall服务状态"></a>查看firewall服务状态</h2><pre><code>systemctl status firewalld</code></pre><pre><code>● firewalld.service - firewalld - dynamic firewall daemon
+                <h2 id="查看firewall服务状态"><a href="#查看firewall服务状态" class="headerlink" title="查看firewall服务状态"></a>查看firewall服务状态</h2><pre class="line-numbers language-shell"><code class="language-shell">systemctl status firewalld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>● firewalld.service - firewalld - dynamic firewall daemon
    Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
    Active: active (running) since 三 2020-02-26 19:46:16 CST; 5min ago
      Docs: man:firewalld(1)
  Main PID: 22556 (firewalld)
     Tasks: 2
    CGroup: /system.slice/firewalld.service
-           └─22556 /usr/bin/python2 -Es /usr/sbin/firewalld --nofork --nopid</code></pre><h2 id="查看firewall的状态"><a href="#查看firewall的状态" class="headerlink" title="查看firewall的状态"></a>查看firewall的状态</h2><pre><code>firewall-cmd --state</code></pre><pre><code>running</code></pre><h2 id="开启、重启、关闭、firewalld-service服务"><a href="#开启、重启、关闭、firewalld-service服务" class="headerlink" title="开启、重启、关闭、firewalld.service服务"></a>开启、重启、关闭、firewalld.service服务</h2><pre><code># 开启
+           └─22556 /usr/bin/python2 -Es /usr/sbin/firewalld --nofork --nopid</code></pre><h2 id="查看firewall的状态"><a href="#查看firewall的状态" class="headerlink" title="查看firewall的状态"></a>查看firewall的状态</h2><pre class="line-numbers language-shell"><code class="language-shell">firewall-cmd --state<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">running<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="开启、重启、关闭、firewalld-service服务"><a href="#开启、重启、关闭、firewalld-service服务" class="headerlink" title="开启、重启、关闭、firewalld.service服务"></a>开启、重启、关闭、firewalld.service服务</h2><pre class="line-numbers language-shell"><code class="language-shell"># 开启
 service firewalld start
 # 重启
 service firewalld restart
 # 关闭
-service firewalld stop</code></pre><h2 id="查看防火墙规则"><a href="#查看防火墙规则" class="headerlink" title="查看防火墙规则"></a>查看防火墙规则</h2><pre><code>public (active)
+service firewalld stop<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="查看防火墙规则"><a href="#查看防火墙规则" class="headerlink" title="查看防火墙规则"></a>查看防火墙规则</h2><pre class="line-numbers language-shell"><code class="language-shell">public (active)
   target: default
   icmp-block-inversion: no
   interfaces: ens33
@@ -428,7 +442,8 @@ service firewalld stop</code></pre><h2 id="查看防火墙规则"><a href="#查�
   forward-ports:
   source-ports:
   icmp-blocks:
-  rich rules:</code></pre><h2 id="查询、开放、关闭端口"><a href="#查询、开放、关闭端口" class="headerlink" title="查询、开放、关闭端口"></a>查询、开放、关闭端口</h2><pre><code># 查询端口是否开放
+  rich rules:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="查询、开放、关闭端口"><a href="#查询、开放、关闭端口" class="headerlink" title="查询、开放、关闭端口"></a>查询、开放、关闭端口</h2><pre class="line-numbers language-shell"><code class="language-shell"># 查询端口是否开放
 firewall-cmd --query-port=8080/tcp
 # 开放80端口
 firewall-cmd --permanent --add-port=80/tcp
@@ -441,7 +456,8 @@ firewall-cmd --reload
 # 参数解释
 1、firwall-cmd：是Linux提供的操作firewall的一个工具；
 2、--permanent：表示设置为持久；
-3、--add-port：标识添加的端口；</code></pre>
+3、--add-port：标识添加的端口；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr/>
 

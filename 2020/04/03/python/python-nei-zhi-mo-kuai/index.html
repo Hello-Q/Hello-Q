@@ -392,14 +392,14 @@ pickle — Python 对象序列化
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.3k
+                        2.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        6 分
+                        10 分
                     </div>
                     
                 
@@ -505,15 +505,285 @@ ls <span class="token operator">=</span> json<span class="token punctuation">.</
 
 <span class="token operator">>></span><span class="token operator">></span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'xiaoming'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token string">'sex'</span><span class="token punctuation">:</span> None<span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'dict'</span><span class="token operator">></span>
 <span class="token operator">>></span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'list'</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="json-dump¶、json-load¶用法与pickle类似"><a href="#json-dump¶、json-load¶用法与pickle类似" class="headerlink" title="json.dump¶、json.load¶用法与pickle类似"></a><code>json.dump</code><a href="https://docs.python.org/zh-cn/3/library/json.html#json.dump" target="_blank" rel="noopener">¶</a>、<code>json.load</code><a href="https://docs.python.org/zh-cn/3/library/json.html#json.load" target="_blank" rel="noopener">¶</a>用法与pickle类似</h3><h2 id="zipfile-—-压缩模块"><a href="#zipfile-—-压缩模块" class="headerlink" title="zipfile — 压缩模块"></a><a href="https://docs.python.org/zh-cn/3/library/zipfile.html#module-zipfile" target="_blank" rel="noopener"><code>zipfile</code></a> — 压缩模块</h2><p>ZIP 文件格式是一个常用的归档与压缩标准。 这个模块提供了创建、读取、写入、添加及列出 ZIP 文件的工具。</p>
+<h3 id="json-dump¶、json-load¶用法与pickle类似"><a href="#json-dump¶、json-load¶用法与pickle类似" class="headerlink" title="json.dump¶、json.load¶用法与pickle类似"></a><code>json.dump</code><a href="https://docs.python.org/zh-cn/3/library/json.html#json.dump" target="_blank" rel="noopener">¶</a>、<code>json.load</code><a href="https://docs.python.org/zh-cn/3/library/json.html#json.load" target="_blank" rel="noopener">¶</a>用法与pickle类似</h3><h2 id="math-—-数学函数"><a href="#math-—-数学函数" class="headerlink" title="math — 数学函数"></a><a href="https://docs.python.org/zh-cn/3/library/math.html#module-math" target="_blank" rel="noopener"><code>math</code></a> — 数学函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>用途</th>
+<th>示例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>math</code>.<code>ceil</code>(<em>x</em>)<a href="https://docs.python.org/zh-cn/3/library/math.html#math.ceil" target="_blank" rel="noopener">¶</a></td>
+<td>向上取整</td>
+<td>math.ceil(3.44)</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>math</code>.<code>pow</code>(<em>x</em>, <em>y</em>)<a href="https://docs.python.org/zh-cn/3/library/math.html#math.pow" target="_blank" rel="noopener">¶</a></td>
+<td>返回x的y次幂(返回浮点数)</td>
+<td>math.pow(2,3)</td>
+<td>8.0</td>
+</tr>
+<tr>
+<td><code>math</code>.<code>sqrt</code>(<em>x</em>)<a href="https://docs.python.org/zh-cn/3/library/math.html#math.sqrt" target="_blank" rel="noopener">¶</a></td>
+<td>返回x的平方根(返回浮点数)</td>
+<td>math.sqrt(4)</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td><code>math</code>.<code>fabs</code>(<em>x</em>)<a href="https://docs.python.org/zh-cn/3/library/math.html#math.fabs" target="_blank" rel="noopener">¶</a></td>
+<td>返回x的绝对值(浮点数)</td>
+<td>math.fabs(-4)</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td><code>math</code>.<code>modf</code>(x)<a href="https://docs.python.org/zh-cn/3/library/math.html#math.modf" target="_blank" rel="noopener">¶</a></td>
+<td>拆分一个小数，将整数部分和小数部分组成一个元祖（连个元素都为浮点数形式）</td>
+<td>math.modf(3.145)</td>
+<td>(0.14500000000000002, 3.0)</td>
+</tr>
+<tr>
+<td><code>math.copysign</code>(<em>x</em>, <em>y</em>)<a href="https://docs.python.org/zh-cn/3/library/math.html#math.copysign" target="_blank" rel="noopener">¶</a></td>
+<td>将y的符号（正负号）复制给x</td>
+<td>math.copysign(3.145, -23)</td>
+<td>-3.145</td>
+</tr>
+<tr>
+<td><code>math.``fsum</code>(<em>iterable</em>)<a href="https://docs.python.org/zh-cn/3/library/math.html#math.fsum" target="_blank" rel="noopener">¶</a></td>
+<td>返回迭代器中元素的和（浮点数）</td>
+<td>math.fsum([1, 2, 3])</td>
+<td>6.0</td>
+</tr>
+<tr>
+<td><code>math</code>.<code>factorial</code>(<em>x</em>)</td>
+<td>返回x的阶乘</td>
+<td>math.factorial(3)</td>
+<td>6</td>
+</tr>
+</tbody></table>
+<h2 id="random-—-生成伪随机数"><a href="#random-—-生成伪随机数" class="headerlink" title="random — 生成伪随机数"></a><a href="https://docs.python.org/zh-cn/3/library/random.html#module-random" target="_blank" rel="noopener"><code>random</code></a> — 生成伪随机数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>用途</th>
+<th>示例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>random</code>.<code>random</code>()<a href="https://docs.python.org/zh-cn/3/library/random.html#random.random" target="_blank" rel="noopener">¶</a></td>
+<td>随机生成一个小数</td>
+<td>random.random()</td>
+<td>0.709557022521133</td>
+</tr>
+<tr>
+<td><code>random</code>.<code>uniform(a, b)</code><a href="https://docs.python.org/zh-cn/3/library/random.html#random.uniform" target="_blank" rel="noopener">¶</a></td>
+<td>随机生成一个介于a, b之间小数</td>
+<td>random.uniform(2, 7)</td>
+<td>6.627613954751759</td>
+</tr>
+<tr>
+<td><code>random</code>.<code>randrange</code>(<em>start</em>, <em>stop</em>[, <em>step</em>])<a href="https://docs.python.org/zh-cn/3/library/random.html#random.randrange" target="_blank" rel="noopener">¶</a></td>
+<td>生成随机整数<br><em>start</em>：起始值<br><em>stop</em>：结束值<br><em>step</em>：步进值</td>
+<td>random.randrange(2, 7, 2)</td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>random</code>.<code>randint</code>(<em>a</em>, <em>b</em>)<a href="https://docs.python.org/zh-cn/3/library/random.html#random.randint" target="_blank" rel="noopener">¶</a></td>
+<td>生成a,b之间整数</td>
+<td>random.randint(2, 7)</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>random</code>.<code>choice</code>(<em>seq</em>)<a href="https://docs.python.org/zh-cn/3/library/random.html#random.choice" target="_blank" rel="noopener">¶</a></td>
+<td>从序列中随机选取元素</td>
+<td>random.choice((2, 7, 44))</td>
+<td>44</td>
+</tr>
+<tr>
+<td><code>random.</code>shuffle`(<em>x</em>[, <em>random</em>])<a href="https://docs.python.org/zh-cn/3/library/random.html#random.shuffle" target="_blank" rel="noopener">¶</a></td>
+<td>随机打乱可变序列x，没有返回值。</td>
+<td>l = [2, 7, 44]<br>random.shuffle(l)<br>print(l)</td>
+<td>[7, 44, 2]</td>
+</tr>
+</tbody></table>
+<h2 id="os-—-多种操作系统接口¶"><a href="#os-—-多种操作系统接口¶" class="headerlink" title="os — 多种操作系统接口¶"></a><a href="https://docs.python.org/zh-cn/3/library/os.html#module-os" target="_blank" rel="noopener"><code>os</code></a> — 多种操作系统接口<a href="https://docs.python.org/zh-cn/3/library/os.html#module-os" target="_blank" rel="noopener">¶</a></h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>用途</th>
+<th>示例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>os</code>.<code>getcwd</code>()</td>
+<td>返回当前目录</td>
+<td>os.getcwd()</td>
+<td>/home/zhang/study/test</td>
+</tr>
+<tr>
+<td><code>os</code>.<code>chdir</code>(<em>path</em>)<a href="https://docs.python.org/zh-cn/3/library/os.html#os.chdir" target="_blank" rel="noopener">¶</a></td>
+<td>将工作目录设置为<em>path</em></td>
+<td>os.chdir(‘/home’)</td>
+<td>没有返回值，os.getcwd()会返回 ‘/home’</td>
+</tr>
+<tr>
+<td><code>os</code>.<code>listdir</code>(<em>path=’.’</em>)<a href="https://docs.python.org/zh-cn/3/library/os.html#os.listdir" target="_blank" rel="noopener">¶</a></td>
+<td>返回<em>path</em>下的所有项（文件和文件夹）组成列表。</td>
+<td>os.listdir(‘/home/zhang/‘)</td>
+<td>[‘.vscode’,  ‘test.txt’, ‘.idea’, ‘.pytest_cache’, ‘test.py’]</td>
+</tr>
+<tr>
+<td><code>os</code>.<code>mkdir</code>(<em>path</em>, <em>mode=0o777</em>, <em>, *dir_fd=None</em>)<a href="https://docs.python.org/zh-cn/3/library/os.html#os.mkdir" target="_blank" rel="noopener">¶</a></td>
+<td>在工作目录下创建名为<em>path</em>的文件夹，mode制定权限</td>
+<td>os.mkdir(‘aa’)</td>
+<td>没有返回值，会在工作目录下创建aa文件夹。</td>
+</tr>
+<tr>
+<td><code>os</code>.<code>makedirs</code>(<em>name</em>, <em>mode=0o777</em>, <em>exist_ok=False</em>)<a href="https://docs.python.org/zh-cn/3/library/os.html#os.makedirs" target="_blank" rel="noopener">¶</a></td>
+<td>递归创建目录</td>
+<td>os.makedirs(‘/home/zhang/test’)</td>
+<td>创建test文件夹</td>
+</tr>
+<tr>
+<td><code>os</code>.<code>rmdir</code>(<em>path</em>, <em>, *dir_fd=None</em>)<a href="https://docs.python.org/zh-cn/3/library/os.html#os.rmdir" target="_blank" rel="noopener">¶</a></td>
+<td>删除一个空文件夹</td>
+<td>os.rmdir(‘/home/zhang/test’)</td>
+<td>删除test文件夹</td>
+</tr>
+<tr>
+<td><code>os</code>.<code>removedirs</code>(<em>name</em>)<a href="https://docs.python.org/zh-cn/3/library/os.html#os.removedirs" target="_blank" rel="noopener">¶</a></td>
+<td>递归删除文件夹(非空)</td>
+<td>os.removedirs(‘test/a/b/‘)</td>
+<td>从下向上依次检查删除空目录</td>
+</tr>
+<tr>
+<td><code>os</code>.<code>remove</code>(<em>path</em>, <em>, *dir_fd=None</em>)<a href="https://docs.python.org/zh-cn/3/library/os.html#os.remove" target="_blank" rel="noopener">¶</a></td>
+<td>删除一个文件</td>
+<td>os.remove(‘test.txt’)</td>
+<td>删除test.txt文件</td>
+</tr>
+<tr>
+<td><code>os</code>.<code>rename</code>(<em>src</em>, <em>dst</em>, <em>**, *src_dir_fd=None</em>, <em>dst_dir_fd=None</em>)<a href="https://docs.python.org/zh-cn/3/library/os.html#os.rename" target="_blank" rel="noopener">¶</a></td>
+<td>将<em>src</em>重命名为<em>dst</em>（可可以使文件或者换是文件夹）</td>
+<td>os.rename(‘test.txt’, ‘text1.txt’)</td>
+<td>将<em>src<em>重命名为</em>dst</em></td>
+</tr>
+<tr>
+<td><code>os</code>.<code>system</code>(<em>command</em>)</td>
+<td>执行系统命令</td>
+<td>os.system(‘python’)</td>
+<td>调用python解释器</td>
+</tr>
+</tbody></table>
+<h2 id="os-path-—-常用路径操作¶"><a href="#os-path-—-常用路径操作¶" class="headerlink" title="os.path — 常用路径操作¶"></a><a href="https://docs.python.org/zh-cn/3/library/os.path.html#module-os.path" target="_blank" rel="noopener"><code>os.path</code></a> — 常用路径操作<a href="https://docs.python.org/zh-cn/3/library/os.path.html#module-os.path" target="_blank" rel="noopener">¶</a></h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>用途</th>
+<th>示例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>os.path</code>.<code>abspath</code>(<em>path</em>)<a href="https://docs.python.org/zh-cn/3/library/os.path.html#os.path.abspath" target="_blank" rel="noopener">¶</a></td>
+<td>将相对路径转为绝对路径</td>
+<td>path.abspath(‘.’)</td>
+<td>返回所在目录的就对路径</td>
+</tr>
+<tr>
+<td><code>os.path</code>.<code>basename</code>(<em>path</em>)<a href="https://docs.python.org/zh-cn/3/library/os.path.html#os.path.basename" target="_blank" rel="noopener">¶</a></td>
+<td>返回<em>path</em>的基本名称（/最后的部分）</td>
+<td>path.basename(‘/test/eta/test.txt’)</td>
+<td>test.txt</td>
+</tr>
+<tr>
+<td><code>os.path</code>.<code>join</code>(<em>path</em>, <em>*paths</em>)<a href="https://docs.python.org/zh-cn/3/library/os.path.html#os.path.join" target="_blank" rel="noopener">¶</a></td>
+<td>路径拼接</td>
+<td>path.join(‘home’, ‘zhang’, ‘a’)</td>
+<td>home/zhang/a</td>
+</tr>
+<tr>
+<td><code>os.path</code>.<code>split</code>(<em>path</em>)<a href="https://docs.python.org/zh-cn/3/library/os.path.html#os.path.split" target="_blank" rel="noopener">¶</a></td>
+<td>路径拆分</td>
+<td>path.split(‘/home/zhang/1.txt’)</td>
+<td>(‘/home/zhang’, ‘1.txt’)</td>
+</tr>
+<tr>
+<td><code>os.path</code>.<code>splitext</code>(<em>path</em>)<a href="https://docs.python.org/zh-cn/3/library/os.path.html#os.path.splitext" target="_blank" rel="noopener">¶</a></td>
+<td>拆分文件后缀名</td>
+<td>path.splitext(‘/home/1.txt’)</td>
+<td>(‘/home/zhang/1’, ‘.txt’)</td>
+</tr>
+<tr>
+<td><code>os.path</code>.<code>getsize</code>(<em>path</em>)<a href="https://docs.python.org/zh-cn/3/library/os.path.html#os.path.getsize" target="_blank" rel="noopener">¶</a></td>
+<td>获取文件大小（单位：字节）</td>
+<td>path.getsize(‘test.json’)</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>os.path</code>.<code>isdir</code>(<em>path</em>)<a href="https://docs.python.org/zh-cn/3/library/os.path.html#os.path.isdir" target="_blank" rel="noopener">¶</a></td>
+<td>检测文件夹是否存在</td>
+<td>path.isdir(‘.’)</td>
+<td>True</td>
+</tr>
+<tr>
+<td><code>os.path</code>.<code>isfile</code>(<em>path</em>)<a href="https://docs.python.org/zh-cn/3/library/os.path.html#os.path.isfile" target="_blank" rel="noopener">¶</a></td>
+<td>检测文件是否存在</td>
+<td>path.isfile(‘test.py’)</td>
+<td>True</td>
+</tr>
+<tr>
+<td><code>os.path</code>.<code>exists</code>(<em>path</em>)<a href="https://docs.python.org/zh-cn/3/library/os.path.html#os.path.lexists" target="_blank" rel="noopener">¶</a></td>
+<td>检测一个路径是否存在</td>
+<td>path.exists(‘test.py’)</td>
+<td>True</td>
+</tr>
+<tr>
+<td><code>os.path</code>.<code>samefile</code>(<em>path1</em>, <em>path2</em>)<a href="https://docs.python.org/zh-cn/3/library/os.path.html#os.path.samefile" target="_blank" rel="noopener">¶</a></td>
+<td>判断连个路径是否指向同一个位置</td>
+<td>path.samefile(‘test.py’, ‘/home/zhang/study/test/test.py’)</td>
+<td>True</td>
+</tr>
+<tr>
+<td><code>os.path</code>.<code>getatime</code>(<em>path</em>)<a href="https://docs.python.org/zh-cn/3/library/os.path.html#os.path.getatime" target="_blank" rel="noopener">¶</a></td>
+<td>返回文件最后访问时间</td>
+<td>path.getatime(‘test.py’)</td>
+<td>1586792545.7373118</td>
+</tr>
+<tr>
+<td><code>os.path</code>.<code>getmtime</code>(<em>path</em>)<a href="https://docs.python.org/zh-cn/3/library/os.path.html#os.path.getmtime" target="_blank" rel="noopener">¶</a></td>
+<td>返回文件最后修改时间</td>
+<td>path.getmtime(‘test.py’)</td>
+<td>1586792563.1691456</td>
+</tr>
+<tr>
+<td><code>os.path.``getctime</code>(<em>path</em>)<a href="https://docs.python.org/zh-cn/3/library/os.path.html#os.path.getctime" target="_blank" rel="noopener">¶</a></td>
+<td>返回文件创建时间</td>
+<td>path.getctime(‘test.py’)</td>
+<td>1586792584.7729402</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="zipfile-—-压缩模块"><a href="#zipfile-—-压缩模块" class="headerlink" title="zipfile — 压缩模块"></a><a href="https://docs.python.org/zh-cn/3/library/zipfile.html#module-zipfile" target="_blank" rel="noopener"><code>zipfile</code></a> — 压缩模块</h2><p>ZIP 文件格式是一个常用的归档与压缩标准。 这个模块提供了创建、读取、写入、添加及列出 ZIP 文件的工具。</p>
 <p><strong>语法：</strong> <code>zipfile.``ZipFile</code>(<em>file</em>, <em>mode=’r’</em>, <em>compression=ZIP_STORED</em>, <em>allowZip64=True</em>, <em>compresslevel=None</em>, <em>**, *strict_timestamps=True</em>)</p>
 <p><em>file</em>： 文件路径</p>
 <p><em>mode</em>： 打开模式（r：读取文件，w：写入文件、a：追加写入文件）</p>
 <h3 id="压缩文档"><a href="#压缩文档" class="headerlink" title="压缩文档"></a>压缩文档</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> zipfile
 
+
 <span class="token keyword">with</span> zipfile<span class="token punctuation">.</span>ZipFile<span class="token punctuation">(</span><span class="token string">'test.zip'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> zipf<span class="token punctuation">:</span>
     zipf<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'文件1.xls'</span><span class="token punctuation">)</span>
-    zipf<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'文件2.xls'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    zipf<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'文件2.xls'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>执行以上代码后会创建一个<strong>test.zip</strong>的压缩文件，内容为<strong>文件1</strong>和<strong>文件2</strong></p>
 <h3 id="解压文档"><a href="#解压文档" class="headerlink" title="解压文档"></a>解压文档</h3><p><strong>语法：</strong> <code>ZipFile.``extractall</code>(<em>path=None</em>, <em>members=None</em>, <em>pwd=None</em>)</p>
 <p><em>path</em>：解压文件路径</p>
@@ -976,7 +1246,7 @@ pickle — Python 对象序列化
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">45.8k</span>&nbsp;字
+                class="white-color">46.8k</span>&nbsp;字
             
             
             

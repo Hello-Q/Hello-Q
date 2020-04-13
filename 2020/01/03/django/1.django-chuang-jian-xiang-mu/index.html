@@ -357,12 +357,12 @@ django">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Django/" target="_blank">
-                                <span class="chip bg-color">Django</span>
-                            </a>
-                        
                             <a href="/tags/Python/" target="_blank">
                                 <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                            <a href="/tags/Django/" target="_blank">
+                                <span class="chip bg-color">Django</span>
                             </a>
                         
                             <a href="/tags/基础/" target="_blank">
@@ -436,9 +436,8 @@ django-admin startproject mysite</code></pre><h2 id="运行Django项目"><a href
 <h2 id="创建一个应用"><a href="#创建一个应用" class="headerlink" title="创建一个应用"></a>创建一个应用</h2><p>使用django manage工具创建应用</p>
 <pre><code>python manage.py start app polls</code></pre><h2 id="编写app视图"><a href="#编写app视图" class="headerlink" title="编写app视图"></a>编写app视图</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>http <span class="token keyword">import</span> HttpResponse
 
-
 <span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">"Hello, world. You're at the polls index."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">"Hello, world. You're at the polls index."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="为视图编写路由"><a href="#为视图编写路由" class="headerlink" title="为视图编写路由"></a>为视图编写路由</h3><p>在app的目录下创建urls.py</p>
 <p>编写对应代码<br>*app下的urls.py</p>
 <pre><code>from django.urls import path
@@ -684,12 +683,12 @@ django.db.backends
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Django/" target="_blank">
-                        <span class="chip bg-color">Django</span>
-                    </a>
-                    
                     <a href="/tags/Python/" target="_blank">
                         <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/Django/" target="_blank">
+                        <span class="chip bg-color">Django</span>
                     </a>
                     
                     <a href="/tags/基础/" target="_blank">
@@ -888,7 +887,7 @@ django.db.backends
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">45.8k</span>&nbsp;字
+                class="white-color">46.8k</span>&nbsp;字
             
             
             

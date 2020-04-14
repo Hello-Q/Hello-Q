@@ -6,10 +6,12 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Python-内置模块, Hello-Z">
     <meta name="description" content="
+
+
 内置模块是安装完Python解释器后，系统提供的模块
 
 pickle — Python 对象序列化
-序列化是指可以把Python中的数据，以文本（json）或二进制（pickle）的方式进行转换，并且在需要的时候进行反序列化恢复成原来的P">
+序列化是指可以把Python中的数据，以文本（json）或二进制（pickle）的方式进行转换，并且在需要的时候进行反序列化恢复成原来">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -392,7 +394,7 @@ pickle — Python 对象序列化
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.3k
+                        2.4k
                     </div>
                     
 
@@ -415,7 +417,9 @@ pickle — Python 对象序列化
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
+                <div align="middle"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="420" height="86" src="//music.163.com/outchain/player?type=2&id=86381&auto=1&height=66"></iframe></div>
+
+<blockquote>
 <p>内置模块是安装完Python解释器后，系统提供的模块</p>
 </blockquote>
 <h2 id="pickle-—-Python-对象序列化"><a href="#pickle-—-Python-对象序列化" class="headerlink" title="pickle — Python 对象序列化"></a><a href="https://docs.python.org/zh-cn/3/library/pickle.html#module-pickle" target="_blank" rel="noopener"><code>pickle</code></a> — Python 对象序列化</h2><blockquote>
@@ -766,10 +770,43 @@ ls <span class="token operator">=</span> json<span class="token punctuation">.</
 <td>path.getctime(‘test.py’)</td>
 <td>1586792584.7729402</td>
 </tr>
+</tbody></table>
+<h2 id="time-—-时间的访问和转换¶"><a href="#time-—-时间的访问和转换¶" class="headerlink" title="time — 时间的访问和转换¶"></a><a href="https://docs.python.org/zh-cn/3/library/time.html#module-time" target="_blank" rel="noopener"><code>time</code></a> — 时间的访问和转换<a href="https://docs.python.org/zh-cn/3/library/time.html#module-time" target="_blank" rel="noopener">¶</a></h2><table>
+<thead>
 <tr>
+<th>函数</th>
+<th>用途</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>time</code>.<code>time</code>() → float<a href="https://docs.python.org/zh-cn/3/library/time.html#time.time" target="_blank" rel="noopener">¶</a></td>
+<td>返回以浮点数表示的从 <a href="https://docs.python.org/zh-cn/3/library/time.html#epoch" target="_blank" rel="noopener">epoch</a> 开始的秒数的时间值。</td>
+<td>time.time()</td>
+</tr>
+<tr>
+<td><code>time</code>.<code>ctime</code>([<em>secs</em>])<a href="https://docs.python.org/zh-cn/3/library/time.html#time.ctime" target="_blank" rel="noopener">¶</a></td>
+<td>返回类似<code>&#39;Sun Jun 20 23:21:05 1993&#39;</code>时间字符串，<em>secs</em>为时间戳，为空则默认当前时间。</td>
 <td></td>
+</tr>
+<tr>
+<td><code>time</code>.<code>localtime</code>([<em>secs</em>])<a href="https://docs.python.org/zh-cn/3/library/time.html#time.localtime" target="_blank" rel="noopener">¶</a></td>
+<td>获取时间元组</td>
 <td></td>
+</tr>
+<tr>
+<td><code>time.``strftime</code>(<em>format</em>[, <em>t</em>])<a href="https://docs.python.org/zh-cn/3/library/time.html#time.strftime" target="_blank" rel="noopener">¶</a></td>
+<td>格式化时间格式（具体格式参<a href="!https://docs.python.org/zh-cn/3/library/time.html#time.strftime">官方文档</a>）</td>
 <td></td>
+</tr>
+<tr>
+<td><code>time.``sleep</code>(<em>secs</em>)<a href="https://docs.python.org/zh-cn/3/library/time.html#time.sleep" target="_blank" rel="noopener">¶</a></td>
+<td>暂停程序<em>secs</em>秒</td>
+<td></td>
+</tr>
+<tr>
+<td><code>time.``perf_counter</code>() → float<a href="https://docs.python.org/zh-cn/3/library/time.html#time.perf_counter" target="_blank" rel="noopener">¶</a></td>
+<td>连续调用，计算程序运行时间。</td>
 <td></td>
 </tr>
 </tbody></table>
@@ -1001,47 +1038,44 @@ res <span class="token operator">=</span> shutil<span class="token punctuation">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/03/python/python-nei-zhi-mo-kuai/">
+                <a href="/2020/04/14/python/python-mian-xiang-dui-xiang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Python-内置模块">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Python-面向对象">
                         
-                        <span class="card-title">Python-内置模块</span>
+                        <span class="card-title">Python-面向对象</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-内置模块是安装完Python解释器后，系统提供的模块
-
-pickle — Python 对象序列化
-序列化是指可以把Python中的数据，以文本（json）或二进制（pickle）的方式进行转换，并且在需要的时候进行反序列化恢复成原来的P
+                            面向对象与面向过程的区别面向过程（Procedure Oriented）：以过程为核心，强调事件的流程、顺序
+面向对象（Object Oriented）：以对象为核心，强调事件的角色、主体
+案例小明起床上班这件事；
+从面向过程的角度看就是：
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-03
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-14
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category" target="_blank">
-                                    Python
+                            <a href="/categories/Python学习笔记/" class="post-category" target="_blank">
+                                    Python学习笔记
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1049,8 +1083,12 @@ pickle — Python 对象序列化
                         <span class="chip bg-color">Python</span>
                     </a>
                     
-                    <a href="/tags/学习笔记/" target="_blank">
-                        <span class="chip bg-color">学习笔记</span>
+                    <a href="/tags/面向对象/" target="_blank">
+                        <span class="chip bg-color">面向对象</span>
+                    </a>
+                    
+                    <a href="/tags/高级/" target="_blank">
+                        <span class="chip bg-color">高级</span>
                     </a>
                     
                 </div>
@@ -1246,7 +1284,7 @@ pickle — Python 对象序列化
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">46.8k</span>&nbsp;字
+                class="white-color">47.1k</span>&nbsp;字
             
             
             

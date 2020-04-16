@@ -395,7 +395,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        223
+                        443
                     </div>
                     
 
@@ -437,9 +437,53 @@
 <blockquote>
 <p>刚好与面向过程相反。</p>
 </blockquote>
-<h2 id="创建类"><a href="#创建类" class="headerlink" title="创建类"></a>创建类</h2><blockquote>
-<p>面向对象编程中，用类表示现实世界中的</p>
+<h2 id="面向对象的实现-创建类"><a href="#面向对象的实现-创建类" class="headerlink" title="面向对象的实现 - 创建类"></a>面向对象的实现 - 创建类</h2><blockquote>
+<p>面向对象编程中，用类表示现实世界中的事物和情景</p>
 </blockquote>
+<p>在Python中使用<strong>class</strong>关键字来创建类</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment" spellcheck="true"># 1</span>
+    <span class="token triple-quoted-string string">"""描述小狗的类"""</span>  <span class="token comment" spellcheck="true"># 2</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 3</span>
+        <span class="token triple-quoted-string string">"""初始化属性name和age"""</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name  <span class="token comment" spellcheck="true"># 4</span>
+        self<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+
+    <span class="token keyword">def</span> <span class="token function">sit</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 5</span>
+        <span class="token triple-quoted-string string">"""模拟小狗被命令蹲下"""</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" is now sitting."</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">roll_over</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""模拟小狗打滚"""</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" rolled_over!"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>类的命名：</p>
+<p>类的命名建议使用驼峰命名法</p>
+</li>
+<li><p>类的组成</p>
+<p>属性：一个变量，是类的描述</p>
+<p>方法：一个函数，是类的功能</p>
+</li>
+</ul>
+<h2 id="类的实例化"><a href="#类的实例化" class="headerlink" title="类的实例化"></a>类的实例化</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 变量 = 类名() #实例化了一个对象</span>
+dog <span class="token operator">=</span> Dog<span class="token punctuation">(</span><span class="token string">"willie"</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="访问属性"><a href="#访问属性" class="headerlink" title="访问属性"></a>访问属性</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>dog<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+
+<span class="token operator">>></span><span class="token operator">></span> willie<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="修改属性"><a href="#修改属性" class="headerlink" title="修改属性"></a>修改属性</h3><pre class="line-numbers language-python"><code class="language-python">dog<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'lick'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dog<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+
+<span class="token operator">>></span><span class="token operator">></span> lick<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="调用方法"><a href="#调用方法" class="headerlink" title="调用方法"></a>调用方法</h3><pre class="line-numbers language-python"><code class="language-python">dog<span class="token punctuation">.</span>sit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+dog<span class="token punctuation">.</span>roll_over<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token operator">>></span><span class="token operator">></span> Willie <span class="token keyword">is</span> now sitting<span class="token punctuation">.</span>
+<span class="token operator">>></span><span class="token operator">></span> Willie rolled_over!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="实例化多个对象"><a href="#实例化多个对象" class="headerlink" title="实例化多个对象"></a>实例化多个对象</h3><blockquote>
+<p>可以实例化多个类，每个对象都是一个单独的个体</p>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python">my_dog <span class="token operator">=</span> Dog<span class="token punctuation">(</span><span class="token string">"willie"</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+your_dog <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">"lick"</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -870,7 +914,7 @@ pickle — Python 对象序列化
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">47.1k</span>&nbsp;字
+                class="white-color">47.3k</span>&nbsp;字
             
             
             

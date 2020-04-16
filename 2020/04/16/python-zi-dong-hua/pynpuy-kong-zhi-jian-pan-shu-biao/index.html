@@ -4,11 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Python-面向对象, Hello-Z">
-    <meta name="description" content="面向对象与面向过程的区别面向过程（Procedure Oriented）：以过程为核心，强调事件的流程、顺序
-面向对象（Object Oriented）：以对象为核心，强调事件的角色、主体
-案例小明起床上班这件事；
-从面向过程的角度看就是：">
+    <meta name="keywords" content="pynpuy-控制键盘鼠标, Hello-Z">
+    <meta name="description" content="控制鼠标与监听#-*- coding:utf-8 -*-
+from pynput.mouse import Button, Controller
+
+
+## ==========================================">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Python-面向对象 | Hello-Z</title>
+    <title>pynpuy-控制键盘鼠标 | Hello-Z</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -239,13 +240,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Python-面向对象
+                        pynpuy-控制键盘鼠标
                     </div>
                 </div>
             </div>
@@ -360,12 +361,8 @@
                                 <span class="chip bg-color">Python</span>
                             </a>
                         
-                            <a href="/tags/面向对象/" target="_blank">
-                                <span class="chip bg-color">面向对象</span>
-                            </a>
-                        
-                            <a href="/tags/高级/" target="_blank">
-                                <span class="chip bg-color">高级</span>
+                            <a href="/tags/自动化/" target="_blank">
+                                <span class="chip bg-color">自动化</span>
                             </a>
                         
                     </div>
@@ -376,8 +373,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Python学习笔记/" class="post-category" target="_blank">
-                                Python学习笔记
+                            <a href="/categories/Python/" class="post-category" target="_blank">
+                                Python
                             </a>
                         
                     </div>
@@ -388,21 +385,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-14
+                    2020-04-16
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        443
+                        571
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -418,72 +415,100 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="面向对象与面向过程的区别"><a href="#面向对象与面向过程的区别" class="headerlink" title="面向对象与面向过程的区别"></a>面向对象与面向过程的区别</h2><p>面向过程（Procedure Oriented）：以<strong>过程</strong>为核心，强调<strong>事件的流程、顺序</strong></p>
-<p>面向对象（Object Oriented）：以<strong>对象</strong>为核心，强调<strong>事件的角色、主体</strong></p>
-<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>小明起床上班这件事；</p>
-<p>从面向过程的角度看就是：1、起床；2、刷牙洗脸；3、开车上班。</p>
-<p>从面向对象的角度看就是：主人公：小明；拥有的财产：床、牙刷、车；小明可以做什么：从床上站起来、刷牙、开车。</p>
-<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><h3 id="面向过程"><a href="#面向过程" class="headerlink" title="面向过程"></a>面向过程</h3><ul>
-<li>优点：将问题流程化，简单化</li>
-<li>缺点：扩展性差（更新、维护、升级）</li>
-</ul>
-<blockquote>
-<p>适合简单的一次性任务、脚本</p>
-</blockquote>
-<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><ul>
-<li>优点：扩拓展性高</li>
-<li>缺点：编程复杂度相对高。</li>
-</ul>
-<blockquote>
-<p>刚好与面向过程相反。</p>
-</blockquote>
-<h2 id="面向对象的实现-创建类"><a href="#面向对象的实现-创建类" class="headerlink" title="面向对象的实现 - 创建类"></a>面向对象的实现 - 创建类</h2><blockquote>
-<p>面向对象编程中，用类表示现实世界中的事物和情景</p>
-</blockquote>
-<p>在Python中使用<strong>class</strong>关键字来创建类</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment" spellcheck="true"># 1</span>
-    <span class="token triple-quoted-string string">"""描述小狗的类"""</span>  <span class="token comment" spellcheck="true"># 2</span>
+                <h2 id="控制鼠标与监听"><a href="#控制鼠标与监听" class="headerlink" title="控制鼠标与监听"></a>控制鼠标与监听</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#-*- coding:utf-8 -*-</span>
+<span class="token keyword">from</span> pynput<span class="token punctuation">.</span>mouse <span class="token keyword">import</span> Button<span class="token punctuation">,</span> Controller
 
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 3</span>
-        <span class="token triple-quoted-string string">"""初始化属性name和age"""</span>
-        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name  <span class="token comment" spellcheck="true"># 4</span>
-        self<span class="token punctuation">.</span>age <span class="token operator">=</span> age
 
-    <span class="token keyword">def</span> <span class="token function">sit</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 5</span>
-        <span class="token triple-quoted-string string">"""模拟小狗被命令蹲下"""</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" is now sitting."</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">## ================================================</span>
+<span class="token comment" spellcheck="true">##              控制鼠标</span>
+<span class="token comment" spellcheck="true">## ================================================</span>
+<span class="token comment" spellcheck="true"># 读鼠标坐标</span>
+mouse <span class="token operator">=</span> Controller<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'The current pointer position is {0}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>mouse<span class="token punctuation">.</span>position<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 设置鼠标坐标</span>
+mouse<span class="token punctuation">.</span>position <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Now we have moved it to {0}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>mouse<span class="token punctuation">.</span>position<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 移动鼠标到相对位置</span>
+mouse<span class="token punctuation">.</span>move<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 按住和放开鼠标</span>
+mouse<span class="token punctuation">.</span>press<span class="token punctuation">(</span>Button<span class="token punctuation">.</span>left<span class="token punctuation">)</span>        <span class="token comment" spellcheck="true"># 按住鼠标左键</span>
+mouse<span class="token punctuation">.</span>release<span class="token punctuation">(</span>Button<span class="token punctuation">.</span>left<span class="token punctuation">)</span>      <span class="token comment" spellcheck="true"># 放开鼠标左键</span>
+<span class="token comment" spellcheck="true"># 点击鼠标</span>
+mouse<span class="token punctuation">.</span>click<span class="token punctuation">(</span>Button<span class="token punctuation">.</span>left<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>     <span class="token comment" spellcheck="true"># 点击鼠标2下</span>
+<span class="token comment" spellcheck="true"># 鼠标滚轮</span>
+mouse<span class="token punctuation">.</span>scroll<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>              <span class="token comment" spellcheck="true"># 滚动鼠标</span>
 
-    <span class="token keyword">def</span> <span class="token function">roll_over</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""模拟小狗打滚"""</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" rolled_over!"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li><p>类的命名：</p>
-<p>类的命名建议使用驼峰命名法</p>
-</li>
-<li><p>类的组成</p>
-<p>属性：一个变量，是类的描述</p>
-<p>方法：一个函数，是类的功能</p>
-</li>
-</ul>
-<h2 id="类的实例化"><a href="#类的实例化" class="headerlink" title="类的实例化"></a>类的实例化</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 变量 = 类名() #实例化了一个对象</span>
-dog <span class="token operator">=</span> Dog<span class="token punctuation">(</span><span class="token string">"willie"</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="访问属性"><a href="#访问属性" class="headerlink" title="访问属性"></a>访问属性</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>dog<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">## 监听鼠标</span>
+<span class="token keyword">from</span> pynput<span class="token punctuation">.</span>mouse <span class="token keyword">import</span> Listener
 
-<span class="token operator">>></span><span class="token operator">></span> willie<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="修改属性"><a href="#修改属性" class="headerlink" title="修改属性"></a>修改属性</h3><pre class="line-numbers language-python"><code class="language-python">dog<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'lick'</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>dog<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">on_move</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 监听鼠标移动</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Pointer moved to {0}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-<span class="token operator">>></span><span class="token operator">></span> lick<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="调用方法"><a href="#调用方法" class="headerlink" title="调用方法"></a>调用方法</h3><pre class="line-numbers language-python"><code class="language-python">dog<span class="token punctuation">.</span>sit<span class="token punctuation">(</span><span class="token punctuation">)</span>
-dog<span class="token punctuation">.</span>roll_over<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">on_click</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> button<span class="token punctuation">,</span> pressed<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 监听鼠标点击</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'{0} at {1}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span><span class="token string">'Pressed'</span> <span class="token keyword">if</span> pressed <span class="token keyword">else</span> <span class="token string">'Released'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token operator">not</span> pressed<span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># Stop listener</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span>
 
-<span class="token operator">>></span><span class="token operator">></span> Willie <span class="token keyword">is</span> now sitting<span class="token punctuation">.</span>
-<span class="token operator">>></span><span class="token operator">></span> Willie rolled_over!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="实例化多个对象"><a href="#实例化多个对象" class="headerlink" title="实例化多个对象"></a>实例化多个对象</h3><blockquote>
-<p>可以实例化多个类，每个对象都是一个单独的个体</p>
-</blockquote>
-<pre class="line-numbers language-python"><code class="language-python">my_dog <span class="token operator">=</span> Dog<span class="token punctuation">(</span><span class="token string">"willie"</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
-your_dog <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">"lick"</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<span class="token keyword">def</span> <span class="token function">on_scroll</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> dx<span class="token punctuation">,</span> dy<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 监听鼠标滚轮</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Scrolled {0}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 连接事件以及释放</span>
+<span class="token keyword">with</span> Listener<span class="token punctuation">(</span>on_move<span class="token operator">=</span>on_move<span class="token punctuation">,</span> on_click<span class="token operator">=</span>on_click<span class="token punctuation">,</span> on_scroll<span class="token operator">=</span>on_scroll<span class="token punctuation">)</span> <span class="token keyword">as</span> listener<span class="token punctuation">:</span>
+    listener<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 一个鼠标监听器是一个线程。线程，所有的回调将从线程调用。从任何地方调用pynput.mouse.Listener.stop，或者调用pynput.mouse.Listener.StopException或从回调中返回False来停止监听器。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="控制键盘与监听"><a href="#控制键盘与监听" class="headerlink" title="控制键盘与监听"></a>控制键盘与监听</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">## ================================================</span>
+<span class="token comment" spellcheck="true">##              控制键盘</span>
+<span class="token comment" spellcheck="true">## ================================================</span>
+<span class="token keyword">from</span> pynput<span class="token punctuation">.</span>keyboard <span class="token keyword">import</span> Key<span class="token punctuation">,</span> Controller
+
+keyboard <span class="token operator">=</span> Controller<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 按键盘和释放键盘</span>
+keyboard<span class="token punctuation">.</span>press<span class="token punctuation">(</span>Key<span class="token punctuation">.</span>space<span class="token punctuation">)</span>
+keyboard<span class="token punctuation">.</span>release<span class="token punctuation">(</span>Key<span class="token punctuation">.</span>space<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 按小写的a</span>
+keyboard<span class="token punctuation">.</span>press<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span>
+keyboard<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 按大写的A</span>
+keyboard<span class="token punctuation">.</span>press<span class="token punctuation">(</span><span class="token string">'A'</span><span class="token punctuation">)</span>
+keyboard<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token string">'A'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 按住shift在按a</span>
+<span class="token keyword">with</span> keyboard<span class="token punctuation">.</span>pressed<span class="token punctuation">(</span>Key<span class="token punctuation">.</span>shift<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># Key.shift_l, Key.shift_r, Key.shift</span>
+    keyboard<span class="token punctuation">.</span>press<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span>
+    keyboard<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 直接输入Hello World</span>
+keyboard<span class="token punctuation">.</span>type<span class="token punctuation">(</span><span class="token string">'Hello World'</span><span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true">## 监听键盘</span>
+<span class="token keyword">from</span> pynput<span class="token punctuation">.</span>keyboard <span class="token keyword">import</span> Key<span class="token punctuation">,</span> Listener
+
+<span class="token keyword">def</span> <span class="token function">on_press</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 监听按键</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'{0} pressed'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">on_release</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 监听释放</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'{0} release'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> key <span class="token operator">==</span> Key<span class="token punctuation">.</span>esc<span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># Stop listener</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span>
+
+<span class="token comment" spellcheck="true"># 连接事件以及释放</span>
+<span class="token keyword">with</span> Listener<span class="token punctuation">(</span>on_press<span class="token operator">=</span>on_press<span class="token punctuation">,</span> on_release<span class="token operator">=</span>on_release<span class="token punctuation">)</span> <span class="token keyword">as</span> listener<span class="token punctuation">:</span>
+    listener<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>一个鼠标监听器是一个线程。线程，所有的回调将从线程调用。从任何地方调用pynput.mouse.Listener.stop，或者调用pynput.mouse.Listener.StopException或从回调中返回False来停止监听器。</p>
+<p>作者：longgb246<br>链接：<a href="https://www.jianshu.com/p/b80523ca388c" target="_blank" rel="noopener">https://www.jianshu.com/p/b80523ca388c</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p>对于鼠标来说，api就上面几个。但是对于键盘来说还要别的，详细的查看：<a href="https://pythonhosted.org/pynput/index.html" target="_blank" rel="noopener">https://pythonhosted.org/pynput/index.html</a></p>
+<p>转载自<strong>简书-<a href="https://www.jianshu.com/u/c30b3a73f940" target="_blank" rel="noopener">longgb246</a></strong></p>
 
             </div>
             <hr/>
@@ -645,9 +670,10 @@ your_dog <span class="token operator">=</span> <span class="token punctuation">(
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/04/16/python-zi-dong-hua/pynpuy-kong-zhi-jian-pan-shu-biao/">
                     <div class="card-image">
@@ -669,9 +695,9 @@ from pynput.mouse import Button, Controller
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -684,6 +710,7 @@ from pynput.mouse import Button, Controller
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -706,37 +733,34 @@ from pynput.mouse import Button, Controller
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/03/python/python-nei-zhi-mo-kuai/">
+                <a href="/2020/04/14/python/python-mian-xiang-dui-xiang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Python-内置模块">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Python-面向对象">
                         
-                        <span class="card-title">Python-内置模块</span>
+                        <span class="card-title">Python-面向对象</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-
-
-内置模块是安装完Python解释器后，系统提供的模块
-
-pickle — Python 对象序列化
-序列化是指可以把Python中的数据，以文本（json）或二进制（pickle）的方式进行转换，并且在需要的时候进行反序列化恢复成原来
+                            面向对象与面向过程的区别面向过程（Procedure Oriented）：以过程为核心，强调事件的流程、顺序
+面向对象（Object Oriented）：以对象为核心，强调事件的角色、主体
+案例小明起床上班这件事；
+从面向过程的角度看就是：
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-03
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category" target="_blank">
-                                    Python
+                            <a href="/categories/Python学习笔记/" class="post-category" target="_blank">
+                                    Python学习笔记
                                 </a>
                             
                             
@@ -750,8 +774,12 @@ pickle — Python 对象序列化
                         <span class="chip bg-color">Python</span>
                     </a>
                     
-                    <a href="/tags/学习笔记/" target="_blank">
-                        <span class="chip bg-color">学习笔记</span>
+                    <a href="/tags/面向对象/" target="_blank">
+                        <span class="chip bg-color">面向对象</span>
+                    </a>
+                    
+                    <a href="/tags/高级/" target="_blank">
+                        <span class="chip bg-color">高级</span>
                     </a>
                     
                 </div>

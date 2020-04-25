@@ -638,22 +638,23 @@ search_fields <span class="token operator">=</span> <span class="token punctuati
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/01/11/django/django-tuo-zhan-user-mo-xing/">
+                <a href="/2020/01/11/django/django-lian-jie-mysql/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Django-拓展User模型">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Django-连接Mysql">
                         
-                        <span class="card-title">Django-拓展User模型</span>
+                        <span class="card-title">Django-连接Mysql</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            继承AbstractUser编写用户拓展模型models.py
-from django.db import models
-from django.contrib.auth.models import AbstractUser
-# Creat
+                            使用pymysqlPython3.5+并不支持MySQLdb，使用MySql可以使用pymysql代替
+安装pip install pymysqldjango配置在项目的init.py 文件中
+import pymysql
+
+pymysql
                         
                     </div>
                     <div class="publish-info">
@@ -675,12 +676,20 @@ from django.contrib.auth.models import AbstractUser
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Django/" target="_blank">
-                        <span class="chip bg-color">Django</span>
-                    </a>
-                    
                     <a href="/tags/Python/" target="_blank">
                         <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/配置/" target="_blank">
+                        <span class="chip bg-color">配置</span>
+                    </a>
+                    
+                    <a href="/tags/DJango/" target="_blank">
+                        <span class="chip bg-color">DJango</span>
+                    </a>
+                    
+                    <a href="/tags/Mysql/" target="_blank">
+                        <span class="chip bg-color">Mysql</span>
                     </a>
                     
                 </div>
@@ -906,7 +915,7 @@ from django.contrib.auth.models import AbstractUser
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">47.9k</span>&nbsp;字
+                class="white-color">49.9k</span>&nbsp;字
             
             
             

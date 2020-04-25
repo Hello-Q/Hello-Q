@@ -4,9 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Python-数据类型-通用操作、迭代器与生成器, Hello-Z">
-    <meta name="description" content="通用序列操作不可变、可变序列通用操作大多数序列类型，包括可变类型和不可变类型都支持下表中的操作。 collections.abc.Sequence ABC 被提供用来更容易地在自定义序列类型上正确地实现这些操作。
-此表按优先级升序列出了序列">
+    <meta name="keywords" content="Django-连接Mysql, Hello-Z">
+    <meta name="description" content="使用pymysqlPython3.5+并不支持MySQLdb，使用MySql可以使用pymysql代替
+安装pip install pymysqldjango配置在项目的init.py 文件中
+import pymysql
+
+pymysql">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Python-数据类型-通用操作、迭代器与生成器 | Hello-Z</title>
+    <title>Django-连接Mysql | Hello-Z</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -237,13 +240,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Python-数据类型-通用操作、迭代器与生成器
+                        Django-连接Mysql
                     </div>
                 </div>
             </div>
@@ -352,12 +355,37 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python/" target="_blank">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                            <a href="/tags/配置/" target="_blank">
+                                <span class="chip bg-color">配置</span>
+                            </a>
+                        
+                            <a href="/tags/DJango/" target="_blank">
+                                <span class="chip bg-color">DJango</span>
+                            </a>
+                        
+                            <a href="/tags/Mysql/" target="_blank">
+                                <span class="chip bg-color">Mysql</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Django/" class="post-category" target="_blank">
+                                Django
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -365,21 +393,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-22
+                    2020-01-11
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.5k
+                        60
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        1 分
                     </div>
                     
                 
@@ -395,226 +423,12 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="通用序列操作"><a href="#通用序列操作" class="headerlink" title="通用序列操作"></a>通用序列操作</h2><h3 id="不可变、可变序列通用操作"><a href="#不可变、可变序列通用操作" class="headerlink" title="不可变、可变序列通用操作"></a>不可变、可变序列通用操作</h3><p>大多数序列类型，包括可变类型和不可变类型都支持下表中的操作。 <a href="https://docs.python.org/zh-cn/3/library/collections.abc.html#collections.abc.Sequence" target="_blank" rel="noopener"><code>collections.abc.Sequence</code></a> ABC 被提供用来更容易地在自定义序列类型上正确地实现这些操作。</p>
-<p>此表按优先级升序列出了序列操作。 在表格中，<em>s</em> 和 <em>t</em> 是具有相同类型的序列，<em>n</em>, <em>i</em>, <em>j</em> 和 <em>k</em> 是整数而 <em>x</em> 是任何满足 <em>s</em> 所规定的类型和值限制的任意对象。</p>
-<p><code>in</code> 和 <code>not in</code> 操作具有与比较操作相同的优先级。 <code>+</code> (拼接) 和 <code>*</code> (重复) 操作具有与对应数值运算相同的优先级。</p>
-<table>
-<thead>
-<tr>
-<th align="left">运算</th>
-<th align="center">结果</th>
-<th align="left">注释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>x in s</code></td>
-<td align="center">如果 <em>s</em> 中的某项等于 <em>x</em> 则结果为 <code>True</code>，否则为 <code>False</code></td>
-<td align="left">(1)</td>
-</tr>
-<tr>
-<td align="left"><code>x not in s</code></td>
-<td align="center">如果 <em>s</em> 中的某项等于 <em>x</em> 则结果为 <code>False</code>，否则为 <code>True</code></td>
-<td align="left">(1)</td>
-</tr>
-<tr>
-<td align="left"><code>s + t</code></td>
-<td align="center"><em>s</em> 与 <em>t</em> 相拼接</td>
-<td align="left">(6)(7)</td>
-</tr>
-<tr>
-<td align="left"><code>s * n</code> 或 <code>n * s</code></td>
-<td align="center">相当于 <em>s</em> 与自身进行 <em>n</em> 次拼接</td>
-<td align="left">(2)(7)</td>
-</tr>
-<tr>
-<td align="left"><code>s[i]</code></td>
-<td align="center"><em>s</em> 的第 <em>i</em> 项，起始为 0</td>
-<td align="left">(3)</td>
-</tr>
-<tr>
-<td align="left"><code>s[i:j]</code></td>
-<td align="center"><em>s</em> 从 <em>i</em> 到 <em>j</em> 的切片</td>
-<td align="left">(3)(4)</td>
-</tr>
-<tr>
-<td align="left"><code>s[i:j:k]</code></td>
-<td align="center"><em>s</em> 从 <em>i</em> 到 <em>j</em> 步长为 <em>k</em> 的切片</td>
-<td align="left">(3)(5)</td>
-</tr>
-<tr>
-<td align="left"><code>len(s)</code></td>
-<td align="center"><em>s</em> 的长度</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><code>min(s)</code></td>
-<td align="center"><em>s</em> 的最小项</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><code>max(s)</code></td>
-<td align="center"><em>s</em> 的最大项</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><code>s.index(x[, i[, j]])</code></td>
-<td align="center"><em>x</em> 在 <em>s</em> 中首次出现项的索引号（索引号在 <em>i</em> 或其后且在 <em>j</em> 之前）</td>
-<td align="left">(8)</td>
-</tr>
-<tr>
-<td align="left"><code>s.count(x)</code></td>
-<td align="center"><em>x</em> 在 <em>s</em> 中出现的总次数</td>
-<td align="left"></td>
-</tr>
-</tbody></table>
-<h3 id="可变序列通用操作"><a href="#可变序列通用操作" class="headerlink" title="可变序列通用操作"></a>可变序列通用操作</h3><p>以下表格中的操作是在可变序列类型上定义的。 </p>
-<p>表格中的 <em>s</em> 是可变序列类型的实例，<em>t</em> 是任意可迭代对象，而 <em>x</em> 是符合对 <em>s</em> 所规定类型与值限制的任何对象 (例如，<a href="https://docs.python.org/zh-cn/3/library/stdtypes.html?highlight=count#bytearray" target="_blank" rel="noopener"><code>bytearray</code></a> 仅接受满足 <code>0 &lt;= x &lt;= 255</code> 值限制的整数)。</p>
-<table>
-<thead>
-<tr>
-<th align="left">运算</th>
-<th align="left">结果</th>
-<th align="left">注释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>s[i] = x</code></td>
-<td align="left">将 <em>s</em> 的第 <em>i</em> 项替换为 <em>x</em></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><code>s[i:j] = t</code></td>
-<td align="left">将 <em>s</em> 从 <em>i</em> 到 <em>j</em> 的切片替换为可迭代对象 <em>t</em> 的内容</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><code>del s[i:j]</code></td>
-<td align="left">等同于 <code>s[i:j] = []</code></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><code>s[i:j:k] = t</code></td>
-<td align="left">将 <code>s[i:j:k]</code> 的元素替换为 <em>t</em> 的元素</td>
-<td align="left">(1)</td>
-</tr>
-<tr>
-<td align="left"><code>del s[i:j:k]</code></td>
-<td align="left">从列表中移除 <code>s[i:j:k]</code> 的元素</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><code>s.append(x)</code></td>
-<td align="left">将 <em>x</em> 添加到序列的末尾 (等同于 <code>s[len(s):len(s)] = [x]</code>)</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><code>s.clear()</code></td>
-<td align="left">从 <em>s</em> 中移除所有项 (等同于 <code>del s[:]</code>)</td>
-<td align="left">(5)</td>
-</tr>
-<tr>
-<td align="left"><code>s.copy()</code></td>
-<td align="left">创建 <em>s</em> 的浅拷贝 (等同于 <code>s[:]</code>)</td>
-<td align="left">(5)</td>
-</tr>
-<tr>
-<td align="left"><code>s.extend(t)</code> 或 <code>s += t</code></td>
-<td align="left">用 <em>t</em> 的内容扩展 <em>s</em> (基本上等同于 <code>s[len(s):len(s)] = t</code>)</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><code>s *= n</code></td>
-<td align="left">使用 <em>s</em> 的内容重复 <em>n</em> 次来对其进行更新</td>
-<td align="left">(6)</td>
-</tr>
-<tr>
-<td align="left"><code>s.insert(i, x)</code></td>
-<td align="left">在由 <em>i</em> 给出的索引位置将 <em>x</em> 插入 <em>s</em> (等同于 <code>s[i:i] = [x]</code>)</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><code>s.pop([i])</code></td>
-<td align="left">提取在 <em>i</em> 位置上的项，并将其从 <em>s</em> 中移除</td>
-<td align="left">(2)</td>
-</tr>
-<tr>
-<td align="left"><code>s.remove(x)</code></td>
-<td align="left">删除 <em>s</em> 中第一个 <code>s[i]</code> 等于 <em>x</em> 的项目。</td>
-<td align="left">(3)</td>
-</tr>
-<tr>
-<td align="left"><code>s.reverse()</code></td>
-<td align="left">就地将列表中的元素逆序。</td>
-<td align="left">(4)</td>
-</tr>
-</tbody></table>
-<p>注释:</p>
-<ol>
-<li><p><em>t</em> 必须与它所替换的切片具有相同的长度。</p>
-</li>
-<li><p>可选参数 <em>i</em> 默认为 <code>-1</code>，因此在默认情况下会移除并返回最后一项。</p>
-</li>
-<li><p>当在 <em>s</em> 中找不到 <em>x</em> 时 <code>remove()</code> 操作会引发 <a href="https://docs.python.org/zh-cn/3/library/exceptions.html#ValueError" target="_blank" rel="noopener"><code>ValueError</code></a>。</p>
-</li>
-<li><p>当反转大尺寸序列时 <code>reverse()</code> 方法会原地修改该序列以保证空间经济性。 为提醒用户此操作是通过间接影响进行的，它并不会返回反转后的序列。</p>
-</li>
-<li><p>包括 <code>clear()</code> 和 <code>copy()</code> 是为了与不支持切片操作的可变容器 (例如 <a href="https://docs.python.org/zh-cn/3/library/stdtypes.html?highlight=count#dict" target="_blank" rel="noopener"><code>dict</code></a> 和 <a href="https://docs.python.org/zh-cn/3/library/stdtypes.html?highlight=count#set" target="_blank" rel="noopener"><code>set</code></a>) 的接口保持一致。 <code>copy()</code> 不是 <a href="https://docs.python.org/zh-cn/3/library/collections.abc.html#collections.abc.MutableSequence" target="_blank" rel="noopener"><code>collections.abc.MutableSequence</code></a> ABC 的一部分，但大多数具体的可变序列类都提供了它。</p>
-<p><em>3.3 新版功能:</em> <code>clear()</code> 和 <code>copy()</code> 方法。</p>
-</li>
-<li><p><em>n</em> 值为一个整数，或是一个实现了 <a href="https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__index__" target="_blank" rel="noopener"><code>__index__()</code></a> 的对象。 <em>n</em> 值为零或负数将清空序列。 序列中的项不会被拷贝；它们会被多次引用，正如 <a href="https://docs.python.org/zh-cn/3/library/stdtypes.html?highlight=count#typesseq-common" target="_blank" rel="noopener">通用序列操作</a> 中有关 <code>s * n</code> 的说明。</p>
-</li>
-</ol>
-<h2 id="迭代器与生成器"><a href="#迭代器与生成器" class="headerlink" title="迭代器与生成器"></a>迭代器与生成器</h2><h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><p>迭代器是一个能记住遍历位置的对象。</p>
-<p>迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束。迭代器只能往前不会后退。</p>
-<p>迭代器有两个基本的方法：<strong>iter()</strong> 和 <strong>next()</strong>。</p>
-<p>字符串，列表或元组对象都可用于创建迭代器：</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
-<span class="token operator">>></span><span class="token operator">></span> it <span class="token operator">=</span> iter<span class="token punctuation">(</span>list<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 创建迭代器对象</span>
-<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span> <span class="token punctuation">(</span>next<span class="token punctuation">(</span>it<span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 输出迭代器的下一个元素</span>
-<span class="token number">1</span>
-<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span> <span class="token punctuation">(</span>next<span class="token punctuation">(</span>it<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>迭代器对象可以使用常规for语句进行遍历：</p>
-<pre class="line-numbers language-python"><code class="language-python">list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
-it <span class="token operator">=</span> iter<span class="token punctuation">(</span>list<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 创建迭代器对象</span>
-<span class="token keyword">for</span> x <span class="token keyword">in</span> it<span class="token punctuation">:</span>
-    <span class="token keyword">print</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>
+                <h2 id="使用pymysql"><a href="#使用pymysql" class="headerlink" title="使用pymysql"></a>使用pymysql</h2><p>Python3.5+并不支持MySQLdb，使用MySql可以使用pymysql代替</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre><code>pip install pymysql</code></pre><h3 id="django配置"><a href="#django配置" class="headerlink" title="django配置"></a>django配置</h3><p>在项目的<strong>init</strong>.py 文件中</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> pymysql
 
-<span class="token operator">>></span><span class="token operator">></span> <span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>也可以使用 next() 函数：</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> sys         <span class="token comment" spellcheck="true"># 引入 sys 模块</span>
-<span class="token operator">>></span><span class="token operator">></span>  
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
-<span class="token operator">>></span><span class="token operator">></span> it <span class="token operator">=</span> iter<span class="token punctuation">(</span>list<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 创建迭代器对象</span>
-<span class="token operator">>></span><span class="token operator">></span>  
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>next<span class="token punctuation">(</span>it<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">', '</span><span class="token punctuation">)</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>      
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> 
-<span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3><p>在 Python 中，使用了 yield 的函数被称为生成器（generator）。</p>
-<p>跟普通函数不同的是，生成器是一个返回迭代器的函数，只能用于迭代操作，更简单点理解生成器就是一个迭代器。</p>
-<p>在调用生成器运行的过程中，每次遇到 yield 时函数会暂停并保存当前所有的运行信息，返回 yield 的值, 并在下一次执行 next() 方法时从当前位置继续运行。</p>
-<p>调用一个生成器函数，返回的是一个迭代器对象。</p>
-<p>以下实例使用 yield 实现斐波那契数列：</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> sys
-
-<span class="token keyword">def</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 生成器函数 - 斐波那契</span>
-    a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> counter <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span>
-    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>counter <span class="token operator">></span> n<span class="token punctuation">)</span><span class="token punctuation">:</span> 
-            <span class="token keyword">return</span>
-        <span class="token keyword">yield</span> a
-        a<span class="token punctuation">,</span> b <span class="token operator">=</span> b<span class="token punctuation">,</span> a <span class="token operator">+</span> b
-        counter <span class="token operator">+=</span> <span class="token number">1</span>
-f <span class="token operator">=</span> fibonacci<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># f 是一个迭代器，由生成器返回生成</span>
-
-<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-    <span class="token keyword">try</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span> <span class="token punctuation">(</span>next<span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>
-    <span class="token keyword">except</span> StopIteration<span class="token punctuation">:</span>
-        sys<span class="token punctuation">.</span>exit<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><code>0 1 1 2 3 5 8 13 21 34 55</code></p>
+pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="使用mysql-connector-python"><a href="#使用mysql-connector-python" class="headerlink" title="使用mysql-connector-python"></a>使用mysql-connector-python</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><pre><code>pip install mysql-connector-python</code></pre><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>修改’ENGINE’配置项，’ENGINE’:’mysql.connector.django’,</p>
 
             </div>
             <hr/>
@@ -780,37 +594,34 @@ f <span class="token operator">=</span> fibonacci<span class="token punctuation"
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/03/python/python-nei-zhi-mo-kuai/">
+                <a href="/2020/01/11/django/django-tuo-zhan-user-mo-xing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Python-内置模块">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Django-拓展User模型">
                         
-                        <span class="card-title">Python-内置模块</span>
+                        <span class="card-title">Django-拓展User模型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-
-
-内置模块是安装完Python解释器后，系统提供的模块
-
-pickle — Python 对象序列化
-序列化是指可以把Python中的数据，以文本（json）或二进制（pickle）的方式进行转换，并且在需要的时候进行反序列化恢复成原来
+                            继承AbstractUser编写用户拓展模型models.py
+from django.db import models
+from django.contrib.auth.models import AbstractUser
+# Creat
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-03
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-11
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category" target="_blank">
-                                    Python
+                            <a href="/categories/Django/" class="post-category" target="_blank">
+                                    Django
                                 </a>
                             
                             
@@ -820,12 +631,12 @@ pickle — Python 对象序列化
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/" target="_blank">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/Django/" target="_blank">
+                        <span class="chip bg-color">Django</span>
                     </a>
                     
-                    <a href="/tags/学习笔记/" target="_blank">
-                        <span class="chip bg-color">学习笔记</span>
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -839,50 +650,36 @@ pickle — Python 对象序列化
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/26/linux/centos7-pei-zhi-fang-huo-qiang/">
+                <a href="/2020/01/09/django/7-djano-zi-ding-yi-admin-zhan-dian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="centos7配置防火墙">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="7-Djano-自定义Admin站点">
                         
-                        <span class="card-title">centos7配置防火墙</span>
+                        <span class="card-title">7-Djano-自定义Admin站点</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            查看firewall服务状态systemctl status firewalld
-● firewalld.service - firewalld - dynamic firewall daemon
-   Loaded: loaded (/u
+                            Django,入门,Python
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-26
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category" target="_blank">
-                                    Linux
+                            <a href="/categories/Django/" class="post-category" target="_blank">
+                                    Django
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Linux/" target="_blank">
-                        <span class="chip bg-color">Linux</span>
-                    </a>
-                    
-                    <a href="/tags/firewall/" target="_blank">
-                        <span class="chip bg-color">firewall</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1038,7 +835,7 @@ pickle — Python 对象序列化
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">47.9k</span>&nbsp;字
+                class="white-color">49.9k</span>&nbsp;字
             
             
             

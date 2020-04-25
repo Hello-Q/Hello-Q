@@ -4,11 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello-Z">
-    <meta name="description" content="
-title: Django-连接Mysqldate: 2020-1-11 14:57:51top: falsecover: falsepassword:toc: truemathjax: truesummary:tags:
-
-DJango">
+    <meta name="keywords" content="Python-迭代器与生成器, Hello-Z">
+    <meta name="description" content="迭代器与生成器迭代器迭代器是一个能记住遍历位置的对象。
+迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束。迭代器只能往前不会后退。
+迭代器有两个基本的方法：iter() 和 next()。
+字符串，列表或元组对象都可用于创建">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@ DJango">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello-Z</title>
+    <title>Python-迭代器与生成器 | Hello-Z</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -239,13 +239,13 @@ DJango">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        
+                        Python-迭代器与生成器
                     </div>
                 </div>
             </div>
@@ -367,14 +367,14 @@ DJango">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-16
+                    2020-04-23
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        84
+                        461
                     </div>
                     
 
@@ -397,22 +397,58 @@ DJango">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<p>title: Django-连接Mysql<br>date: 2020-1-11 14:57:51<br>top: false<br>cover: false<br>password:<br>toc: true<br>mathjax: true<br>summary:<br>tags:</p>
-<ul>
-<li>DJango</li>
-<li>Mysql</li>
-<li>Python</li>
-<li>配置<br>categories: Django</li>
-</ul>
-<hr>
-<h2 id="使用pymysql"><a href="#使用pymysql" class="headerlink" title="使用pymysql"></a>使用pymysql</h2><p>Python3.5+并不支持MySQLdb，使用MySql可以使用pymysql代替</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre><code>pip install pymysql</code></pre><h3 id="django配置"><a href="#django配置" class="headerlink" title="django配置"></a>django配置</h3><p>在项目的<strong>init</strong>.py 文件中</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> pymysql
+                <h2 id="迭代器与生成器"><a href="#迭代器与生成器" class="headerlink" title="迭代器与生成器"></a>迭代器与生成器</h2><h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><p>迭代器是一个能记住遍历位置的对象。</p>
+<p>迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束。迭代器只能往前不会后退。</p>
+<p>迭代器有两个基本的方法：<strong>iter()</strong> 和 <strong>next()</strong>。</p>
+<p>字符串，列表或元组对象都可用于创建迭代器：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> it <span class="token operator">=</span> iter<span class="token punctuation">(</span>list<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 创建迭代器对象</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span> <span class="token punctuation">(</span>next<span class="token punctuation">(</span>it<span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 输出迭代器的下一个元素</span>
+<span class="token number">1</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span> <span class="token punctuation">(</span>next<span class="token punctuation">(</span>it<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>迭代器对象可以使用常规for语句进行遍历：</p>
+<pre class="line-numbers language-python"><code class="language-python">list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
+it <span class="token operator">=</span> iter<span class="token punctuation">(</span>list<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 创建迭代器对象</span>
+<span class="token keyword">for</span> x <span class="token keyword">in</span> it<span class="token punctuation">:</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>
 
-pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="使用mysql-connector-python"><a href="#使用mysql-connector-python" class="headerlink" title="使用mysql-connector-python"></a>使用mysql-connector-python</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><pre><code>pip install mysql-connector-python</code></pre><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>修改’ENGINE’配置项，’ENGINE’:’mysql.connector.django’,</p>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>也可以使用 next() 函数：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> sys         <span class="token comment" spellcheck="true"># 引入 sys 模块</span>
+<span class="token operator">>></span><span class="token operator">></span>  
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> it <span class="token operator">=</span> iter<span class="token punctuation">(</span>list<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 创建迭代器对象</span>
+<span class="token operator">>></span><span class="token operator">></span>  
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>next<span class="token punctuation">(</span>it<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">', '</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>      
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> 
+<span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3><p>在 Python 中，使用了 yield 的函数被称为生成器（generator）。</p>
+<p>跟普通函数不同的是，生成器是一个返回迭代器的函数，只能用于迭代操作，更简单点理解生成器就是一个迭代器。</p>
+<p>在调用生成器运行的过程中，每次遇到 yield 时函数会暂停并保存当前所有的运行信息，返回 yield 的值, 并在下一次执行 next() 方法时从当前位置继续运行。</p>
+<p>调用一个生成器函数，返回的是一个迭代器对象。</p>
+<p>以下实例使用 yield 实现斐波那契数列：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> sys
 
+<span class="token keyword">def</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 生成器函数 - 斐波那契</span>
+    a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> counter <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>counter <span class="token operator">></span> n<span class="token punctuation">)</span><span class="token punctuation">:</span> 
+            <span class="token keyword">return</span>
+        <span class="token keyword">yield</span> a
+        a<span class="token punctuation">,</span> b <span class="token operator">=</span> b<span class="token punctuation">,</span> a <span class="token operator">+</span> b
+        counter <span class="token operator">+=</span> <span class="token number">1</span>
+f <span class="token operator">=</span> fibonacci<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># f 是一个迭代器，由生成器返回生成</span>
+
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token punctuation">(</span>next<span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> StopIteration<span class="token punctuation">:</span>
+        sys<span class="token punctuation">.</span>exit<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输出：</p>
+<pre><code>0 1 1 2 3 5 8 13 21 34 55</code></pre>
             </div>
             <hr/>
 
@@ -573,36 +609,81 @@ pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="to
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/02/26/python/05.python-liu-cheng-kong-zhi/">
+                <a href="/2020/04/23/python/python-die-dai-qi-yu-sheng-cheng-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Python-流程控制-分支结构与循环语句">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Python-迭代器与生成器">
                         
-                        <span class="card-title">Python-流程控制-分支结构与循环语句</span>
+                        <span class="card-title">Python-迭代器与生成器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python代码块Python语言通过缩进来组织代码块，这是Python的强制要求。在Python编程中具有相同缩进的代码被自动视为一个代码块，无论进行了几个空格的缩进都是被允许的，只要缩进空格的数量统一。
-以冒号开始，用缩进划分相同的作用
+                            迭代器与生成器迭代器迭代器是一个能记住遍历位置的对象。
+迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束。迭代器只能往前不会后退。
+迭代器有两个基本的方法：iter() 和 next()。
+字符串，列表或元组对象都可用于创建
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-26
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Hello-Z
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/04/16/python-zi-dong-hua/pynpuy-kong-zhi-jian-pan-shu-biao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="pynpuy-控制键盘鼠标">
+                        
+                        <span class="card-title">pynpuy-控制键盘鼠标</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            控制鼠标与监听#-*- coding:utf-8 -*-
+from pynput.mouse import Button, Controller
+
+
+## ==========================================
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python基础/" class="post-category" target="_blank">
-                                    Python基础
+                            <a href="/categories/Python/" class="post-category" target="_blank">
+                                    Python
                                 </a>
                             
                             
@@ -616,46 +697,10 @@ pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="to
                         <span class="chip bg-color">Python</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/01/16/django/django-xu-lie-hua-shu-ju/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Django-序列化数据">
-                        
-                        <span class="card-title">Django-序列化数据</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Django类视图返回使用json加载数据class GoodsView(View):
-    def get(self, request):
-        json_list = []
-        goods = models.Go
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-16
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            Hello-Z
-                            
-                        </span>
-                    </div>
+                    <a href="/tags/自动化/" target="_blank">
+                        <span class="chip bg-color">自动化</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -811,7 +856,7 @@ pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="to
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">47.9k</span>&nbsp;字
+                class="white-color">49.9k</span>&nbsp;字
             
             
             

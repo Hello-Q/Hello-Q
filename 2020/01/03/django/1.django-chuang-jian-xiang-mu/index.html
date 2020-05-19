@@ -6,10 +6,9 @@
     <meta charset="utf-8">
     <meta name="keywords" content="1. Django-请求与响应, Hello-Z">
     <meta name="description" content="Django安装直接使用pip
-pip install django创建一个Django 项目使用django-admin模块
-# django-admin startproject &amp;lt;project_name&amp;gt;
-
-django">
+pip install django指定版本
+pip install django==2.2创建一个Django 项目使用django-admin模块
+# django-admin startproject ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -357,16 +356,16 @@ django">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Django/" target="_blank">
-                                <span class="chip bg-color">Django</span>
-                            </a>
-                        
                             <a href="/tags/Python/" target="_blank">
                                 <span class="chip bg-color">Python</span>
                             </a>
                         
                             <a href="/tags/基础/" target="_blank">
                                 <span class="chip bg-color">基础</span>
+                            </a>
+                        
+                            <a href="/tags/Django/" target="_blank">
+                                <span class="chip bg-color">Django</span>
                             </a>
                         
                     </div>
@@ -396,7 +395,7 @@ django">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        327
+                        338
                     </div>
                     
 
@@ -420,7 +419,8 @@ django">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="Django安装"><a href="#Django安装" class="headerlink" title="Django安装"></a>Django安装</h2><p>直接使用pip</p>
-<pre><code>pip install django</code></pre><h2 id="创建一个Django-项目"><a href="#创建一个Django-项目" class="headerlink" title="创建一个Django 项目"></a>创建一个Django 项目</h2><p>使用django-admin模块</p>
+<pre><code>pip install django</code></pre><p>指定版本</p>
+<pre><code>pip install django==2.2</code></pre><h2 id="创建一个Django-项目"><a href="#创建一个Django-项目" class="headerlink" title="创建一个Django 项目"></a>创建一个Django 项目</h2><p>使用django-admin模块</p>
 <pre><code># django-admin startproject &lt;project_name&gt;
 
 django-admin startproject mysite</code></pre><h2 id="运行Django项目"><a href="#运行Django项目" class="headerlink" title="运行Django项目"></a>运行Django项目</h2><p>使用Django manage 工具</p>
@@ -434,19 +434,20 @@ django-admin startproject mysite</code></pre><h2 id="运行Django项目"><a href
 <p>django 自带的web服务器支持热更新，但创建新文件等操作需要手动重启服务</p>
 </blockquote>
 <h2 id="创建一个应用"><a href="#创建一个应用" class="headerlink" title="创建一个应用"></a>创建一个应用</h2><p>使用django manage工具创建应用</p>
-<pre><code>python manage.py start app polls</code></pre><h2 id="编写app视图"><a href="#编写app视图" class="headerlink" title="编写app视图"></a>编写app视图</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>http <span class="token keyword">import</span> HttpResponse
+<pre><code># python manage.py startapp &lt;appname&gt;
+python manage.py startapp polls</code></pre><h3 id="编写app视图"><a href="#编写app视图" class="headerlink" title="编写app视图"></a>编写app视图</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>http <span class="token keyword">import</span> HttpResponse
 
 <span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">"Hello, world. You're at the polls index."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="为视图编写路由"><a href="#为视图编写路由" class="headerlink" title="为视图编写路由"></a>为视图编写路由</h3><p>在app的目录下创建urls.py</p>
-<p>编写对应代码<br>*app下的urls.py</p>
-<pre><code>from django.urls import path
+<p>编写对应代码<br><em>app下的urls.py</em></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>urls <span class="token keyword">import</span> path
+<span class="token keyword">from</span> <span class="token punctuation">.</span> <span class="token keyword">import</span> views
 
-from . import views
-
-urlpatterns = [
-    path(&#39;&#39;, views.index, name=&#39;index&#39;),
-]</code></pre><p>在项目目录urls.py中插入include()将路由指向app中的路由文件url.py</p>
+urlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>
+    path<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">,</span> views<span class="token punctuation">.</span>index<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'index'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在项目目录urls.py中插入include()将路由指向app中的路由文件url.py</p>
 <p><em>项目目录下的urls.py</em></p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>contrib <span class="token keyword">import</span> admin
 <span class="token keyword">from</span> django<span class="token punctuation">.</span>urls <span class="token keyword">import</span> include<span class="token punctuation">,</span> path
@@ -657,11 +658,10 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
                     <div class="summary block-with-text">
                         
                             数据库配置配置settings中的 DATABASES 变量
-
 ENGINE 数据库引擎
 django.db.backends.sqlite3
 django.db.backends.postgresql
-django.db.backends
+django.db.backends.
                         
                     </div>
                     <div class="publish-info">
@@ -683,16 +683,16 @@ django.db.backends
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Django/" target="_blank">
-                        <span class="chip bg-color">Django</span>
-                    </a>
-                    
                     <a href="/tags/Python/" target="_blank">
                         <span class="chip bg-color">Python</span>
                     </a>
                     
                     <a href="/tags/基础/" target="_blank">
                         <span class="chip bg-color">基础</span>
+                    </a>
+                    
+                    <a href="/tags/Django/" target="_blank">
+                        <span class="chip bg-color">Django</span>
                     </a>
                     
                 </div>
@@ -706,7 +706,7 @@ django.db.backends
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/30/python/12.python-duo-jin-cheng-duo-xian-cheng/">
+                <a href="/2019/12/30/python-ji-chu/12.python-duo-jin-cheng-duo-xian-cheng/">
                     <div class="card-image">
                         
                         
@@ -887,7 +887,7 @@ django.db.backends
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.9k</span>&nbsp;字
+                class="white-color">55.8k</span>&nbsp;字
             
             
             

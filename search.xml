@@ -4,6 +4,40 @@
   
     
     <entry>
+      <title>uniapp接入微信JSSDK教程</title>
+      <link href="/2020/05/21/uniapp-jie-ru-wei-xin-jssdk-jiao-cheng/"/>
+      <url>/2020/05/21/uniapp-jie-ru-wei-xin-jssdk-jiao-cheng/</url>
+      
+        <content type="html"><![CDATA[<h2 id="微信公众平台配置"><a href="#微信公众平台配置" class="headerlink" title="微信公众平台配置"></a>微信公众平台配置</h2><p>进入基本配置，修改服务器配置。</p><p><img src="https://gitee.com/Hello-Q/image/raw/master/picgo/image-20200521115709328.png" alt="微信服务器配置"></p><p>输入url，Token自己设置，只用于验证开发者服务器，EncodingAESKey可以随机生成。在点击提交前，需要在服务搭建服务接受并验证微信发送的验证消息。</p><h2 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h2><p>服务端需要使用80或者443端口接受微信验证。</p><h3 id="简单验证服务"><a href="#简单验证服务" class="headerlink" title="简单验证服务"></a>简单验证服务</h3><blockquote><p>官方教程验证，改写python3代码</p></blockquote><ol><li><p>安装web.py</p><pre><code> pip3 install web.py</code></pre></li><li><p>编写代码</p></li></ol><p>main.py</p><pre><code>```python# -*- coding: utf-8 -*-# filename: main.pyimport webfrom handle import Handleurls = (    &#39;/wx&#39;, &#39;Handle&#39;,)if __name__ == &#39;__main__&#39;:    app = web.application(urls, globals())    app.run()```</code></pre><p>handle.py</p><pre><code>```python# -*- coding: utf-8 -*-# filename: handle.pyimport hashlibimport webclass Handle(object):    def GET(self):        try:            # 获取微信发送的验证消息            data = web.input()            if len(data) == 0:                return &quot;hello, this is handle view&quot;            signature = data.signature  # 微信加密签名            timestamp = data.timestamp  # 时间戳            nonce = data.nonce  # 随机数            echostr = data.echostr  # 随机字符串            token = &quot;xxxx&quot; #请按照公众平台官网\基本配置中信息填写            list = [token, timestamp, nonce]  # 组合列表            list.sort()  # 按字典序排序            # 计算排序后的sha1值（此处为pyhton3写法，官网为python2写法）            sha1 = hashlib.sha1()            sha1.update(list[0].encode(&#39;utf-8&#39;))            sha1.update(list[1].encode(&#39;utf-8&#39;))            sha1.update(list[2].encode(&#39;utf-8&#39;))            hashcode = sha1.hexdigest()            if hashcode == signature:  # 判断自己加密的是否与微信发送的相同                return echostr  # 相同则将微信发送的随机字符串返回，微信服务认证成功            else:                return &quot;&quot;        except Exception:            return Exception```</code></pre><ol start="3"><li>运行代码接受消息</li></ol><h3 id="使用Django配置"><a href="#使用Django配置" class="headerlink" title="使用Django配置"></a>使用Django配置</h3><blockquote><p>使用此配置可以长期使用发生修改可以快速修改</p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 微信 </tag>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2020/05/07/sou-suo/"/>
+      <url>/2020/05/07/sou-suo/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>xadmin教程</title>
       <link href="/2020/05/06/django/xadmin-jiao-cheng/"/>
       <url>/2020/05/06/django/xadmin-jiao-cheng/</url>
@@ -214,9 +248,9 @@
             
             <tag> Python </tag>
             
-            <tag> 高级 </tag>
-            
             <tag> 面向对象 </tag>
+            
+            <tag> 高级 </tag>
             
         </tags>
       
@@ -490,9 +524,9 @@
             
             <tag> Python </tag>
             
-            <tag> 基础 </tag>
-            
             <tag> Django </tag>
+            
+            <tag> 基础 </tag>
             
             <tag> Django官方文档 </tag>
             
@@ -552,9 +586,9 @@
             
             <tag> Python </tag>
             
-            <tag> 基础 </tag>
-            
             <tag> Django </tag>
+            
+            <tag> 基础 </tag>
             
         </tags>
       
@@ -581,9 +615,9 @@
             
             <tag> Python </tag>
             
-            <tag> 基础 </tag>
-            
             <tag> Django </tag>
+            
+            <tag> 基础 </tag>
             
         </tags>
       
@@ -637,9 +671,9 @@
             
             <tag> Python </tag>
             
-            <tag> 基础 </tag>
-            
             <tag> Django </tag>
+            
+            <tag> 基础 </tag>
             
         </tags>
       
@@ -666,9 +700,9 @@
             
             <tag> Python </tag>
             
-            <tag> 基础 </tag>
-            
             <tag> Django </tag>
+            
+            <tag> 基础 </tag>
             
         </tags>
       
@@ -829,9 +863,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 配置 </tag>
+            
+            <tag> python </tag>
             
             <tag> pip </tag>
             
@@ -989,9 +1023,9 @@
       
         <tags>
             
-            <tag> 软件安装 </tag>
-            
             <tag> Python </tag>
+            
+            <tag> 软件安装 </tag>
             
             <tag> centos </tag>
             
@@ -1124,11 +1158,11 @@
             
             <tag> Python </tag>
             
+            <tag> 基础 </tag>
+            
             <tag> 学习笔记 </tag>
             
             <tag> 数据类型 </tag>
-            
-            <tag> 基础 </tag>
             
         </tags>
       
@@ -1207,9 +1241,9 @@
       
         <tags>
             
-            <tag> 命令 </tag>
-            
             <tag> Linux </tag>
+            
+            <tag> 命令 </tag>
             
             <tag> 收藏 </tag>
             
@@ -1236,11 +1270,11 @@
       
         <tags>
             
+            <tag> 命令 </tag>
+            
             <tag> git </tag>
             
             <tag> 积累 </tag>
-            
-            <tag> 命令 </tag>
             
         </tags>
       
@@ -1267,9 +1301,9 @@
             
             <tag> Python </tag>
             
-            <tag> 数据类型 </tag>
-            
             <tag> 基础 </tag>
+            
+            <tag> 数据类型 </tag>
             
         </tags>
       
@@ -1325,9 +1359,9 @@
             
             <tag> Python </tag>
             
-            <tag> 数据类型 </tag>
-            
             <tag> 基础 </tag>
+            
+            <tag> 数据类型 </tag>
             
         </tags>
       
@@ -1639,19 +1673,6 @@
             <tag> ORM </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/1970/01/01/sou-suo/"/>
-      <url>/1970/01/01/sou-suo/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
       
     </entry>
     

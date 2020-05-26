@@ -383,7 +383,7 @@ vscode安装上官网下载安装包，直接点击安装即可。
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        888
+                        909
                     </div>
                     
 
@@ -440,7 +440,8 @@ StartupWMClass=jetbrains-pycharm<span aria-hidden="true" class="line-numbers-row
 <li>安装相关工具</li>
 </ul>
 <pre class="line-numbers language-shell"><code class="language-shell">apt-get install gcc make python-dev  libffi-dev libssl-dev  libxml2-dev libxslt-dev  libmysqlclient-dev libsqlite3-dev zlib1g-dev<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>缺少其他工具包，安装即可。</p>
+<p>cetos使用</p>
+<pre><code>yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel libffi-devel</code></pre><p>缺少其他工具包，安装即可。</p>
 <ul>
 <li><p>下载安装包解压</p>
 <pre class="line-numbers language-shell"><code class="language-shell">wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz
@@ -476,7 +477,7 @@ find: ‘/run/user/1000/gvfs’: 权限不够
 find: ‘/run/user/121/gvfs’: 权限不够
 zhang@zhang-pc:/usr/local/python3.7/bin$ sudo ln -s /usr/local/python3.7/bin/virtualenv /usr/local/bin/virtualenv<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ul>
-<li><p>编辑 ~/ .bashrc 文件</p>
+<li><p>编辑 ~/.bashrc 文件</p>
 <pre class="line-numbers language-shell"><code class="language-shell">export VIRTUALENVWRAPPER_PYTHON=/usr/local/python3.7/bin/python3.7  # 使用的python
 export WORKON_HOME=~/.virtualenv # 存放虚拟环境的目录
 source /usr/local/python3.7/bin/virtualenvwrapper.sh <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>

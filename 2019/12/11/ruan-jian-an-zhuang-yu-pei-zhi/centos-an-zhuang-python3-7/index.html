@@ -395,7 +395,7 @@ yum -y install zlib-devel bzip2-dev">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        164
+                        168
                     </div>
                     
 
@@ -425,11 +425,11 @@ yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel r
 yum install libffi-devel -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="下载安装包解压"><a href="#下载安装包解压" class="headerlink" title="下载安装包解压"></a>下载安装包解压</h3><pre><code>cd #回到用户目录
 wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz
-tar -xvJf  Python-3.7.0.tar.xz</code></pre><h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><pre><code>mkdir /usr/local/python3 #创建编译安装目录
+tar -xvJf  Python-3.7.0.tar.xz</code></pre><h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><pre><code>mkdir /usr/local/python3.7 #创建编译安装目录
 cd Python-3.7.0
-./configure --prefix=/usr/local/python3
-make &amp;&amp; make install</code></pre><h3 id="创建软连接"><a href="#创建软连接" class="headerlink" title="创建软连接"></a>创建软连接</h3><pre><code>ln -s /usr/local/python3/bin/python3 /usr/local/bin/python3
-ln -s /usr/local/python3/bin/pip3 /usr/local/bin/pip3</code></pre><h3 id="验证是否成功"><a href="#验证是否成功" class="headerlink" title="验证是否成功"></a>验证是否成功</h3><pre><code>python3 -V
+./configure --prefix=/usr/local/python3.7
+make &amp;&amp; make install</code></pre><h3 id="创建软连接"><a href="#创建软连接" class="headerlink" title="创建软连接"></a>创建软连接</h3><pre><code>ln -s /usr/local/python3.7/bin/python3 /usr/local/bin/python3
+ln -s /usr/local/python3.7/bin/pip3 /usr/local/bin/pip3</code></pre><h3 id="验证是否成功"><a href="#验证是否成功" class="headerlink" title="验证是否成功"></a>验证是否成功</h3><pre><code>python3 -V
 pip3 -V</code></pre>
             </div>
             <hr/>
